@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "id": "test-07",
+    "naziv": "Model Set 7"
+  },
+  "audio": {
+    "t1": "audio/test0/horen_test0_teil1.mp3",
+    "t2": "audio/test0/horen_test0_teil2.mp3",
+    "t3": "audio/test0/horen_test0_teil3.mp3",
+    "t4": "audio/test0/horen_test0_teil4.mp3"
+  },
+  "lesen": {
+    "t1": {
+      "blog_naslov": "",
+      "blog_tagline": "",
+      "blog_datum": "",
+      "blog_tekst": "Lesen Sie den Text und die Aufgaben 1 bis 6 dazu. \nWählen Sie: Sind die Aussagen richtig oder falsch ?\n\nGregors Blog \n\nMontag, den 4. Dezember \nLetzte Woche Donnerstag bekam ich abends einen Anruf von der Sekretärin meiner alten Firma. \nEs gäbe dort eine interessante Aufgabe für mich und ob ich nicht Lust hätte, mich beim neuen \nChef vorzustellen. Der frühere Chef, mit dem ich immer Ärger gehabt hatte, sei voriges Jahr \ngegangen, der neue sei ganz nett. \nDas hat mich natürlich neugierig gemacht. Bin nun schon fast sechs Jahre bei \nLinguarama\" und mit der Zeit wird auch die interessanteste Aufgabe zur Routine. \nEin Wechsel könnte mir gut tun, vielleicht war das die Chance dazu. \nFreitag nach der Arbeit saß ich dem neuen Chef vom Sprach-Studio\" gegenüber. Er erklärte mir \ngenau, was meine neue Arbeit wäre: Gruppen von jungen Leuten auf das Studium an der Uni \nvorzubereiten, und zwar nicht nur sprachlich, sondern auch kulturell. Ein Angebot, wo man \nnicht „ nein\" sagen kann. Die Bezahlung wäre auch nicht schlecht, etwas mehr, als ich jetzt \nverdiene, und ich hätte das Wochenende frei. \nHeute dann das Gespräch mit meinem jetzigen Arbeitgeber. Wir mögen einander sehr, so hat er \nmir freundlich zugehört und mir keine Steine in den Weg gelegt. Sobald meine Sommerkurse \nzu Ende sind, darf ich gehen. Leicht wird es für mich nicht sein, „Linguarama\" zu verlassen, ich \nhabe dort als Deutschlehrer viel gelernt und meine Kolleg(inn)en waren teilweise sehr traurig. \nDas habe ich natürlich als ein ganz liebes Kompliment an mich empfunden. \nDas einzige Problem bei diesem Wechsel wird die Entfernung sein. Das „Sprach-Studio\" ist in \nErlangen, wenn ich also meine Wohnung im Stadtzentrum von Nürnberg behalten will, muss ich \njeden Tag eine Stunde U-Bahn fahren. Naja, meine jetzige Wohnung ist günstig für die Freizeit \nund teuer ist sie auch nicht, da werde ich wohl bis Ende des Jahres in Nürnberg bleiben. \nIch verlasse meine Arbeit in Nürnberg mit einem weinenden und einem lachenden Auge, kann \nnur hoffen, dass ich es nicht bereuen werde. Aber einem Lehrer bieten sich solche Chancen, \nnämlich eine Tätigkeit, die das Gewohnte übersteigt, nicht oft. Dieser Wechsel wird meiner \nKarriere gut tun! \n\nGregor \n\n\n\n\n",
+      "primer_tekst": " Gregor hatte sich mit seinem früheren Chef nicht gut verstanden. ",
+      "pitanja": [
+        "Gregor findet seine jetzige Arbeit nicht mehr so interessant.",
+        "Im „Sprach-Studio\" wird Gregor Leute unterrichten, die dabei sind,  ein Universitätsstudium zu beginnen.",
+        "Gregor wird mehr verdienen, wenn er auch Samstag und Sonntag arbeitet. ",
+        "Sein jetziger Chef ist über Gregors Weggang nicht traurig. ",
+        "Gregors neuer Arbeitsort ist von seinem Wohnort relativ weit entfernt. ",
+        "Gregor hat starke Zweifel, ob dieser Schritt der richtige ist. "
+      ],
+      "primer_odg": "r"
+    },
+    "t2": {
+      "clanak1": {
+        "kicker": "",
+        "naslov": "",
+        "kolona1": [
+          ""
+        ],
+        "kolona2": [
+          ""
+        ],
+        "izvor": "",
+        "clanak1_tekst": "Lesen Sie den Text aus dem Internet und die Aufgaben 7 bis 9 dazu. \nWählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c?\nDie Erfolgsgeschichte \ndes Handys&nbsp;Auf der Erde könnte es schon im kommenden Jahr so viele \nMobiltelefone wie Menschen geben. Die Zahl der Handys wird \ndann voraussichtlich die Marke von sieben Milliarden erreichen, \ndie Weltbevölkerung umfasst nach Schätzungen der UNO \nzurzeit 7,1 Milliarden Menschen. Das größte Wachstum bei der mobilen Kommunikation vollzieht sich in Asien, bereits jetzt entfällt \nmehr als die Hälfte der weltweiten Mobilfunkverträge auf diesen Erdteil. Allerdings zeichnet sich \ninsgesamt eine Verlangsamung des Wachstums als Folge der zunehmenden Sättigung der Märkte \nab: Bis Ende des Jahres wird die Marktabdeckung mit Mobiltelefonen global 96 Prozent ausmachen, in den Industrieländern bereits 128 Prozent und in den Entwicklungsländern 89 Prozent. \nDeutlich langsamer als erhofft wächst inzwischen der Zugang zum Internet. Bis Ende des \nJahres werden voraussichtlich 39 Prozent der Weltbevölkerung - 2,7 Milliarden Menschen - im \nNetz sein. Dabei wird es große Unterschiede geben: In Europa wird mit einer Internetabdeckung \nvon 75 Prozent gerechnet, in Afrika hingegen mit nur 16 Prozent. Im ersten Abschnitt des neuen \nMillenniums wurden zwar große Fortschritte gemacht, aber noch haben wir einen langen Weg \nvor uns. Denn zwei Drittel der Weltbevölkerung - rund 4,5 Milliarden Menschen - sind immer \nnoch nicht online \nder Welt. \nund damit ausgeschlossen von der größten und wertvollsten Bibliothek&nbsp;&nbsp;"
+      },
+      "clanak2": {
+        "naslov": "",
+        "kolona1": [
+          ""
+        ],
+        "kolona2": [
+          ""
+        ],
+        "izvor": "",
+        "clanak2_tekst": "Mit 300 km/h durch China&nbsp;Das chinesische Wort für „Zug\" bedeutet so viel wie \n„Feuerwagen\", denn es stammt aus einer Zeit, als Züge noch \nmit großem Lärm wie Drachen durch die Provinzen fuhren. \nDer bis zu 350 km/h schnelle Hochgeschwindigkeitszug \naber, der heute Nordostchinas Metropole Harbin mit der Hafenstadt Dalian verbindet - eine 921 \nKilometer lange Strecke bei Schneestürmen und Temperaturen von bis zu minus 40 Grad - erinnert \neher an einen Kometen oder eine Rakete, die eine lange Schneewolke hinter sich herzieht. \nDie Fahrzeit verkürzt sich von neun auf vier Stunden, die Zeit vergeht wie im Flug, und so erinnert \nauch der neue Bahnhof in Harbin eher an einen Flughafen. In weniger als zehn Minuten hat der Zug 200 km/h erreicht. Man spürt sie nicht und hört sie kaum, \nfast geräuschlos schnurrt der Zug durch die Landschaft. Die Fahrt gleicht einer Zeitreise durch \n30 Jahre chinesischer Geschichte, die Eindrücke wechseln sich ab: Hochhaus-Dschungel aus Glas \nund Beton, Dörfer ohne Strom, Fabriken, die den Himmel grau verfärben, eine neue Stadt mitten \nim Nichts. Ein Blick auf die Geschwindigkeitsanzeige verrät, dass der Zug nach wie vor „nur\" \nmit 200 km/h unterwegs ist. „Aus Sicherheitsgründen gilt im Winter dieses Tempolimit, von April \nbis November dürfen die Züge dann bis zu 300 km/h fahren.\" informiert eine Zugbegleiterin \ndie Fahrgäste.&nbsp;&nbsp;"
+      },
+      "primer_tekst": "",
+      "primer_odg": "",
+      "pitanja": [
+        {
+          "tekst": "  In diesem Text geht es um ...",
+          "a": "die Möglichkeiten der neuen Handy-Generation. ",
+          "b": "die Verbreitung von Mobilfunk und Internet. ",
+          "c": "Mobiltelefone ohne Internetzugang."
+        },
+        {
+          "tekst": "Anschluss ans Internet ...",
+          "a": "hat nur 16% der Menschheit. ",
+          "b": "werden bald alle Menschen haben. ",
+          "c": "hat drei Viertel der Bevölkerung Europas. "
+        },
+        {
+          "tekst": "Die meisten Handys ...",
+          "a": "gibt es in den asiatischen Ländern. ",
+          "b": "besitzen die Einwohner der Industrieländer. ",
+          "c": "wird es in Zukunft in den Entwicklungsländern geben."
+        },
+        {
+          "tekst": "In diesem Text geht es um eine  Fahrt ... ",
+          "a": "mit einem neuen Expresszug. ",
+          "b": "mit einem alten chinesischen Nostalgie-Zug. ",
+          "c": "in einem chinesischen Abenteuerpark. "
+        },
+        {
+          "tekst": "Wenn man mit diesem Zug  fährt, ...",
+          "a": "steigt man direkt im Flughafen ein. ",
+          "b": "sieht man draußen immer dasselbe Bild. ",
+          "c": "merkt man die Geschwindigkeit nicht."
+        },
+        {
+          "tekst": "Mit diesem Zug ...",
+          "a": "kann man bei Schnee und Frost nicht fahren. ",
+          "b": "dauert die Fahrt fünf Stunden weniger. ",
+          "c": "kostet die Fahrt genauso viel wie mit dem Flugzeug. "
+        }
+      ],
+      "primer_question": "  Die Anzahl der Mobiltelefone ... ",
+      "primer_a": "wird bald so groß wie die Erdbevölkerung sein. ",
+      "primer_b": "wächst jährlich um eine Milliarde.",
+      "primer_c": "wird in Zukunft nicht mehr zunehmen.",
+      "primer_ans": "a"
+    },
+    "t3": {
+      "kontekst": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen A bis J aus verschiedenen deutschsprachigen \nMedien. Wählen Sie: Welche Anzeige passt zu welcher Situation? Sie können jede Anzeige nur \neinmal verwenden. Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine \nSituation gibt es keine passende Anzeige. In diesem Fall schreiben Sie 0. \nLeute auf der Suche nach einem passenden Buch lesen entsprechende Anzeigen in verschiedenen Medien.",
+      "primer_tekst": "",
+      "primer_odg": "i",
+      "primer_slovo": "f",
+      "oglasi": {
+        "a": {
+          "tekst": "Mein Leben, die Liebe und der ganze Rest&nbsp;Conni ist endlich fünfzehn geworden, aber sie fühlt \nsich kein bisschen anders. Das kann nicht sein! \nAb heute hat sie genau ein Jahr Zeit, um den \nUnterschied herauszufinden - falls es einen gibt.&nbsp;",
+          "primer": false
+        },
+        "b": {
+          "tekst": "Kann ich wirklich schlemmen und dabei schlank \nwerden? Wie das geht, zeigt Starkoch Alfons \nSchuhbeck in seinem neuen Buch \nViel Energie mit wenig Kalorien \nBeste, kalorienarme \nLebensmittel, leichte, köstliche \nRezepte, höchster Geschmack \nein neuer Weg zum Wohlfühlen.",
+          "primer": false
+        },
+        "c": {
+          "tekst": "lsch geh Schulhof&nbsp;&nbsp;Aushilfslehrer? leichter Job, denkt Philipp Möller \nbis zur ersten Stunde. Musikstunden erinnern an \n„Deutschland sucht den Superstar\" und als Pausen\nbrot gibt es Fastfood vom Vortag. Möllers Geschich\nten aus dem deutschen Bildungschaos sind brisant, \nberührend und urkomisch.",
+          "primer": false
+        },
+        "d": {
+          "tekst": "Mein Lern-Spiel-Abenteuer: Erste Zahlen&nbsp;Zusammen mit Freunden, Eltern und Großeltern \nerleben Emma und Leo die Welt der Zahlen in ihrem \nAlltag - im Kindergarten, beim Einkaufen, bei einem \nGeburtstagsfest, im Zoo usw. - und lernen den \nspielerischen Umgang damit.&nbsp;",
+          "primer": false
+        },
+        "e": {
+          "tekst": "Wachstum ist kein Selbstzweck, und die Wirtschaft \nsoll den Menschen dienen, doch \nWie viel ist genug? \nWir sind viermal reicher als vor 100 Jahren und \ndoch abhängig von einem System, in dem manche \nzu viel und viele nicht genug haben.&nbsp;",
+          "primer": false
+        },
+        "f": {
+          "tekst": "Das Dorf der Mörder&nbsp;Ein grausamer Mord ereignet sich im Berliner Tier\npark. Die Schuldige ist schnell gefunden - zu schnell, \nwie Kommissar Karl Rubin glaubt. Sein Verdacht: \nDer Mord hängt mit der Kindheit des Opfers in \neinem kleinen Dorf in Brandenburg zusammen.",
+          "primer": true
+        },
+        "g": {
+          "tekst": "Schon Monate vorher geht der Stress los: \nHeiraten und entspannt bleiben \nWie lädt man ein und vor allem \nwen? Wer sitzt wo, wie sieht die \nDekoration aus, was kann man \nselbst machen oder einfach \nbestellen? Humorvoller Ratge\nber mit vielen Tipps und Tricks.",
+          "primer": false
+        },
+        "h": {
+          "tekst": "&nbsp;Sommer 2011:&nbsp;Er ist wieder da!&nbsp;&nbsp;Adolf Hitler erwacht auf einem leeren Grundstück in \nBerlin-Mitte. Ohne Krieg, ohne Partei, ohne Eva, im \ntiefsten Frieden, unter Tausenden von Ausländern, \n66 Jahre nach seinem vermeintlichen Ende - und \nstartet eine neue Karriere.&nbsp;",
+          "primer": false
+        },
+        "i": {
+          "tekst": "Was wir sind und was wir sein könnten&nbsp;&nbsp;Das Burnout-Syndrom, \ndas Gefühl emotionaler \nErschöpfung und reduzierter \nLeistungsfähigkeit, ist die \n.. \nKrankheit unserer Zeit. Man wandert von Krise zu \nKrise, man funktioniert, aber man lebt nicht mehr. \nSchluss damit!&nbsp;",
+          "primer": false
+        },
+        "j": {
+          "tekst": "&nbsp;Die verlorenen Spuren&nbsp;&nbsp;England, 1941: Während einer Familien\nfeier am Flussufer beobachtet der junge \nLaure!, wie ein Fremder das Grundstück \nbetrifft und seine Mutter aufsucht. \nKurz darauf ist der idyllische Frieden des \nOrtes jäh zerstört.",
+          "primer": false
+        }
+      },
+      "situacije": [
+        "Andreas mag witzige Bücher, wo Unerwartetes passiert. ",
+        "Christiane S. möchte ihrer Nichte zu ihrem 15. Geburtstag etwas Passendes  schenken.",
+        " Nathan fühlt sich lustlos und kraftlos, ist mit seinem Leben unzufrieden. ",
+        " Gertrud liest gern Biographien bekannter Persönlichkeiten. ",
+        "Jörg möchte abnehmen ohne auf Sachen zu verzichten, die gut schmecken. ",
+        " Daphne M. möchte die Hochzeit ihrer Tochter perfekt planen.",
+        " Gerd sucht ein schönes Buchgeschenk für seinen Vater, der pensionierter  Grundschullehrer ist."
+      ]
+    },
+    "t4": {
+      "kontekst": "In einer deutschen Zeitung lesen Sie folgende Leserbriefe zum Thema, ob sich die Frauen\nwieder - bei entsprechender finanzieller Unterstützung durch den Staat - mehr um die Familie \nund die Kindererziehung kümmern sollten.",
+      "primer_ime": "Rebekka ",
+      "primer_odg": "n",
+      "primer_tekst": "Da machen es sich Männer mit solchen Vorschlägen zu bequem. Diese Idee geht klar in die falsche Richtung, Frauen haben heute das gleiche Recht auf Beruf und \nKarriere wie Männer. Vor hundert Jahren mag das anders gewesen sein, was aber mit Sicherheit kein Beweis \ndafür ist, dass die damalige Gesellschaftsstruktur \neffizienter war.Rebekka, 35, Nürnberg ",
+      "osobe": [
+        {
+          "ime": "Mayra",
+          "tekst": "Ich bin fest davon überzeugt, dass Familien aus Frauen \nund Männern, Müttern und Vätern bestehen. Ich \nmöchte, dass es dabei Flexibilität gibt, dass jeder seine \neigenen Schwerpunkte setzen kann. Den Frauen eine \nbestimmte Rolle zu übertragen, ohne lange zu überle\ngen, wäre nicht nur falsch und ungerecht, sondern \nkönnte sogar gefährlich werden. \n\nMayra, 27, Hannover"
+        },
+        {
+          "ime": "Tim",
+          "tekst": "Bei der Beantwortung dieser Frage kann man sehr \nleicht missverstanden werden. Ich möchte mich des\nhalb so klar wie nur möglich ausdrücken: In den ersten \ndrei Jahren nach Geburt eines Kindes sollte sich die \nMutter ausschließlich mit ihrem Kind beschäftigen. Sie \nsollte jedoch eine abgeschlossene Berufsausbildung ha\nben, damit sie später ihren Beruf wieder aufnehmen kann. \n\nTim, 46, Krefeld"
+        },
+        {
+          "ime": "Ingo",
+          "tekst": "Die Arbeit zu Hause ist für die Gesellschaft die wichtigs\nte Arbeit überhaupt, weil die zu Selbständigkeit, Sozial\nverstand und Humanität erzogenen Kinder die Zukunft \nder Gesellschaft sind. Die Frauen müssen diese Arbeit \nübernehmen, gleichzeitig muss jedoch der Beruf \n„ Hausfrau\" allgemein anerkannt sein und wie jeder an\ndere Beruf irgendwann mal zur Rente führen. \n\nIngo, 58, Halle "
+        },
+        {
+          "ime": "Cora",
+          "tekst": "Es ist nicht Aufgabe des Staates zu bestimmen, ob Mut\nter oder Vater in einer Familie die Kinderbetreuung \nübernimmt. Aufgabe des Staates ist es vielmehr, die \nVoraussetzungen dafür zu schaffen, dass Mütter und \nVäter Familien- und Berufsleben in Einklang bringen \nkönnen. Jede andere Überlegung ist einseitig und führt \nzu keinem befriedigenden Ergebnis.\nCora, 42, Dresden"
+        },
+        {
+          "ime": "Fiona",
+          "tekst": "Diese Position ist absurd, Kinder haben das Recht auf \nbeide Elternteile! Unser Ziel sollte ein selbstbestimmtes \nLeben und die Vereinbarkeit von Familie und Beruf \nsein. Der Anteil der berufstätigen Frauen muss steigen, \ndafür brauchen wir mehr Kinderkrippeplätze, flexiblere \nArbeitszeiten und mehr Verantwortung auf Seiten der \nVäter. \nFiona, 36, Leipzig "
+        },
+        {
+          "ime": "Hennes",
+          "tekst": "Frauen sind von Natur aus dafür geschaffen, Familien\nbindeglied zu sein. Es ist eine billige Erfindung, Männer \nin die Frauenaufgaben zu zwingen, denn Männer sind \neinfach nicht in der Lage, verschiedene Arbeiten paral\nlel durchzuführen. Ein Erziehungsgehalt von 1000 € \nwürde den Frauen die Möglichkeit geben, zu Hause und \nbei den Kindern zu bleiben. \nHennes, 50, Magdeburg "
+        },
+        {
+          "ime": "Samuel",
+          "tekst": "Ich glaube, Frauen sollen selbst entscheiden können, \nwelche Aufgaben sie im Leben übernehmen wollen. Ob \nKinder vorwiegend durch die Mutter oder durch den \nVater betreut werden, ist nicht entscheidend. Wichtig \nist die Geborgenheit in der Familie, die ihnen die not\nwendige Stabilität der Persönlichkeit gibt. Diese Gebor\ngenheit können Kinderkrippen nur in seltenen Fallen \nbieten. \nSamuel, 22, Freiburg i.B. "
+        }
+      ],
+      "aufgabe": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person dafür, dass sich Frauen wieder mehr um die Familie kümmern sollten? "
+    },
+    "t5": {
+      "kontekst": "",
+      "hausordnung": [
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        }
+      ],
+      "pitanja": [
+        {
+          "tekst": "",
+          "a": "",
+          "b": "",
+          "c": ""
+        },
+        {
+          "tekst": "",
+          "a": "",
+          "b": "",
+          "c": ""
+        },
+        {
+          "tekst": "",
+          "a": "",
+          "b": "",
+          "c": ""
+        },
+        {
+          "tekst": "",
+          "a": "",
+          "b": "",
+          "c": ""
+        }
+      ],
+      "tekst": ":\n\n\n:\n\n\n:\n\n\n:\n\n\n:\n\n\n:\n\n\n:\n"
+    }
+  },
+  "hoeren": {
+    "t1": {
+      "primer_rf": {
+        "tekst": ""
+      },
+      "primer_mc": {
+        "tekst": "",
+        "a": "",
+        "b": "",
+        "c": ""
+      },
+      "tekstovi": [
+        {
+          "rf": "",
+          "mc": {
+            "tekst": "",
+            "a": "",
+            "b": "",
+            "c": ""
+          }
+        },
+        {
+          "rf": "",
+          "mc": {
+            "tekst": "",
+            "a": "",
+            "b": "",
+            "c": ""
+          }
+        },
+        {
+          "rf": "",
+          "mc": {
+            "tekst": "",
+            "a": "",
+            "b": "",
+            "c": ""
+          }
+        },
+        {
+          "rf": "",
+          "mc": {
+            "tekst": "",
+            "a": "",
+            "b": "",
+            "c": ""
+          }
+        },
+        {
+          "rf": "",
+          "mc": {
+            "tekst": "",
+            "a": "",
+            "b": "",
+            "c": ""
+          }
+        }
+      ],
+      "primer_rf_odg": "r",
+      "primer_mc_odg": "c"
+    },
+    "t2": {
+      "kontekst": "",
+      "pitanja": [
+        {
+          "tekst": "",
+          "a": "",
+          "b": "",
+          "c": ""
+        },
+        {
+          "tekst": "",
+          "a": "",
+          "b": "",
+          "c": ""
+        },
+        {
+          "tekst": "",
+          "a": "",
+          "b": "",
+          "c": ""
+        },
+        {
+          "tekst": "",
+          "a": "",
+          "b": "",
+          "c": ""
+        },
+        {
+          "tekst": "",
+          "a": "",
+          "b": "",
+          "c": ""
+        }
+      ]
+    },
+    "t3": {
+      "kontekst": "",
+      "pitanja": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "t4": {
+      "kontekst": "",
+      "primer_tekst": "",
+      "primer_odg": "b",
+      "pitanja": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "osobe_naslovi": {
+        "a": "Moderator",
+        "b": "Dana Schneider",
+        "c": "Florian Bader"
+      }
+    }
+  },
+  "schreiben": {
+    "a1": {
+      "situacija": "",
+      "tacke": []
+    },
+    "a2": {
+      "situacija": ""
+    },
+    "a3": {
+      "situacija": "",
+      "placeholder": ""
+    }
+  },
+  "sprechen": {
+    "t1": {
+      "situacija": "",
+      "naslov": "– – – ",
+      "tacke": [],
+      "_rich": "– <br>– <br>– <br>– "
+    },
+    "t2": {
+      "thema1_naslov": "",
+      "thema1_folien": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "thema1_instrukcije": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "thema2_naslov": "",
+      "thema2_folien": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "thema2_instrukcije": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "t3": {
+      "tekst1": "",
+      "tekst2": ""
+    }
+  }
+}
