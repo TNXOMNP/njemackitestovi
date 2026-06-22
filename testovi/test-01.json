@@ -1,0 +1,450 @@
+{
+  "meta": {
+    "id": "test-01",
+    "naziv": "Model Set 1"
+  },
+  "audio": {
+    "t1": "audio/test1/horen_test1_teil1.mp3",
+    "t2": "audio/test1/horen_test1_teil2.mp3",
+    "t3": "audio/test1/horen_test1_teil3.mp3",
+    "t4": "audio/test1/horen_test1_teil4.mp3"
+  },
+  "lesen": {
+    "t1": {
+      "blog_naslov": "",
+      "blog_tagline": "",
+      "blog_datum": "",
+      "blog_tekst": "\nhttp://www.werkstatt-deutsch.de/blogs/Eddy\n\nEDDYS SPORT-BLOG\n\nFreitag, den 10. Mai\n\nEigentlich habe ich mit dem Laufen angefangen, weil ich täglich stundenlang am Schreibtisch arbeite. Mein Beruf als Programmierer zwingt mich nämlich, fast während meiner gesamten Arbeitszeit vor dem Bildschirm zu sitzen – eine sehr passive Tätigkeit, die für die Gesundheit nicht gut sein kann. Ich hoffte, dass ich mich mit Laufen fit halten, beim Laufen auf andere Gedanken kommen, die Routine meiner Arbeit vergessen würde. Und schließlich wollte ich eine sinnvolle Beschäftigung für meine Freizeit finden.\n\nZwar bin ich auch früher ab und zu gelaufen. Aber weder regelmäßig, noch mit einem Ziel. Und genau das wollte ich nun ändern. Ein Ziel festzulegen ist gut, um einem Weg dahin zu suchen. Je höher, desto besser. Also beschloss ich, ohne lange zu überlegen, die unglaubliche Entfernung von 42,195 Kilometern zu laufen. Einmal bei einem Marathonlauf am Start stehen und Stunden später über die Ziellinie laufen – das muss doch ein super Gefühl sein, oder? Ein Jahr legte ich als Zeitraum fest, um das zu schaffen.\n\nLaufen ist einfach. Schuhe an und los. Das kann fast jeder. Aber ich wusste nicht, ob ich „richtig“ laufen kann. Ich kann schwimmen, ich weiß, was man da tun muss. Aber bewege ich Arme, Beine und Körper, wie es sein muss, und atme ich dabei auch richtig? Keine Ahnung. Das hat mir nie jemand erklärt. Mit dem Laufen war es genauso. Aber im Unterschied zum Schwimmen wollte ich beim Laufen nun ein Ziel erreichen. Also brauchte ich eine, sagen wir mal, besondere Ausbildung. Und einen Plan, einen Trainingsplan. Davon hatte ich schon gelesen. Statt aber Bücher zu studieren, schloss ich mich einer Laufgruppe an und ließ mir von einem Profi erklären, was man beim Laufen mit den Armen macht und wie man den Oberkörper hält. Ich lernte, dass zum Laufen auch sportliche Übungen gehören, weil man einfach viel Kraft braucht. Der Trainer beobachtete mich und kontrollierte meine Fehler, um meinen Laufstil zu verbessern. Ich trainierte nach einem ganz persönlichen Plan, der an meine Leistungen und mein Ziel angepasst war.\n\nNeun Monate später lief ich bei meinem ersten Marathon über die Ziellinie.\n\n\n\n\n",
+      "primer_tekst": "Eddy fürchtete sich vor gesundheitlichen Schäden durch das ständige Sitzen.",
+      "pitanja": [
+        "Beim Sport wollte Eddy nicht an seinen Beruf denken.",
+        "Als er jünger war, hat Eddy manchmal auch Sport gemacht.",
+        "Eddy hat sich in kurzer Zeit für ein ungewöhnliches Ziel entschieden.",
+        "Beim Schwimmen wusste Eddy, wann er alles richtig machte.",
+        "Um seinen Laufstil zu verbessern, las Eddy ganz viele Bücher.",
+        "Eddy hat sein Ziel in weniger als einem Jahr erreicht."
+      ],
+      "primer_odg": "r"
+    },
+    "t2": {
+      "clanak1": {
+        "kicker": "",
+        "naslov": "",
+        "kolona1": [
+          ""
+        ],
+        "kolona2": [
+          ""
+        ],
+        "izvor": "",
+        "clanak1_tekst": "Gemeinsame Aktion gegen Schnellfahrer\nIn Nordrhein-Westfalen und Niedersachsen hat vor wenigen Tagen in Zusammenarbeit mit den Medien eine ungewöhnliche Aktion der Verkehrspolizei stattgefunden: 24 Stunden lang haben 4000 Polizisten in den beiden Bundesländern zum ersten Mal gleichzeitig die Geschwindigkeit von Autofahrern gemessen. Die Medien hatten in den Tagen davor die Bevölkerung über die geplante Kontrollaktion informiert, die Autofahrer wussten also genau, was geschehen würde. Die Bilanz ist positiv: In Nordrhein-Westfalen zum Beispiel waren 24.000 Autofahrer zu schnell, das waren rund drei Prozent der kontrollierten Fahrzeuge – an anderen Tagen sind es im Durchschnitt acht Prozent.\nDas starke Interesse der Medien am Kontroll-Marathon hat offenbar zu einer positiven Reaktion der Bevölkerung geführt: Die meisten Autofahrer sind verantwortungsbewusster gefahren und haben sich an die Geschwindigkeitsregeln gehalten. Viele haben erkannt, dass schnelles Fahren sie nicht viel früher ans Ziel bringt.\nIn Nordrhein-Westfalen wurde der schlimmste Schnellfahrer auf einer Autobahn im Raum Düsseldorf fotografiert. Statt der erlaubten 60 fuhr er 176 Stundenkilometer. Nun erwarten ihn eine Geldstrafe von 680 Euro und drei Monate Fahrverbot. Mit einer hohen Strafe muss auch ein 19-jähriger Fahranfänger rechnen, der bei Braunschweig in einer geschlossenen Ortschaft 66 Stundenkilometer zu schnell war und außerdem Alkohol getrunken hatte.\naus einer deutschen Regionalzeitung"
+      },
+      "clanak2": {
+        "naslov": "",
+        "kolona1": [
+          ""
+        ],
+        "kolona2": [
+          ""
+        ],
+        "izvor": "",
+        "clanak2_tekst": "„easy“-Beschäftigungsprojekt startet in Salzburg\nZiel des Projektes ist, Jugendlichen in Krisensituationen einen Start in ein geregeltes Leben zu ermöglichen. Für ihre Tätigkeit erhalten die 15- bis 18-Jährigen fünf Euro pro Stunde.\nKlingt gut. Einfach wird es trotzdem nicht, die Jugendlichen für das Projekt zu interessieren. Denn „easy“ ist für junge Erwachsene gedacht, die Probleme in ihrem Leben haben, z. B. die Schule nicht abgeschlossen, kein Dach über dem Kopf und keine Arbeit haben. „Wir wollen Jugendlichen in Krisensituationen eine Chance geben, sich selbst auszuprobieren“, sagt Projektleiterin Beatrix Selih. Niemand zwingt sie, die Teilnehmer können selbst entscheiden, wann und ob sie kommen. „Wir hoffen, dass die fünf Euro pro Arbeitsstunde und das Gefühl der Zufriedenheit sie dazu bewegen, immer wieder zu kommen.“ Das Gefühl, etwas geleistet zu haben und dafür entlohnt zu werden, sei ein wichtiger Grund, „easy“ nicht zu verlassen.\nAcht Jugendliche kann die Gruppe aus Ergotherapeutin und zwei Sozialpädagogen gleichzeitig betreuen. Langsam lernen die Teilnehmer dabei, wie es ist, einen sinnvoll organisierten Tag mit aufstehen, arbeiten und Freizeit zu haben. Damit ist das von dem Land Salzburg finanzierte Projekt ein erster Schritt in regelmäßige Tätigkeiten – und damit der Anfang eines geregelten Lebens.\naus einer österreichischen Zeitung"
+      },
+      "primer_tekst": "",
+      "primer_odg": "",
+      "pitanja": [
+        {
+          "tekst": "In diesem Text geht es um ...",
+          "a": "eine große Polizeiaktion gegen zu schnelles Fahren.",
+          "b": "strengere Strafen für zu schnelle Autofahrer.",
+          "c": "eine bekannte Methode der Verkehrspolizei."
+        },
+        {
+          "tekst": "Die geplante Kontrollaktion ...",
+          "a": "sollte ursprünglich geheim bleiben.",
+          "b": "war für die Medien kein interessantes Thema.",
+          "c": "wurde vorher durch die Medien bekannt gemacht."
+        },
+        {
+          "tekst": "Der Fahrer, der am schnellsten gefahren ist, ...",
+          "a": "muss 176 € Strafe zahlen.",
+          "b": "darf ein Vierteljahr lang kein Auto fahren.",
+          "c": "war erst 19 Jahre alt."
+        },
+        {
+          "tekst": "In diesem Text geht es um ein Projekt, das ...",
+          "a": "Jugendlichen ohne Arbeit oder Wohnung helfen soll.",
+          "b": "Schulen für Jugendliche ohne Beschäftigung gründen will.",
+          "c": "Freizeitangebote für Jugendliche ausprobiert."
+        },
+        {
+          "tekst": "Wer bei dem Projekt mitmacht, ...",
+          "a": "muss jeden Tag dort arbeiten.",
+          "b": "muss älter als 18 sein.",
+          "c": "bekommt einen Stundenlohn von 5 Euro."
+        },
+        {
+          "tekst": "Mit der Zeit lernen die Jugendlichen, ...",
+          "a": "dass sie nicht so viel Freizeit brauchen.",
+          "b": "welche Vorteile ein geregeltes Leben hat.",
+          "c": "dass auch uninteressante Tätigkeiten Geld bringen."
+        }
+      ],
+      "primer_question": "Während der Kontrollaktion ...",
+      "primer_a": "wurden 24.000 Autofahrer kontrolliert.",
+      "primer_b": "sind weniger Fahrer als sonst zu schnell gefahren.",
+      "primer_c": "fuhren die Autofahrer um acht Prozent langsamer.",
+      "primer_ans": "b"
+    },
+    "t3": {
+      "kontekst": "Die folgenden Personen wollen aktiv Sport treiben und suchen dafür passende Möglichkeiten.",
+      "primer_tekst": "",
+      "primer_odg": "i",
+      "primer_slovo": "i",
+      "oglasi": {
+        "a": {
+          "tekst": "Heiße Latin-Rhythmen wie Cha-cha-cha, Salsa, Samba und Merengue kombiniert mit heißen Schritten und Figuren.\nKeine Vorkenntnisse erforderlich!\nIm Vordergrund steht die Lust, sich zu toller Musik zu bewegen.\ninfo@tanzfit.ch",
+          "primer": false
+        },
+        "b": {
+          "tekst": "Trainieren Sie Arme und Beine mit einer Mischung aus Skilanglauf und schnellem Gehen.\nNordic Walking\nschont die Gelenke und ist auch für Menschen ohne Erfahrung als Ski(Lang)läufer geeignet.\nwww.nordwalk.de",
+          "primer": false
+        },
+        "c": {
+          "tekst": "Bike fit, das perfekte Training auf dem stationären Fahrrad für alle, die in Form bleiben und Spaß haben wollen. Die ideale Alternative zum Radfahren im Freien. Geschwindigkeit kann individuell geregelt werden.\nwww.bike_fit.at",
+          "primer": false
+        },
+        "d": {
+          "tekst": "Kombi-Training: spezielle Übungen zur Kräftigung der Rücken- und Bauchmuskulatur, zur Stabilisierung der Wirbelsäule und der Körperhaltung. Sagen Sie Ihren Rückenbeschwerden ade! Geschultes Personal.\ninfo@athleticus.at",
+          "primer": false
+        },
+        "e": {
+          "tekst": "Baby da, aber keine Zeit für etwas Gymnastik, denn wo soll das Baby in der Zwischenzeit bleiben?\nKein Problem! Ich komme zu Ihnen nach Hause und Sie können problemlos mit mir gemeinsam Ihr persönliches Trainingsprogramm erstellen und durchführen.\nE-Mail an: ruth_kunz@gmail.com",
+          "primer": false
+        },
+        "f": {
+          "tekst": "Rad-Wandertouren auf Mallorca\nJede Woche 5 tolle Touren durch die schönsten Landschaften im Südwesten der Insel. Eigenes Rad erforderlich. Unterkunft in einer herrlich gelegenen Villa (mit Pool). Maximal 10 Personen! Prospekt anfordern:\ncosta.diva@yahoo.es",
+          "primer": false
+        },
+        "g": {
+          "tekst": "Mit Wing Tsun könnt ihr euch gegen Angreifer verteidigen. Keine sportlichen Voraussetzungen nötig. Körpergröße und Kraft spielen keine Rolle!\nWing Tsun schult Körper und Geist. Neue Kurse wöchentlich in Berlin Mitte. Info:\nwingtsun@hotmail.com.",
+          "primer": false
+        },
+        "h": {
+          "tekst": "Squash gegen Stress!\nÄrger im Büro, Probleme in der Familie? Vergessen Sie alles bei einer Partie Squash. Nichts baut den Stress schneller und effektiver ab.\nFür zwei Spieler kostet der Raum (voll klimatisiert) 8 Euro die Stunde.\nwww.creative-squash.at",
+          "primer": false
+        },
+        "i": {
+          "tekst": "Ich habe wieder Lust, regelmäßig laufen zu gehen und würde mich freuen, wenn jemand neben mir her läuft, dem gemeinsam macht es einfach mehr Spaß. Noch bin ich nicht ganz fit, laufe daher in ruhigem Tempo.\nEinfach anrufen: 0175 6876 3545",
+          "primer": true
+        },
+        "j": {
+          "tekst": "Ballettunterricht für Kinder\nWir lernen alle Grundschritte des Balletts an der Stange sowie in der Mitte und üben längere Sequenzen ein. Regelmäßige Aufführungen für Freunde und Verwandte machen diesen Kurs zu einer ganz besonderen Erfahrung.\ninfo@ballettino.de",
+          "primer": false
+        }
+      },
+      "situacije": [
+        "Franka hat früher sehr, sehr gern getanzt, dazu hätte sie auch jetzt Lust.",
+        "Sonja und ihre Freundinnen möchten in ihrem Urlaub aufs Fahrrad nicht verzichten.",
+        "Roberta ist vor einigen Wochen Mutter geworden und hat keine Zeit fürs Fitnesscenter.",
+        "Tim und Michelle möchten, dass ihre kleine Tochter einen Tanzkurs besucht.",
+        "Geraldine, 24, interessiert sich für Kampfsportarten aus Fernost.",
+        "Rolf ist neu in der Stadt und sucht Anschluss an eine Basketball-Gruppe.",
+        "Maurice will etwas für seinen Rücken tun."
+      ]
+    },
+    "t4": {
+      "kontekst": "In einer deutschen Tageszeitung lesen Sie die folgenden Leserbriefe zu einem Artikel zum Thema, ob der Musikunterricht im Schulprogramm bleiben soll oder nicht.",
+      "primer_ime": "Nora",
+      "primer_odg": "n",
+      "primer_tekst": "Musiklehrer kosten den Staat nicht mehr und leisten sicher nicht weniger als Lehrer anderer Schulfächer. Dabei ist ihre Arbeit manchmal wegen zu großen und unruhigen Klassen alles andere als einfach. Ich weiß, das gilt für alle Lehrer. Trotzdem bin ich fest der Ansicht, dass die Abschaffung des Musikunterrichts eine große Ungerechtigkeit ihnen gegenüber bedeuten würde.\nNora, 34, Freiburg im Breisgau",
+      "osobe": [
+        {
+          "ime": "Boris",
+          "tekst": "20 Ich finde die Reaktionen auf die Kürzungen beim Musikunterricht völlig unbegründet. Dass gespart werden muss, das ist seit langem bekannt. Auch in den Schulen. Dann bieten sich Fächer wie Musik oder Kunst doch geradezu an. Diese Fächer gefallen, wenn ich mich an meine schon länger zurückliegende Schulzeit erinnere, sowieso nur den wenigsten Kindern.\nBoris, 56, Würzburg"
+        },
+        {
+          "ime": "Katharina",
+          "tekst": "21 Die Schulen brauchen gutes Lehrpersonal und gute Lehrmaterialien für ihre Arbeit. Es glaubt doch niemand, dass, wenn man die Struktur der Schulen verändert, der Unterricht sofort besser wird, schon gar nicht, wenn diese Änderungen vorerst nur eine Verkürzung des Stundenplans bedeuten. Weniger Musikunterricht löst das Problem nicht.\nKatharina, 49, Leverkusen"
+        },
+        {
+          "ime": "Nils",
+          "tekst": "22 Das Wissen der Menschheit nimmt in einem unglaublichen Tempo zu. Mit dem bisherigen Bildungssystem ist es unmöglich, diese Vielfalt zu vermitteln. Nichts gegen Musik, aber man muss auf etwas verzichten, damit am Ende alle Beteiligten das sichere Gefühl haben, dass alles für die Vorbereitung der Kinder und Jugendlichen auf das weitere Leben getan worden ist.\nNils, 42, Schwerin"
+        },
+        {
+          "ime": "Natascha",
+          "tekst": "23 Aha! Es ist also nicht schlimm, wenn jetzt eine Stunde Musik gestrichen wird. Dann ist es auch nicht schlimm, wenn es in zwei Jahren eine Stunde Sport, in weiteren zwei Jahren eine Stunde Mathe, dann eine Stunde Englisch weniger gibt. Was ist aber, wenn am Ende nichts mehr zu streichen ist? Wollen wir das wirklich?\nNatascha, 25, Augsburg"
+        },
+        {
+          "ime": "Matteo",
+          "tekst": "24 Am Musikunterricht ist neben dem Wissen, das man dort bekommt, vor allem auch das gemeinsame Tun wichtig. Wenn man zusammen musiziert, wird die Leistung des Einzelnen als Teil des Ganzen gesehen und bewertet. Deshalb ist Musik für die Persönlichkeitsentwicklung und mehr Teamfähigkeit, Toleranz und Verantwortung von größer Wichtigkeit. Dafür sind zwei Stunden in der Woche nicht viel.\nMatteo, 37, Tübingen"
+        },
+        {
+          "ime": "Helga",
+          "tekst": "25 Man darf nicht so tun, als gäbe es die schlechten Ergebnisse der PISA-Studien und die Klagen der Wirtschaft über nicht ausreichende Deutsch- und Mathematikkenntnisse der jungen Generation nicht. Die Musikerziehung kann warten, der Zug der Zukunft nicht, er wird an unseren Kindern vorbeifahren. Vielleicht klingt diese Ansicht hart und arrogant, sie ist aber leider die bittere Wahrheit.\nHelga, 38, Rostock"
+        },
+        {
+          "ime": "Oskar",
+          "tekst": "26 Die Entscheidung für oder gegen Musikunterricht hängt damit zusammen, dass er für das spätere Leben – im Gegensatz etwa zu Deutsch, Fremdsprachen, Mathematik oder Naturwissenschaften – nicht erforderlich ist. Außerdem ist niemand ein schlechter Mensch, wenn er kein Instrument spielen kann, und die Freude am Musikhören bleibt einem trotzdem erhalten.\nOskar, 32, Kiel"
+        }
+      ],
+      "aufgabe": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für weniger Musikunterricht an der Schule?"
+    },
+    "t5": {
+      "kontekst": "",
+      "hausordnung": [
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        }
+      ],
+      "pitanja": [
+        {
+          "tekst": "Was darf man im Wohnheim nicht?",
+          "a": "Sich nachts etwas kochen.",
+          "b": "Hunde, Katzen usw. in seinem Zimmer halten.",
+          "c": "Plakate an Fenstern aufhängen."
+        },
+        {
+          "tekst": "Falls etwas im Haus zerstört wird, ...",
+          "a": "wird der Schuldige nicht gesucht.",
+          "b": "muss der Schuldige das Wohnheim verlassen.",
+          "c": "müssen alle Wohnheimbewohner für den Schaden zahlen."
+        },
+        {
+          "tekst": "Die Zimmer der Wohnheimbewohner ...",
+          "a": "werden alle zwei Tage sauber gemacht.",
+          "b": "werden von den Studenten selber geputzt.",
+          "c": "dürfen nie von einer dritten Person betreten werden."
+        },
+        {
+          "tekst": "Aus Gründen der Sicherheit ...",
+          "a": "darf keine Tür unverschlossen bleiben.",
+          "b": "dürfen keine Besucher ins Heim kommen.",
+          "c": "darf nirgendwo im Heim geraucht werden."
+        }
+      ],
+      "tekst": "Sie haben sich zu einem Deutschkurs in Heidelberg mit Unterkunft in einem Wohnheim angemeldet und per E-Mail die folgende Hausordnung zugeschickt bekommen.\n\nRegeln für alle Bewohner(innen) des Wohnheims\n\nVon 13.00–15.00 und 22.00–07.00 Uhr sollte im Wohnheim Ruhe sein. Partys sind zu keiner Stunde erlaubt. Das Übernachten von Besuchern im Wohnheim ist verboten. Das Halten von Haustieren ist nicht erlaubt.\nAus Sicherheitsgründen immer Flur-, Haus- und Zimmertür abschließen. Die Heimleitung ist nicht verantwortlich für den Verlust oder die Beschädigung des Eigentums der Wohnheimbewohner(innen) durch Diebstahl, Feuer, Wasserrohrbruch oder anderen Vorkommnissen während des Aufenthalts im Wohnheim. Der Abschluss einer entsprechenden Versicherung wird daher dringend empfohlen.\nJede(r) Student/in ist für die Sauberhaltung des eigenen Raumes verantwortlich. Es finden regelmäßige Kontrollen statt, die Wohnheimbewohner(innen) werden zwei Tage zuvor darüber informiert. Das Anheften von Postern und Bildern ist nur in den Zimmern an den dafür vorgesehenen Pinnwänden erlaubt.\nKüche, Dusche und Toiletten müssen sauber gehalten werden. Abfall ist in die Müllräume zu leeren.\nLicht nach Benutzung ausmachen und die Wasserhähne nach Gebrauch abdrehen; bei Missbrauch (z. B. von Heizung und heißem Wasser) ist es nicht anders möglich, als die entstehenden Kosten auf alle Wohnheimbewohner(innen) zu verteilen.\nIm Falle von Zerstörung gemeinsamen Eigentums (Waschmaschine, Trockner, Küche, Bad/WC, Treppenhaus, Eingangshalle etc.) werden die anstehenden Kosten auf die Bewohner(innen) des Wohnheims verteilt.\nRauchen ist im Wohnheim nicht erlaubt! Bistro und Innenhof sind als Raucherzone deklariert! Betrunkenheit wird nicht akzeptiert. Es herrscht absolutes Drogenverbot.\nIm Notfall und auch bei Reparaturen sowie aus hygienischen oder Sicherheitsgründen ist folgendes Personal befugt, einen Raum zu betreten: Der Campusdirektor, der Wohnheimdirektor, der Wohnheimverwalter und der Hausmeister."
+    }
+  },
+  "hoeren": {
+    "t1": {
+      "primer_rf": {
+        "tekst": "Am heutigen Tag gibt es ein besonderes Programm."
+      },
+      "primer_mc": {
+        "tekst": "Die letzte Vorstellung heute ...",
+        "a": "zeigt den Film auf Englisch.",
+        "b": "beginnt um Viertel nach zehn.",
+        "c": "ist schon ausverkauft."
+      },
+      "tekstovi": [
+        {
+          "rf": "Dies ist eine Information für die Kollegen von Dr. Steffens.",
+          "mc": {
+            "tekst": "Im Notfall kann man ...",
+            "a": "eine Kollegin von Dr. Steffens anrufen.",
+            "b": "in den Pulverhäuserweg 7 gehen.",
+            "c": "am Montag in die Praxis kommen."
+          }
+        },
+        {
+          "rf": "In den nächsten Tagen ist keine Wetterbesserung zu erwarten.",
+          "mc": {
+            "tekst": "Besonders viel Schnee gab es ...",
+            "a": "im Westen Deutschlands.",
+            "b": "auf allen Autobahnen.",
+            "c": "im Süden Deutschlands."
+          }
+        },
+        {
+          "rf": "Die Ansage ist für die Fahrgäste aller U-Bahn-Linien.",
+          "mc": {
+            "tekst": "Am kommenden Wochenende fährt die U4 ...",
+            "a": "bis Schwedenplatz.",
+            "b": "bis Heiligenstadt.",
+            "c": "bis Stephansplatz."
+          }
+        },
+        {
+          "rf": "Kerstin war noch nicht in der neuen Disko.",
+          "mc": {
+            "tekst": "Wo befindet sich die Disko?",
+            "a": "Magdalenastraße 5.",
+            "b": "Burgstraße 23.",
+            "c": "Reuterplatz 18."
+          }
+        },
+        {
+          "rf": "Im Mittelpunkt der Aktion stehen Produkte für Jugendliche und junge Erwachsene.",
+          "mc": {
+            "tekst": "Die teuerste Jeans kostet ...",
+            "a": "15 Franken.",
+            "b": "25 Franken.",
+            "c": "30 Franken."
+          }
+        }
+      ],
+      "primer_rf_odg": "r",
+      "primer_mc_odg": "a"
+    },
+    "t2": {
+      "kontekst": "Sie nehmen an einer Führung durch den Stephansdom in Wien teil.",
+      "pitanja": [
+        {
+          "tekst": "Wann findet keine Führung statt?",
+          "a": "An Festtagen.",
+          "b": "An Wochentagen nachmittags.",
+          "c": "Am Sonntagvormittag."
+        },
+        {
+          "tekst": "Den Audio-Guide braucht man besonders, ...",
+          "a": "wenn sehr viele Leute in der Kirche sind.",
+          "b": "wenn man sich im Dunkel befindet.",
+          "c": "wenn man nur Deutsch spricht."
+        },
+        {
+          "tekst": "Der Nordturm ...",
+          "a": "hat eine sehr große Glocke.",
+          "b": "ist nur an bestimmten Tagen geöffnet.",
+          "c": "ist nur von außen zu Fuß zu erreichen."
+        },
+        {
+          "tekst": "Der Südturm ist ...",
+          "a": "173 m hoch.",
+          "b": "343 m hoch.",
+          "c": "137 m hoch."
+        },
+        {
+          "tekst": "Wann findet im Dom ein Konzert statt?",
+          "a": "eden Tag um 20.30 Uhr.",
+          "b": "An Feiertagen.",
+          "c": "Freitags und samstags."
+        }
+      ]
+    },
+    "t3": {
+      "kontekst": "In der Mensa¹ hören Sie, wie sich am Nebentisch ein Student und eine Studentin über Ess- und Kochgewohnheiten unterhalten.",
+      "pitanja": [
+        "Axel findet das Essen in der Mensa nicht so gut.",
+        "Ulrike hat auch früher selten in der Mensa gegessen.",
+        "Ulrike kocht sich jeden Tag ihr Abendessen selbst.",
+        "Ulrike hat eine eigene Wohnung mit kompletter Küche.",
+        "Von ihrer Mutter und Großmutter hat Ulrike kochen gelernt.",
+        "Axel kann sehr gut Spaghetti kochen.",
+        "Ulrike gibt Axel den Tipp, leichte Rezepte aus dem Internet auszuprobieren."
+      ]
+    },
+    "t4": {
+      "kontekst": "Die Moderatorin der Radiosendung „Aktuelles Panorama“ spricht mit Paul Gärtner und Nicole Siebert zum Thema „Weihnachten steht vor der Tür“.",
+      "primer_tekst": "Die Zeit vor Weihnachten ist für Kinder mit vielen Aktivitäten verbunden.",
+      "primer_odg": "b",
+      "pitanja": [
+        "Am schönsten sind die Tage zwischen dem 24.12. und dem 01.01.",
+        "Gutes Essen ist Teil des Festes.",
+        "Heute nutzen viele Leute Weihnachten für eine Urlaubsreise.",
+        "Kinder werden an Weihnachten zunehmend mit Computerspielen beschenkt.",
+        "Nach Weihnachten tauschen immer mehr Menschen Geschenke um.",
+        "Für die Auswahl eines passenden Geschenks braucht man Zeit zum Überlegen.",
+        "Persönliche Geschenke sind nicht unbedingt teuer.",
+        "Das Weihnachtsfest wird immer mehr zu einem Gewinn bringenden Geschäft."
+      ],
+      "osobe_naslovi": {
+        "a": "Moderatorin",
+        "b": "Paul Gärtner",
+        "c": "Nicole Siebert"
+      }
+    }
+  },
+  "schreiben": {
+    "a1": {
+      "situacija": "Sie fangen im kommenden Semester mit Ihrem Studium an und brauchen Hilfe bei der Wohnungssuche. Ein Bekannter / Eine Bekannte von Ihnen studiert bereits an Ihrem Studienort.",
+      "tacke": [
+        "Beschreiben Sie: Was und wo wollen Sie studieren?",
+        "Begründen Sie: Warum suchen Sie eine Wohnung in der Nähe der Uni?",
+        "Machen Sie einen Vorschlag: Wie kann Ihnen Ihr Bekannter/Ihre Bekannte bei der Wohnungssuche helfen?"
+      ]
+    },
+    "a2": {
+      "situacija": "Beim Surfen im Internet sind Sie auf den Blog „Kinder und Karriere – leichter als man denkt?“ gestoßen, wo auch folgender Beitrag steht:\n\nhttp://www.werkstatt-deutsch.de/blogs/Kinder-und-Karriere\n\nKinder und Karriere – leichter als man denkt?\n\nStefan schrieb: (10.08. – 10:39 Uhr)\n\nKinder und Karriere, das ist meiner Ansicht nach leider nicht mehr möglich. Wer heute im Beruf erfolgreich sein will, kann nicht gleichzeitig Kinder großziehen. Das mag hart klingen, entspricht aber voll der Realität. In unserer Gesellschaft zählt nur noch Leistung!"
+    },
+    "a3": {
+      "situacija": "Am kommenden Sonntag finden in Deutschland Parlamentswahlen statt und Ihr Nachbar, Herr Engenbach hat Sie zu einer Wahlparty in seinem Garten eingeladen. An dem Tag können Sie aber nicht kommen.\n\nSchreiben Sie an Herrn Engenbach. Entschuldigen Sie sich höflich und berichten Sie, warum Sie nicht kommen können.\n\nSchreiben Sie eine E-Mail (circa 40 Wörter).\nVergessen Sie nicht die Anrede und die Grußformel am Schluss.\n\nWählen Sie aus der folgenden Liste passende sprachliche Mittel aus.",
+      "placeholder": "..."
+    }
+  },
+  "sprechen": {
+    "t1": {
+      "situacija": "zum Kennenlernen – Kandidat(in) 1 und 2\n\nIn den letzten zwei Semestern waren Sie sehr oft mit einem deutschen Studenten zusammen, der diese Zeit im Rahmen eines ERASMUS-Programms in Ihrer Stadt verbracht hat. Nun ist auch das zweite Semester vorbei und er fliegt in zwei Wochen nach Deutschland zurück. Weil er sehr nett war, wollen Sie ihn mit einer Abschiedsparty überraschen. Überlegen Sie, wie Sie das am besten organisieren können.\n\nSprechen Sie über die Punkte unten, machen Sie Vorschläge und reagieren Sie auf die Vorschläge Ihres Gesprächspartners / Ihrer Gesprächspartnerin. Planen und entscheiden Sie gemeinsam, was Sie tun möchten.",
+      "naslov": "Abschiedsparty zur Überraschung",
+      "tacke": [
+        "Wann? (Tag, Uhrzeit)",
+        "Wo? (Wohnung von ..., Disko „...“?)",
+        "Wen noch einladen?",
+        "Abschiedsgeschenk besorgen",
+        "..."
+      ],
+      "_rich": "<p data-start=\"6992\" data-end=\"7027\"><strong data-start=\"6992\" data-end=\"7027\">Abschiedsparty zur Überraschung</strong></p>\n<ul data-start=\"7029\" data-end=\"7145\">\n<li data-start=\"7029\" data-end=\"7051\">\nWann? (Tag, Uhrzeit)\n</li>\n<li data-start=\"7052\" data-end=\"7089\">\nWo? (Wohnung von ..., Disko „...“?)\n</li>\n<li data-start=\"7090\" data-end=\"7110\">\nWen noch einladen?\n</li>\n<li data-start=\"7111\" data-end=\"7139\">\nAbschiedsgeschenk besorgen\n</li>\n<li data-start=\"7140\" data-end=\"7145\">\n...</li></ul>"
+    },
+    "t2": {
+      "thema1_naslov": "",
+      "thema1_folien": [
+        "„Ich will ins Kino!“\n\nMögen Kinder Kino lieber als Theater?",
+        "Mögen Kinder Kino lieber als Theater?\n\nMeine persönlichen Erfahrungen",
+        "Mögen Kinder Kino lieber als Theater?\n\nDie Beliebtheit des Kinos unter Kindern in meinem Heimatland",
+        "Mögen Kinder Kino lieber als Theater?\n\nVor- und Nachteile & meine Meinung",
+        "Mögen Kinder Kino lieber als Theater?\n\nAbschluss und Dank"
+      ],
+      "thema1_instrukcije": [
+        "Stellen Sie Ihr Thema vor. Erklären Sie den Inhalt und die Struktur Ihrer Präsentation.",
+        "Berichten Sie von Ihrer Situation oder einem Erlebnis im Zusammenhang mit dem Thema.",
+        "Berichten Sie von der Situation in Ihrem Heimatland und geben Sie Beispiele.",
+        "Nennen Sie die Vor- und Nachteile und sagen Sie dazu Ihre Meinung. Geben Sie auch Beispiele.",
+        "Beenden Sie Ihre Präsentation und bedanken Sie sich bei den Zuhörern."
+      ],
+      "thema2_naslov": "",
+      "thema2_folien": [
+        "„Wollen wir ausgehen?“\n\nMit Freunden ausgehen oder Freunde einladen?",
+        "Mit Freunden ausgehen oder Freunde einladen?\n\nMeine persönlichen Erfahrungen",
+        "Mit Freunden ausgehen oder Freunde einladen?\n\nWas die Leute in meinem Heimatland lieber tun.",
+        "Mit Freunden ausgehen oder Freunde einladen?\n\nVor- und Nachteile & meine Meinung",
+        "Mit Freunden ausgehen oder Freunde einladen?\n\nAbschluss und Dank"
+      ],
+      "thema2_instrukcije": [
+        "Stellen Sie Ihr Thema vor. Erklären Sie den Inhalt und die Struktur Ihrer Präsentation.",
+        "Berichten Sie von Ihrer Situation oder einem Erlebnis im Zusammenhang mit dem Thema.",
+        "Berichten Sie von der Situation in Ihrem Heimatland und geben Sie Beispiele.",
+        "Nennen Sie die Vor- und Nachteile und sagen Sie dazu Ihre Meinung. Geben Sie auch Beispiele.",
+        "Beenden Sie Ihre Präsentation und bedanken Sie sich bei den Zuhörern."
+      ]
+    },
+    "t3": {
+      "tekst1": "Nach Ihrer Präsentation:\nReagieren Sie auf die Rückmeldung und Fragen der Prüfer(innen) und des Gesprächspartners / der Gesprächspartnerin.",
+      "tekst2": "Nach der Präsentation Ihres Partners / Ihrer Partnerin:\na) Geben Sie eine Rückmeldung zur Präsentation Ihres Partners / Ihrer Partnerin.\n(z. B. wie Ihnen die Präsentation gefallen hat, was für Sie neu oder besonders interessant war usw.).\n\nb) Stellen Sie auch eine Frage zur Präsentation Ihres Partners / Ihrer Partnerin."
+    }
+  }
+}

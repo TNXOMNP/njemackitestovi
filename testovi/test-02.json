@@ -1,0 +1,452 @@
+{
+  "meta": {
+    "id": "test-02",
+    "naziv": "Model Set 2"
+  },
+  "audio": {
+    "t1": "audio/test2/horen_test2_teil1.mp3",
+    "t2": "audio/test2/horen_test2_teil2.mp3",
+    "t3": "audio/test2/horen_test2_teil3.mp3",
+    "t4": "audio/test2/horen_test2_teil4.mp3"
+  },
+  "lesen": {
+    "t1": {
+      "blog_naslov": "",
+      "blog_tagline": "",
+      "blog_datum": "",
+      "blog_tekst": "Betreff: Sprachkurs in Tübingen\nheute, 17:35 Uhr\n\nHallo Bianca!\n\nIch hatte dir doch versprochen, dir gleich nach meiner Rückkehr aus Deutschland zu schreiben, solange die Erinnerungen noch frisch sind. Wer weiß, vielleicht entscheidest du dich spontan auch für den Besuch so eines Kurses, der Sommer ist ja noch lang.\n\nKurz gesagt, das Ganze war ein unvergessliches Erlebnis in einer traumhaften Atmosphäre. Vielleicht klingt das, was ich schreibe, wie ein Werbeprospekt über Tübingen, aber glaub’ mir, es stimmt alles!\n\nTübingen ist weder Groß- noch Kleinstadt, es hat genau die richtige Größe für einen Sommeraufenthalt. Der Fluss Neckar, der durch die Stadt fließt, das prächtige Schloss auf dem höchsten Punkt Tübingens und die malerische Altstadt bilden eine echte Idylle. Und in der nahen Umgebung von Tübingen kann man viele schöne kleinere Orte besuchen. Dank der Sparpreise der Deutschen Bahn bin ich viel herumgereist.\n\nGewohnt habe ich bei einer Gastfamilie. Vor der Reise hatte ich oft überlegt, mir doch lieber ein Zimmer in einem Hotel zu nehmen, was etwas teurer gewesen wäre, aber zum Glück habe ich meine Meinung nicht geändert. Herr und Frau Schmidinger haben mich wie einen Sohn behandelt, ich fühlte mich ganz wie zu Hause, habe sehr viel Deutsch gesprochen, was ich ja unbedingt wollte, und habe nun ein ganz anderes Bild von den Deutschen und ihrer Kultur. Frau Schmidinger hat früh entdeckt, wie sehr ich die traditionelle deutsche Küche mag, deswegen war ich abends oft bei meinen Gasteltern zum Essen eingeladen.\n\nMit dem Unterricht war ich mehr als zufrieden. Am ersten Tag haben wir alle einen Einstufungstest geschrieben und ich bin in einen B2-Kurs gelandet. Insgesamt hatte mein Kurs nur sieben Teilnehmer, die meisten davon aus Südeuropa, Jungen und Mädchen gemischt. Wir hatten von Anfang an guten Kontakt zueinander, waren auch nach dem Unterricht viel zusammen und sind an einem Sonntag als geschlossene Gruppe nach Heidelberg gefahren, das auch am Neckar liegt, aber deutlich mehr Touristen hat.\n\nIch habe natürlich sehr viele Fotos gemacht, die findest du alle auf meiner Facebook-Seite.\n\nAlles Liebe\nJuan",
+      "primer_tekst": "Juan schlägt Bianca vor, ebenfalls nach Tübingen zu reisen.",
+      "pitanja": [
+        "Nach Juans Ansicht ist Tübingen sehr klein.",
+        "Juan fand die Preise der Eisenbahn günstig.",
+        "Zunächst hatte Juan vor, ein Hotelzimmer zu reservieren.",
+        "Juan hat oft bei den Schmidingers zu Abend gegessen.",
+        "Juan findet, dass sein Kurs zu voll war.",
+        "Juan hat auch ein paar Tage in Heidelberg verbracht."
+      ],
+      "primer_odg": "r"
+    },
+    "t2": {
+      "clanak1": {
+        "kicker": "",
+        "naslov": "",
+        "kolona1": [
+          ""
+        ],
+        "kolona2": [
+          ""
+        ],
+        "izvor": "",
+        "clanak1_tekst": "zum Wiederholen\nBearbeiten Sie die folgende Aufgabe wie in Test 1 beschrieben.\nLesen Sie den Text aus der Presse und die Aufgaben 7 bis 9 dazu.\nWählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.\n„Zirkus Knie“ zu Gast in Darmstadt\nMan kann darüber streiten, ob Tiere in einen Zirkus gehören oder ob man in Zukunft Attraktionen mit wilden Tieren nicht mehr erlauben sollte. Aber mal ehrlich: was wäre ein Zirkus ohne Tiere?\nAuch in Darmstadt wird am Freitagabend schnell klar: Die Tiere gehören zu den Lieblingen des Publikums, besonders der sehr vielen Kinder. Gleich nach Eröffnung der Show folgt die erste Tiernummer, mit Zebras, Kamelen und Lamas, die zu Livemusik ihre Runden drehen. Es wird nicht die einzige Tiernummer im ersten einstündigen Programmabschnitt bleiben. Später treten schöne schwarze Pferde auf und nach der Pause folgen drei Elefanten mit je drei rot gekleideten Schönheiten auf den Rücken.\nEins wird am Freitagabend ebenso deutlich: Überraschungen erlebt man kaum. Und das gilt nicht nur für die Tiernummern. Auch bei den Clowns und Akrobaten hat man das Gefühl, dass das Programm alte, bekannte Traditionen wiederholt. Hinter all dem steckt mit Sicherheit sehr viel Training, Mühe und Können – kreativ im Sinne von neu ist es jedoch nicht. Im positiven Sinn aufregend ist, wenn etwas Ungewöhnliches passiert, wenn etwas nicht so klappt wie erwartet. Momente, wo es richtig spannend wird, sind selten. Das Publikum bleibt dann geduldig, hält den Atem. In solchen Momenten wird die schwierige Kunst der Zirkusartisten ganz anders sichtbar – und man freut sich in den Zirkus gegangen zu sein.\naus einer deutschen Regionalzeitung"
+      },
+      "clanak2": {
+        "naslov": "",
+        "kolona1": [
+          ""
+        ],
+        "kolona2": [
+          ""
+        ],
+        "izvor": "",
+        "clanak2_tekst": "Mütter wollen immer nur das Beste für ihr Kind\nIn unserer heutigen Zeit ist das eigene Kind längst zu einem Projekt geworden, mit dem sich die Eltern beschäftigen müssen, bis sie es erfolgreich abgeschlossen haben. Viele Mütter spüren deshalb enormen Stress und brechen manchmal unter dem Druck von Familie, Beruf und Haushalt zusammen, denn sie denken, sie sind nur dann gute Mütter, wenn sie perfekt sind und immer alles – und damit auch ihre Kinder – unter Kontrolle haben.\nHinter dem Wunsch, perfekt zu sein, stecken jedoch Unsicherheit und viele Ängste. Eine Mutter, die glaubt, nur dann anerkannt und gut zu sein, wenn sie fehlerlos ist, gibt genau diese Unsicherheit an ihr Kind weiter. Das Kind lernt auf diese Weise: „Ich bin nur liebenswert und wertvoll, wenn ich ebenfalls immer perfekt bin.“ Das setzt Kinder unter einen schrecklichen Leistungsdruck und macht sie zu Menschen, die weder an ihre Möglichkeiten glauben noch den Mut haben, die eigene Meinung zu sagen.\nMütter, die ihre Kinder ganz selbstständig nach eigenen Vorstellungen erziehen und Fehler nicht fürchten, würden ihnen Folgendes sagen: „Du, mein Kind, bist toll, so wie du bist, und Fehler sind keine Katastrophe“. Mütter dürfen also auch mal an sich denken, ohne dass es den Kindern gleich schadet.\naus dem Internet"
+      },
+      "primer_tekst": "",
+      "primer_odg": "",
+      "pitanja": [
+        {
+          "tekst": "In diesem Text geht es um …",
+          "a": "die Zukunft des Zirkus.",
+          "b": "den Zirkus in früheren Zeiten.",
+          "c": "den heutigen Charakter des Zirkus."
+        },
+        {
+          "tekst": "Was wird kritisiert?",
+          "a": "Dass Clowns und Akrobaten nicht wie früher trainieren.",
+          "b": "Dass man im heutigen Zirkus wenig Neues sieht.",
+          "c": "Dass man die Tiere benutzt, um die Besucher zu überraschen."
+        },
+        {
+          "tekst": "In Augenblicken, wo es spannend wird, …",
+          "a": "verlieren viele Besucher den Mut.",
+          "b": "zeigt sich, dass die Kunst der Zirkusartisten nicht leicht ist.",
+          "c": "bleiben die Tiere still."
+        },
+        {
+          "tekst": "In diesem Text geht es darum, …",
+          "a": "dass für viele Mütter Kindererziehung einen starken psychologischen Druck bedeutet.",
+          "b": "welche Forderungen Kinder an ihre Erzieher stellen.",
+          "c": "wie sich moderne Eltern zu perfekten Erziehern entwickeln können."
+        },
+        {
+          "tekst": "Eine unsichere Mutter als Kindererzieherin …",
+          "a": "kann diese Unsicherheit auf das Kind übertragen.",
+          "b": "kann trotzdem ganz ohne Fehler sein.",
+          "c": "hat keine besonderen Wünsche."
+        },
+        {
+          "tekst": "Mütter, die ihre Kinder nach eigenen Ideen erziehen und dabei Fehler machen, …",
+          "a": "sind ganz einfach eine Katastrophe.",
+          "b": "wissen nicht, wie sehr sie ihrem Kind schaden.",
+          "c": "erfüllen ihre Aufgabe schon richtig."
+        }
+      ],
+      "primer_question": "Der „Zirkus Knie“ zeigt in Darmstadt …",
+      "primer_a": "eine Nummer mit Kindern.",
+      "primer_b": "eine interessante Nummer mit Hunden.",
+      "primer_c": "insgesamt drei Nummern mit Tieren.",
+      "primer_ans": "c"
+    },
+    "t3": {
+      "kontekst": "Die folgenden Personen suchen Sachen, die andere nicht mehr brauchen und gern verschenken würden.",
+      "primer_tekst": "",
+      "primer_odg": "i",
+      "primer_slovo": "e",
+      "oglasi": {
+        "a": {
+          "tekst": "Mein neues Apartment ist dafür zu klein, deswegen verschenke ich\nSofa und zwei Sessel\nin sehr gutem Zustand. Das Sofa ist 2 m, jeder Sessel 1 m breit, Rückenhöhe bei allen Stücken 85 cm. Farbe grau mit rosa Muster.\n☎ 6131 46588",
+          "primer": false
+        },
+        "b": {
+          "tekst": "Unser Sohn mag sich nicht mehr damit beschäftigen, drum verschenken wir, solange es nicht zu spät ist, ein voll funktionsfähiges\nVogelhaus\nMaße: 15 x 15 x 22 cm -\nFarbe hellblau. Leicht zu befestigen und zu säubern.\nBitte E-Mail an: sörensen@gmx.de",
+          "primer": false
+        },
+        "c": {
+          "tekst": "Wegen Umzugs zu verschenken:\nKleiderschrank, 3-türig\ngroß genug für zwei Personen, in gutem Zustand, normale Gebrauchsspuren sind erkennbar.\nDer Abholer muss ihn selbst abbauen!",
+          "primer": false
+        },
+        "d": {
+          "tekst": "Mikrowellengerät mit Grillfunktion\ngratis abzugeben. Hab’ einfach keinen Platz dafür in meiner Mini-Küche. Marke Sharp – Farbe weiß – Breite 60 cm (!) – so gut wie neu – funktioniert einwandfrei. Kann nur sonntags abgeholt werden.\n☎ 5320 94493",
+          "primer": false
+        },
+        "e": {
+          "tekst": "Das Ding muss weg!\nGroßer Schreibtisch (180 x 80 cm) mit Eisenbeinen (sehr schwer!). Eine große Schublade, fünf weitere Schubladen seitlich links. Farbe Holz dunkelbraun, Beine schwarz. Verschiedene Verwendungsmöglichkeiten.\ned1171051@hotmail.com",
+          "primer": true
+        },
+        "f": {
+          "tekst": "Wer zuerst kommt, kriegt alles:\nKomplettes Schlafzimmer zu verschenken!\nBett (mit Matratze) und zwei Nachttische (ohne Lampen)! Eiche massiv, guter Zustand. Abholung nach Absprache. Die Möbel müssen abgebaut und aus dem ersten Stock heruntergetragen werden.\nTel. 8949 35775",
+          "primer": false
+        },
+        "g": {
+          "tekst": "Statt dass er unbenutzt rumsteht, soll unser alter Farbfernseher irgendwo irgendwem noch nützlich sein. Das Gerät (Marke Siemens) ist in Ordnung und für Satellit- und Kabel-Empfang tauglich. Breite 60 cm, Bildschirmdiagonale 52 cm. Farbe Gehäuse hellbraun.\nhugodez@instant.com",
+          "primer": false
+        },
+        "h": {
+          "tekst": "Vielleicht ist irgendwo Bedarf für alte\nMöbel für draußen\ndie ich gern loswerden möchte. Es handelt sich um einen runden Tisch (Durchmesser 150 cm) und fünf Stühle, alles Plastik weiß. Kann alles ab sofort abgeholt werden.\nTel. 30 5275 7699",
+          "primer": false
+        },
+        "i": {
+          "tekst": "Hurra! Studium beendet, ziehe um und verschenke robusten\nEck-Computertisch\naus Holz Farbe natur mit ausziehbarer Tastaturablage und Platz für Drucker. Ist allerdings recht verstaubt - keine Zeit :-(\ngerd.mayer90@hotmail.de",
+          "primer": false
+        },
+        "j": {
+          "tekst": "Funktionsfähiger Kühlschrank\nMarke Bauknecht Modell KS 9134, mit Gemüsefach und 3-Sterne-Gefrierfach, sauber, an Selbstabholer aus dem Raum Duisburg gegen null Euro abzugeben. Maße: 180 x 60 x 60 cm.\nE-Mail an: chris_fabiano@livenet.com",
+          "primer": false
+        }
+      },
+      "situacije": [
+        "Gerhild hätte gern die Möglichkeit, ihr Mittagessen in der Teeküche gegenüber ihrem Büro warm zu machen.",
+        "Ian würde sich freuen, wenn er im Gartenhäuschen ein paar Flaschen Bier kalt stellen könnte.",
+        "Frauke zieht in eine unmöblierte Wohngemeinschaft ein und sucht Möbel für das gemeinsame Wohnzimmer.",
+        "Herbert fängt mit seinem Studium in Köln an und sucht Teller, Gläser und Bestecke für seine Küche.",
+        "Ruth möchte das Interesse ihrer Tochter Evelyn (11) für Tiere wecken.",
+        "Arthur möchte dem schönen, jedoch leeren Garten hinter seiner neuen Wohnung neues Leben geben.",
+        "Claire würde gern ab und zu auch in ihrem Arbeitszimmer fernsehen."
+      ]
+    },
+    "t4": {
+      "kontekst": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für einen „Hundeführerschein“, den alle neuen Hundehalter machen müssen?",
+      "primer_ime": "Lillian",
+      "primer_odg": "n",
+      "primer_tekst": "Nicht der Hund ist die Gefahr, sondern der Mensch macht den Hund zu einer Gefahr. Wer einen Hund schlägt, macht das Verhalten des Tieres unvorhersehbar. Was man braucht, ist kein Hundeführerschein, sondern ein polizeiliches Zeugnis, dass der Hundehalter kein aggressives Verhalten gegenüber anderen Menschen und Tieren – zeigt. Erst dann sollte ein Tier gehalten werden können.Lillian, 23, Aarau (CH)",
+      "osobe": [
+        {
+          "ime": "Felicitas",
+          "tekst": "Ich habe mit meiner Hündin einen solchen Kurs gemacht und viel dabei gelernt. Ich kann nun mit Benja ohne Stress durch große Menschenmengen gehen und mit der Straßenbahn fahren. Und Benja hat gelernt, einen Maulkorb zu tragen. Bei Fahrten mit der Bahn ist das ja Pflicht. Auch wenn ich mit ihr auf die Straße gehe, reagiert sie nicht mehr auf Jogger oder Radfahrer.\n\nFelicitas, 18, Graz"
+        },
+        {
+          "ime": "Lukas",
+          "tekst": "Viele Menschen, die sich einen Hund anschaffen, wissen nicht, welche Verantwortung damit verbunden ist. Viele Hundehalter können das aggressive Verhalten ihres Tieres einfach nicht kontrollieren. Ein Hundeführerschein würde zur Lösung des Problems führen, den Besuch entsprechender Kurse müsste deshalb meiner Ansicht nach obligatorisch sein.\n\nLukas, 35, Oberhausen"
+        },
+        {
+          "ime": "Paula",
+          "tekst": "Sobald Hundehalter etwas tun müssen, was dem Schutz von Menschen dient, fangen die Proteste an. Hunde sind Tiere, die natürlich auch Rechte haben, aber die Reaktionen von Tieren kann man nicht immer im Voraus berechnen. Hundehalter sollen nicht den Hundeführerschein in Zweifel ziehen, sondern überlegen, welchen Luxus ihnen der Staat gewährt, dass sie sich mit ihren Tieren in der Öffentlichkeit bewegen und vor allem öffentliche Verkehrsmittel benutzen dürfen.\n\nPaula, 52, Leipzig"
+        },
+        {
+          "ime": "Tina",
+          "tekst": "Wenn man demnächst mit Hund spazieren geht, dann heißt es also: „Ihren Führerschein, bitte!“ Nichts wird sich dadurch ändern. Ob mit Führerschein oder ohne, Hundehalter sind in den Augen bestimmter Leute immer verdächtig. Wen suchen sich diese Menschen denn aus, wenn es mal keine Hunde mehr geben sollte? Junge Mütter mit Babys vielleicht?\n\nTina, 25, Fulda"
+        },
+        {
+          "ime": "Marco",
+          "tekst": "Warum müssen Hundehalter ihr Tier auch außer Haus mit sich führen? Katzenhalter tun das nicht, Hamsterhalter nicht, Vogelhalter nicht. Halter von Echsen, Schlangen usw. schon gar nicht. Wer möglicherweise gefährliche Tiere in der Öffentlichkeit mit sich führen will, muss dazu geeignet sein. Eine regelmäßige strenge Prüfung ist somit Pflicht.\n\nMarco, 45, Sankt Pölten (A)"
+        },
+        {
+          "ime": "Marlies",
+          "tekst": "Was viele nicht überlegen: Der Hundeführer wird vom Besitzer des Hundes verlangt. O.k., der macht den Schein, schickt dann aber im Alltag seine 12-jährige Tochter mit dem Hund nach draußen. Wenn also ein Hundeführerschein, dann nicht in der jetzigen Form. Es sollte vielmehr jeder einen Schein haben, der einen Hund spazieren führt. Mindestalter 14, mit Theoriestunden und einer echten Prüfung am Ende.\n\nMarlies, 33, Kempten im Allgäu"
+        },
+        {
+          "ime": "Heinrich",
+          "tekst": "Ich finde, das Ganze führt langsam zu einer Staatskontrolle, die etwas übertrieben scheint. Demnächst gibt es noch den „Gartenführerschein“ für die richtige Behandlung der Pflanzen. „Katzen-“ oder „Hamsterführerschein“ macht dann auch Sinn. Ich frage mich: Wer, außer der Staatskasse, hat wirklichen Nutzen davon? Und wie soll ein alter Mensch, der einsam und allein ist, den Führerschein für den Hund bestehen?\n\nHeinrich, 51, Luzern"
+        }
+      ],
+      "aufgabe": "In einem Internetforum lesen Sie die folgenden Beiträge zur Frage, ob alle neuen Hundehalter verpflichtet sein sollten, den so genannten „Hundeführerschein“ zu erwerben."
+    },
+    "t5": {
+      "kontekst": "",
+      "hausordnung": [
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        }
+      ],
+      "pitanja": [
+        {
+          "tekst": "Auf dem Ausgabebeleg steht, …",
+          "a": "wie oft die Leihfrist verlängert wurde.",
+          "b": "an welchem Tag man etwas ausgeliehen hat.",
+          "c": "wann man das Entliehene zurückbringen soll."
+        },
+        {
+          "tekst": "Minderjährige dürfen in der Bibliothek …",
+          "a": "Internet-Spiele herunterladen.",
+          "b": "das Internet nur mit Erlaubnis der Eltern benutzen.",
+          "c": "E-Mails nur mit Freunden austauschen."
+        },
+        {
+          "tekst": "Den Benutzerausweis …",
+          "a": "braucht man, wenn man etwas ausleihen möchte.",
+          "b": "kann man wie einen Personalausweis verwenden.",
+          "c": "muss man alle 5 Jahre erneuern."
+        },
+        {
+          "tekst": "Bibliotheksbenutzer dürfen …",
+          "a": "in der Bibliothek miteinander diskutieren.",
+          "b": "Tiere in die Bibliothek mitnehmen.",
+          "c": "in der Bibliothek weder essen noch trinken."
+        }
+      ],
+      "tekst": "Sie leihen sich gelegentlich Bücher von der Stadtbibliothek aus und da gilt die folgende Benutzungsordnung.\n\nBENUTZUNGSORDNUNG DER STADTBIBLIOTHEK\n\nAnmeldung – Benutzerausweis: Bei der Anmeldung erhalten alle Benutzer einen Benutzerausweis. Dazu ist ein gültiger Personalausweis oder ein ähnliches Dokument mit Foto vorzulegen. Der Benutzerausweis muss sowohl bei der Ausleihe als auch der Rückgabe der Medien vorgelegt werden und verliert seine Gültigkeit, wenn er innerhalb eines Zeitraums von fünf Jahren nicht gebraucht worden ist.\n\nAusleihe: Bücher werden für die Dauer von 28 Tagen, Zeitschriften und CDs für 14 Tage und DVDs für 7 Tage ausgeliehen. Die Stadtbibliothek gibt für alle entliehenen Medien einen Ausgabebeleg aus, auf dem das jeweilige Rückgabedatum steht. Die Leihfrist kann höchstens zweimal verlängert werden.\n\nBehandlung der Medien: Die Benutzer müssen die entliehenen Medien sorgfältig behandeln und vor Beschmutzung und Beschädigung schützen. Audiovisuelle Medien sind in der Verpackung zurückzugeben, in der sie ausgeliehen wurden. Für den Verlust oder die Beschädigung entliehener Medien muss eine finanzielle Entschädigung gezahlt werden. Deren Höhe bestimmt die Bibliothek.\n\nInternet-Nutzung: Die Stadtbibliothek stellt gegen eine Nutzungsgebühr Internet-Nutzungsplätze zur Verfügung. Kinder und Jugendliche brauchen dazu eine besondere Einverständniserklärung ihrer Eltern. Adressen gewaltverherrlichenden, pornographischen oder rassistischen Inhalts dürfen nicht aufgerufen werden. Internet-Shopping und die Nutzung von Internet-Spielen sind nicht gestattet. Das Versenden und Lesen von E-Mails ist erlaubt.\n\nVerhalten in den Bibliotheksräumen: Die Benutzer sind verpflichtet, jede Störung anderer Benutzer zu vermeiden. Rauchen sowie das Mitbringen und Konsumieren von Speisen und Getränken sind verboten. Tiere – mit Ausnahme von Blindenhunden – dürfen nicht in die Bibliotheksräume mitgebracht werden."
+    }
+  },
+  "hoeren": {
+    "t1": {
+      "primer_rf": {
+        "tekst": "Marianne braucht Hilfe von Max."
+      },
+      "primer_mc": {
+        "tekst": "In Biologie …",
+        "a": "ist Marianne sehr gut.",
+        "b": "hat Marianne keine Hausaufgaben.",
+        "c": "kann Max Marianne nicht helfen."
+      },
+      "tekstovi": [
+        {
+          "rf": "Samstag und Sonntag ist es in Österreich warm.",
+          "mc": {
+            "tekst": "Man erwartet …",
+            "a": "etwas Regen im Norden.",
+            "b": "Temperaturen um 30 Grad.",
+            "c": "Gewitter über Wien."
+          }
+        },
+        {
+          "rf": "Der Zug fährt nur bis Frankfurt.",
+          "mc": {
+            "tekst": "Die Frankfurter Buchmesse …",
+            "a": "kann man kostenlos besuchen.",
+            "b": "beginnt morgen.",
+            "c": "erreicht man mit öffentlichen Verkehrsmitteln."
+          }
+        },
+        {
+          "rf": "Die Veranstaltung ist nur für aktive Spieler.",
+          "mc": {
+            "tekst": "Kinder und Jugendliche …",
+            "a": "zahlen keinen Eintritt.",
+            "b": "spielen gegen Herren und Damen.",
+            "c": "spielen bis 18:00 Uhr."
+          }
+        },
+        {
+          "rf": "Die Freunde von Oliver kennen Alberto noch nicht.",
+          "mc": {
+            "tekst": "Alberto …",
+            "a": "hat blaue Augen.",
+            "b": "ist jünger als Rosi.",
+            "c": "ist musikalisch."
+          }
+        },
+        {
+          "rf": "Der Zoo schließt heute eine Stunde früher.",
+          "mc": {
+            "tekst": "Das Konzert dauert …",
+            "a": "von 15:00 bis 16:00 Uhr.",
+            "b": "von 16:00 bis 17:00 Uhr.",
+            "c": "von 17:00 bis 18:00 Uhr."
+          }
+        }
+      ],
+      "primer_rf_odg": "r",
+      "primer_mc_odg": "b"
+    },
+    "t2": {
+      "kontekst": "Auf einer internationalen Hochschulausstellung hören Sie einen Vortrag über Studienmöglichkeiten in der Schweiz.",
+      "pitanja": [
+        {
+          "tekst": "In der Schweiz …",
+          "a": "ist an 50% der Hochschulen die Unterrichtssprache Deutsch.",
+          "b": "gibt es nur eine Technische Hochschule.",
+          "c": "gibt es keine zweisprachigen Kantone."
+        },
+        {
+          "tekst": "In der Schweiz …",
+          "a": "ist das Studiensystem anders als in der EU.",
+          "b": "ist die Doktoratsstufe einheitlich geregelt.",
+          "c": "heißen das Winter- und Sommersemester anders."
+        },
+        {
+          "tekst": "Wer Medizin studieren möchte, …",
+          "a": "kann sich nicht online bewerben.",
+          "b": "braucht gute Englischkenntnisse.",
+          "c": "muss eine Aufnahmeprüfung machen."
+        },
+        {
+          "tekst": "Für das Studium zahlt man jährlich …",
+          "a": "nichts.",
+          "b": "bis über 2.000 Franken.",
+          "c": "21.000 bis 31.000 Franken."
+        },
+        {
+          "tekst": "Viele Studierende aus Deutschland …",
+          "a": "trifft man in Zürich.",
+          "b": "können die hohen Kosten nicht tragen.",
+          "c": "finden die Landessprache lustig."
+        }
+      ]
+    },
+    "t3": {
+      "kontekst": "In der U-Bahn hören Sie, wie sich ein junger Mann und eine junge Frau über Sport unterhalten.",
+      "pitanja": [
+        "Holmar ist gestresst, weil ihm sein Chef zu viel Arbeit gibt.",
+        "Der Fußballplatz ist nicht überdacht.",
+        "Auch Nicht-Mitglieder können im Sportzentrum trainieren.",
+        "Die Ernährungsberatung ist für Mitglieder kostenlos.",
+        "Nach wichtigen Sportereignissen gibt es immer eine Party.",
+        "Es ist nicht schwer, einen Partner für Squash oder Badminton zu finden.",
+        "Samstag und Sonntag hat Holmar Fußballtraining."
+      ]
+    },
+    "t4": {
+      "kontekst": "Der Moderator der Radiosendung „Tier-Magazin“ spricht mit Andrea Seiler und Jens Schwarz zum Thema „Medikamente für Tiere“.",
+      "primer_tekst": "Medikamente für Menschen sind nicht für Tiere geeignet.",
+      "primer_odg": "a",
+      "pitanja": [
+        "Normale Apotheken verkaufen häufig auch Medikamente für Tiere.",
+        "Ein krankes Tier sollte man nicht zuerst in eine Tierapotheke bringen.",
+        "Ein Besuch beim Tierarzt ist in der Regel nicht billig.",
+        "Man sollte nicht den Tierarzt spielen, wenn man kein Tierarzt ist.",
+        "In Tierapotheken ist die persönliche Beratung besser.",
+        "Online einkaufen ist jederzeit möglich.",
+        "Online-Apotheken bieten niedrigere Preise.",
+        "Lieferungen ab einem bestimmten Betrag sind versandkostenfrei."
+      ],
+      "osobe_naslovi": {
+        "a": "Moderator",
+        "b": "Andrea Seiler",
+        "c": "Jens Schwarz"
+      }
+    }
+  },
+  "schreiben": {
+    "a1": {
+      "situacija": "Sie brauchen für Ihre Arbeit einen Laptop. Ein Freund / Eine Freundin von Ihnen hat viel Erfahrung mit Rechnern jeder Art.\n",
+      "tacke": [
+        "Beschreiben Sie: Was wollen Sie sich anschaffen?",
+        "Begründen Sie: Warum reicht der Computer, den Sie jetzt haben, nicht mehr aus?",
+        "Machen Sie einen Vorschlag: Vereinbaren Sie ein Treffen mit Ihrem Freund / Ihrer Freundin."
+      ]
+    },
+    "a2": {
+      "situacija": "Nach einer Fernsehdiskussion zum Thema „Die Zukunft der Großstädte“ gehen Sie auf das Online-Gästebuch der Sendung und lesen unter anderem auch Folgendes:\n\nDie Zukunft der Großstädte – Gästebuch\n\nKarla:\n21.03. – 19:40 Uhr\n\nIn früheren Zeiten schien das Leben in der Großstadt klare Vorteile zu bieten. Auch ich, geboren und aufgewachsen in einer langweiligen Kleinstadt, habe nach Beendigung der Schule mein Glück in der Großstadt gesucht. Heute würde ich es mir wahrscheinlich anders überlegen."
+    },
+    "a3": {
+      "situacija": "Herr Munk, ein Mitarbeiter Ihrer Firma, der in Pension geht, hat Sie zusammen mit anderen Kolleginnen und Kollegen zu einem Abschiedsessen eingeladen. Zu dem Termin können Sie aber nicht kommen.\n\nSchreiben Sie an Herrn Munk. Entschuldigen Sie sich höflich und nennen Sie den Grund, warum Sie nicht kommen können.\n\nSchreiben Sie eine E-Mail circa 40 Wörter.\n\nVergessen Sie nicht die Anrede und die Grußformel am Schluss.",
+      "placeholder": "..."
+    }
+  },
+  "sprechen": {
+    "t1": {
+      "situacija": "Im Internet haben Sie einen Artikel über ein Projekt gelesen, das den Bau und die Ausrüstung von Kindergärten und Grundschulen in Entwicklungsländern fördert. So ein Projekt verdient Ihrer Ansicht nach Unterstützung. Sie wollen deshalb eine Aktion organisieren, die Leute informieren, Spenden sammeln und auf jede mögliche Art und Weise helfen. Überlegen Sie, wie Sie diese Aktion am besten organisieren können.\n\nSprechen Sie über die Punkte unten, machen Sie Vorschläge und reagieren Sie auf die Vorschläge Ihres Gesprächspartners / Ihrer Gesprächspartnerin. Planen und entscheiden Sie gemeinsam, was Sie tun möchten.",
+      "naslov": "Aktion für ein Schul-Projekt in einem Entwicklungsland",
+      "tacke": [
+        "Wer kann bei der Aktion mitmachen?",
+        "Wann und wo die Aktion durchführen?",
+        "Wie auf die Aktion aufmerksam machen?",
+        "Schwarzes Brett in der Schule / an der Uni, Facebook, …",
+        "Wie Geld sammeln?",
+        "Sachen zu essen und zu trinken verkaufen, Spenden etc.",
+        "…"
+      ],
+      "_rich": "<p data-start=\"8192\" data-end=\"8250\"><strong data-start=\"8192\" data-end=\"8250\">Aktion für ein Schul-Projekt in einem Entwicklungsland</strong></p>\n<ul data-start=\"8252\" data-end=\"8509\">\n<li data-start=\"8252\" data-end=\"8288\">\nWer kann bei der Aktion mitmachen?\n</li>\n<li data-start=\"8289\" data-end=\"8326\">\nWann und wo die Aktion durchführen?\n</li>\n<li data-start=\"8327\" data-end=\"8426\">\nWie auf die Aktion aufmerksam machen?<br data-start=\"8366\" data-end=\"8369\">\nSchwarzes Brett in der Schule / an der Uni, Facebook, …\n</li>\n<li data-start=\"8427\" data-end=\"8505\">\nWie Geld sammeln?<br data-start=\"8446\" data-end=\"8449\">\nSachen zu essen und zu trinken verkaufen, Spenden etc.\n</li>\n<li data-start=\"8506\" data-end=\"8509\">\n…</li></ul>"
+    },
+    "t2": {
+      "thema1_naslov": "",
+      "thema1_folien": [
+        "„Ich kann Englisch – das reicht doch!“\nBraucht man noch weitere Fremdsprachen außer Englisch?",
+        "Braucht man noch weitere Fremdsprachen außer Englisch?\nMeine persönlichen Erfahrungen",
+        "Braucht man noch weitere Fremdsprachen außer Englisch?\nDie Beliebtheit von Englisch in meinem Heimatland",
+        "Braucht man noch weitere Fremdsprachen außer Englisch?\nVor- und Nachteile & meine Meinung",
+        "Braucht man noch weitere Fremdsprachen außer Englisch?\nAbschluss und Dank"
+      ],
+      "thema1_instrukcije": [
+        "Stellen Sie Ihr Thema vor. Erklären Sie den Inhalt und die Struktur Ihrer Präsentation.",
+        "Berichten Sie von Ihrer Situation oder einem Erlebnis im Zusammenhang mit dem Thema.",
+        "Berichten Sie von der Situation in Ihrem Heimatland und geben Sie Beispiele.",
+        "Nennen Sie die Vor- und Nachteile und sagen Sie dazu Ihre Meinung. Geben Sie auch Beispiele.",
+        "Beenden Sie Ihre Präsentation und bedanken Sie sich bei den Zuhörern."
+      ],
+      "thema2_naslov": "",
+      "thema2_folien": [
+        "„Ich möchte unbedingt studieren!“\nBedeutet ein Studium bessere Berufschancen?",
+        "Bedeutet ein Studium bessere Berufschancen?\nMeine persönlichen Erfahrungen",
+        "Bedeutet ein Studium bessere Berufschancen?\nDie Beliebtheit von Universitätsstudien in meinem Heimatland",
+        "Bedeutet ein Studium bessere Berufschancen?\nVor- und Nachteile & meine Meinung",
+        "Bedeutet ein Studium bessere Berufschancen?\nAbschluss und Dank"
+      ],
+      "thema2_instrukcije": [
+        "Stellen Sie Ihr Thema vor. Erklären Sie den Inhalt und die Struktur Ihrer Präsentation.",
+        "Berichten Sie von Ihrer Situation oder einem Erlebnis im Zusammenhang mit dem Thema.",
+        "Berichten Sie von der Situation in Ihrem Heimatland und geben Sie Beispiele.",
+        "Nennen Sie die Vor- und Nachteile und sagen Sie dazu Ihre Meinung. Geben Sie auch Beispiele.",
+        "Beenden Sie Ihre Präsentation und bedanken Sie sich bei den Zuhörern."
+      ]
+    },
+    "t3": {
+      "tekst1": "Nach Ihrer Präsentation:\nReagieren Sie auf die Rückmeldung und Fragen der Prüfer(innen) und des Gesprächspartners / der Gesprächspartnerin.",
+      "tekst2": "Nach der Präsentation Ihres Partners / Ihrer Partnerin:\na) Geben Sie eine Rückmeldung zur Präsentation Ihres Partners / Ihrer Partnerin.\n(z.B. wie Ihnen die Präsentation gefallen hat, was für Sie neu oder besonders interessant war usw.)\n\nb) Stellen Sie auch eine Frage zur Präsentation Ihres Partners / Ihrer Partnerin."
+    }
+  }
+}

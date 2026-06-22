@@ -1,0 +1,447 @@
+{
+  "meta": {
+    "id": "test-03",
+    "naziv": "Model Set 3"
+  },
+  "audio": {
+    "t1": "audio/test3/horen_test3_teil1.mp3",
+    "t2": "audio/test3/horen_test3_teil2.mp3",
+    "t3": "audio/test3/horen_test3_teil3.mp3",
+    "t4": "audio/test3/horen_test3_teil4.mp3"
+  },
+  "lesen": {
+    "t1": {
+      "blog_naslov": "",
+      "blog_tagline": "",
+      "blog_datum": "",
+      "blog_tekst": "\n\nJans Umzugs-Bericht heute, 10:42 Uhr\n\nWer umzieht, Freunde, hat eine Menge Arbeit vor sich. Wer würde nicht am liebsten umziehen\nund dabei die Beine hochlegen und zuschauen, wie die Umzugskisten voll werden und von allein\nin die neue Wohnung wandern?\nNun, ich habe neulich die Erfahrung eines selbst organisierten Umzugs gemacht, dabei zur\ns Kostensenkung all meine Talente genutzt und bin zu folgendem Ergebnis gekommen : Für einen\ngelungenen Umzug sind die Hilfe von Profis und eine genaue Planung der Schlüssel zum Erfolg.\nAls Erstes soll man möglichst frühzeitig den Umzugstermin festlegen und dann die richtige\nUmzugsfirma finden - was nicht leicht ist. Ich habe Anzeigen über Anzeigen studiert, mir viele\nAngebote geholt und die Preise verglichen. Die Unterschiede waren sehr groß! Dann habe ich in\n10 meinem Bekanntenkreis nach Erfahrungen beim Umziehen gefragt, unzählige Telefonate geführt\nund wieder Preise verglichen, bis ich mich entschieden hatte.\nUm Kosten zu sparen, habe ich mit der Umzugsfirma vereinbart, dass ich fast alle Umzugskisten\nselbst packe - in meiner Freizeit. Das bedeutet weniger teure Arbeitszeit, allerdings war ich auch\nselbst für mögliche Schäden innerhalb der Kisten verantwortlich.\n15 Ein Blick in den Mietvertrag meiner alten Wohnung hat gezeigt, dass ich sie in gutem Zustand\nabgeben musste. Zum Glück konnte ich die meisten der notwendigen Reparaturen parallel zum\nPacken der Umzugskisten selbst erledigen und eine Menge Ausgaben vermeiden. Nur zum\nSchluss habe ich Handwerker geholt, denn es gibt Arbeiten, wo die günstiger sind, als man denkt,\nda sie sehr schnell arbeiten können und vor allem alle nötigen Werkzeuge besitzen.\n20 Umziehen ist mit weiteren wichtigen kleinen Arbeiten verbunden, die ich doppelt machen musste,\ndenn meine Freundin, mit der ich die neue Wohnung teilen werde, hatte wegen Prüfungen\nan der Uni keine Zeit. Das Positive ist, man kann heute fast alles online erledigen. Ganz oben auf\nder Liste stand der Internet- und Telefonanschluss, weil wir beides für unsere Arbeit brauchen.\nDer hat direkt am Tag des Umzugs funktioniert. Und dann habe ich einen Antrag gestellt, damit\nunsere Post an die neue Adresse geschickt wird . Hat auch gut geklappt. \n",
+      "primer_tekst": "Jan konnte sich keinen teuren Umzug leisten. ",
+      "pitanja": [
+        "Das genaue Umzugsdatum hat Jan erst spät festgelegt.",
+        "Jan hat sich schnell für „ seine\" Umzugsfirma entschieden.",
+        "Als Jan seine Sachen in die Kisten packte, ist einiges kaputt gegangen.",
+        "Seine alte Wohnung hat Jan zum größten Teil selbst repariert. ",
+        "Jan wird in der neuen Wohnung nicht allein leben. ",
+        "Jan hatte einen Tag lang keinen Telefonanschluss. "
+      ],
+      "primer_odg": "r"
+    },
+    "t2": {
+      "clanak1": {
+        "kicker": "",
+        "naslov": "",
+        "kolona1": [
+          ""
+        ],
+        "kolona2": [
+          ""
+        ],
+        "izvor": "",
+        "clanak1_tekst": "Verkaufsverbot\nfür Energiegetränke?\nDas Lebensmittelinstitut Hamburg fordert ein Verkaufsverbot von Energiegetränken an Kinder und Jugendliche. Denn diese Getränke enthalten zu viel Koffein – etwa dreimal so viel wie Cola – und auch andere Stoffe, bei denen negative Wirkungen nicht sicher ausgeschlossen werden können. Die unerwünschten Wirkungen werden außerdem verstärkt, wenn Energiegetränke zusammen mit Alkohol oder im Zusammenhang mit intensiven sportlichen Tätigkeiten, aber auch stundenlangem Tanzen, konsumiert werden.\nEin einziges solches Energiegetränk dürfte man sich pro Tag höchstens genehmigen. Dadurch, dass die kleinen Dosen jedoch randvoll sind mit Koffein und anderen Stoffen, ist es leicht, innerhalb kürzester Zeit eine Menge zu sich zu nehmen, die tödlich wirken könnte. Kinder, Schwangere und Menschen, die eine negative Reaktion auf Koffein zeigen, sollten überhaupt keine Getränke dieser Art konsumieren.\nDie Hersteller warnen jedoch nicht vor dem Konsum solcher Getränke. So macht einer der bekanntesten Firmen zum Beispiel Werbung damit, dass der Energy-Drink für Menschen entwickelt wurde, „die einen klaren und konzentrierten Kopf brauchen, körperliche Leistungen erbringen wollen, dynamisch und erfolgsorientiert sind und gleichzeitig einen aktiven und positiven Lebensstil mögen“. Der Slogan scheint Erfolg zu haben, denn letztes Jahr verkaufte dieses Unternehmen auf der ganzen Welt rund 4,2 Milliarden Dosen seines Energiegetränks – das bedeutet ein Plus von 15,8 Prozent.\naus einer deutschen Zeitung"
+      },
+      "clanak2": {
+        "naslov": "",
+        "kolona1": [
+          ""
+        ],
+        "kolona2": [
+          ""
+        ],
+        "izvor": "",
+        "clanak2_tekst": "Generation Praktikum\nVor acht Jahren stand der Ausdruck „Generation Praktikum“ zum ersten Mal in einer großen deutschen Wochenzeitung, 2006 wäre er fast zum „Wort des Jahres“ gewählt worden – ein deutlicher Beweis für die ständige Zunahme der Anzahl der Praktika, die im Rahmen einer Ausbildung zwingend vorgeschrieben sind. Während des Studiums werden Praktika von zwei bis vier Monaten Dauer gemacht, für die man kein Geld bekommt. Nach Abschluss des Studiums haben Studierende durchschnittlich 2,6 Praktika hinter sich gebracht. Nicht schlecht für den Lebenslauf, aber keine Garantie für einen festen Job.\nViele Unternehmen sparen sich durch die Verwendung von Praktikanten eine Menge Geld und Pflichten. Bis zu mehreren Monaten können so Studierende und Akademiker, die Berufserfahrung sammeln möchten, eine Arbeit machen, für die der Arbeitgeber eigentlich einen normal bezahlten Mitarbeiter einstellen müsste. Ein Praktikant aber erhält im besten Fall ein kleines Taschengeld, oft muss er sich auch nur mit einem Praktikumszeugnis zufrieden geben.\nHat man den Abschluss in der Tasche, sollte normalerweise Schluss sein mit Arbeit für null Euro: Einen Arbeitsplatz für ein paar Monate für wenig bis gar kein Geld, den will kaum jemand, der gerade sein Studium beendet, vielleicht sogar ein Auslandssemester absolviert und zwei Fremdsprachen gelernt hat. Noch dazu mit der Unsicherheit, ob er am Ende des Praktikums vom Unternehmen, das ihn beschäftigt hat, übernommen wird. Aber manchmal geht es nicht anders.\naus einer österreichischen Zeitung"
+      },
+      "primer_tekst": "",
+      "primer_odg": "",
+      "pitanja": [
+        {
+          "tekst": "In diesem Text geht es darum...",
+          "a": "welche Marken von Energiegetränken verboten werden sollen.",
+          "b": "wie die Werbung für Energiegetränke aussehen soll. ",
+          "c": "dass der Konsum von Energiegetränken lebensgefährlich sein kann."
+        },
+        {
+          "tekst": "Das Risiko erhöht sich, ....",
+          "a": "weil man in sehr kurzer Zeit viele Dosen austrinken kann.",
+          "b": "wenn ältere Menschen solche Getränke konsumieren .",
+          "c": "wenn man nicht gleichzeitig etwas Sport macht. "
+        },
+        {
+          "tekst": "Zielgruppe der Werbung für ein bekanntes Produkt sind heute , ...",
+          "a": "deren Einkommen unter dem Durchschnitt liegt. ",
+          "b": "für die Erfolg und Leistung ganz oben stehen. ",
+          "c": "die keine Zeit für langweilige Aktivitäten haben."
+        },
+        {
+          "tekst": "In diesem Text geht es darum, ...",
+          "a": "wie wichtig ein Praktikum im Ausland ist.",
+          "b": "dass nicht nur während, sondern auch nach dem Studium viele Praktika gemacht werden.",
+          "c": "ob Praktikanten ein Gehalt bekommen sollten."
+        },
+        {
+          "tekst": "Bei einem Praktikum ist es nicht sicher, ...",
+          "a": "ob man danach ein Zeugnis bekommt.",
+          "b": "ob man am Ende eine Stelle in dieser Firma bekommt.",
+          "c": "ob man Berufserfahrung sammeln kann."
+        },
+        {
+          "tekst": "Mit Hilfe von Praktikanten, ...",
+          "a": "wird die Arbeit der Unternehmen genau kontrolliert.",
+          "b": "spart ein Unternehmen Personalkosten.",
+          "c": "entsteht eine neue Generation von Unternehmen."
+        }
+      ],
+      "primer_question": "Energiegetränke enthalten...",
+      "primer_a": "das Dreifache an Koffein im Vergleich zu Cola-Getränken.",
+      "primer_b": "so viel Zucker wie Cola-Getränke.",
+      "primer_c": "keine weiteren schädlichen Stoffe außer Koffein.",
+      "primer_ans": "c"
+    },
+    "t3": {
+      "kontekst": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen A bis J aus verschiedenen deutschsprachigen\nMedien. Wählen Sie: Welche Anzeige passt zu welcher Situation? Sie können jede Anzeige nur\neinmal verwenden. Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine\nSituation gibt es keine passende Anzeige. In diesem Fall schreiben Sie 0.\nJunge Leute möchten etwas Geld verdienen und suchen dafür einen passenden Job.",
+      "primer_tekst": "",
+      "primer_odg": "i",
+      "primer_slovo": "c",
+      "oglasi": {
+        "a": {
+          "tekst": "Aushilfe Frühstücks- und Roomservice gesuchtAuf 400,- €-Basis, an zwei Tagen pro Woche - von\n07:00 bis ca. 15:00 Uhr, flexible Arbeitszeiten können\nvereinbart werden. Berufserfahrung in einem Hotel\no. Restaurant erwünscht, jedoch\nkeine Voraussetzung.\npersona/@linzerhof.at\n",
+          "primer": false
+        },
+        "b": {
+          "tekst": "Die Buchhandlung „Esperia\" in Bern sucht für sechs&nbsp;bis acht Monate eine\nmotivierte Praktikantin.&nbsp;40-Stunden-Job - gute Bezahlung-Aussicht auf\nÜbernahme am Ende des Praktikums. Voraussetzung: Matura über 3,0. Schriftliche Bewerbung an:\nwww. esperia-book-bern. eh&nbsp;",
+          "primer": false
+        },
+        "c": {
+          "tekst": "Sommerjob für Studenten\nMontage für Notebooks, Hilfsarbeiten, Verpacken\netc. - Bezahlung: 12 Euro pro Stunde - Besondere\nAnforderungen: gute Computer- und Deutschkenntnisse, Genauigkeit und Teamgeist- Flexible Arbeitszeiten zwischen 8 und 20 Uhr.\nwww.autronic.de&nbsp;",
+          "primer": true
+        },
+        "d": {
+          "tekst": "Gutes Geld für starke Männer, die kräftig sind und täglich in den frühen Morgenstunden Kisten mit Gemüse und Obst schleppen\nund auf Lastwagen laden.\nArbeit dauert ca. drei Stunden, keine Pause möglich!\nBezahlung: 23 €pro angefangene Stunde.\n~ 2100 2093 846, Herr Schindler",
+          "primer": false
+        },
+        "e": {
+          "tekst": "Der Valentinstag rückt näher und wir suchen engagierte und erfahrene Aushilfe, die überall mit anpacken kann: Blumen und Pflanzen transportieren,\nschneiden und gießen, Bestellungen annehmen und\nabliefern etc. Gute Bezahlung. Blumenladen Orchi-Shop in Schwabing,\n~ 089 7638 2848",
+          "primer": false
+        },
+        "f": {
+          "tekst": "&nbsp;Die Wochenzeitung DIE. ZEIT möchte neue Leser\ngewinnen. Hierfür sollen im Zentrum der größten\ndeutschen Städte kostenlose Leseproben verteilt\nwerden.\nDie Aktionen finden immer samstags statt.\nVergütung: 10 € / Stunde.\nassist@abc-marketing.de",
+          "primer": false
+        },
+        "g": {
+          "tekst": "Wir brauchen Verstärkung!\nDu hast Spaß am Umgang mit Kunden und bist körperlich fit? Dann stell dich direkt bei uns im Studio\nvor! Vorkenntnisse als Trainer(in) brauchst du nicht.\nMuske/protz, Mül/erstr. 23, München - Pasing",
+          "primer": false
+        },
+        "h": {
+          "tekst": "Wir suchen für den Empfang junge Dame\ndie mindestens eine Fremdsprache kann und gern\nnachts arbeitet. Keine Berufserfahrung erforderlich.\nArbeitszeit von 22-7 Uhr, 6- bis 8mal pro Monat auf\n450 € - Basis. Lebenslauf mit Foto an:\njobs@hoste/_graben.at",
+          "primer": false
+        },
+        "i": {
+          "tekst": "Mitarbeiter gesucht&nbsp;Für unsere Neueröffnung am Potsdamer Platz suchen wir einen motivierten und flexiblen männlichen\nMitarbeiter, nach Möglichkeit mit Erfahrung in einer\nCurrywurst-Braterei o.Ä. Arbeitszeiten Mo - Fr von\n12:00 bis 16:00 Uhr. potscurry@yahoo.de",
+          "primer": false
+        },
+        "j": {
+          "tekst": "&nbsp;Der Garten meiner über 80-jährigen Eltern ist ziemlich groß und sehr hübsch und braucht natürlich\nständig Pflege. Wer hat Erfahrung und kann das als\nfeste Aufgabe übernehmen?\nZahle 280 CHF im Monat.\nMail bitte an:\nkurt290878@hotmail.ch&nbsp;",
+          "primer": false
+        }
+      },
+      "situacije": [
+        "Ramona hat oft in Restaurants gejobbt und sucht eine entsprechende Arbeit. ",
+        "Philipp studiert Anglistik und sucht Arbeit als Englischlehrer in einem Sprachinstitut.",
+        "Sandra geht in Frankfurt zur Schule und möchte am Wochenende etwas verdienen. ",
+        "Tanja liebt Blumen und Pflanzen und sucht einen Job auf Dauer.",
+        " Stefanie spricht gut Französisch und würde gern in der Rezeption eines Hotels arbeiten.",
+        "Clemens hat früher ein paar Wochen lang in einem Imbiss in Köln gearbeitet. ",
+        "Susanna, Sportstudentin, kennt sich gut mit Fitnessgeräten aus und möchte mit Menschen arbeiten."
+      ]
+    },
+    "t4": {
+      "kontekst": "In einer österreichischen Zeitung lesen Sie folgende Leserbriefe zu einem Artikel über Vor- und\nNachteile eines Urlaubs im Inland. ",
+      "primer_ime": "0 Greti ",
+      "primer_odg": "n",
+      "primer_tekst": "Gebildete Leute haben einen Grund mehr, im Urlaub ins Ausland zu fahren: Sie lernen Land, Leute und neue\nKulturen kennen, sehen die Welt mit anderen Augen\nund sammeln wertvolle Erfahrungen. Beim Inlandsurlaub ist dagegen der Besuch und das Kennenlernen\nfremder Kulturen nicht möglich, man bleibt auch als\nUrlauber im eigenen Kulturraum eingeschlossen.\nGreti, 51, Wien",
+      "osobe": [
+        {
+          "ime": "Gerhard ",
+          "tekst": "Ich kann alle, die ihren Urlaub lieber „in der Heimat\"\nverbringen, gut verstehen, ihre Argumente klingen\nüberzeugend. Der moderne Mensch braucht aber\nmehr, sonst hat der jährliche Urlaub keinen Sinn. Man\nmuss zu allem Abstand gewinnen, Neues sehen und\nNeues erleben. Eine vollständig neue Umgebung ist\nerforderlich, nur auf diese Weise kann man sich regenerieren.\nGerhard, 48, Bregenz "
+        },
+        {
+          "ime": "Daria ",
+          "tekst": "Ein längerer Urlaubsaufenthalt im Ausland ist meistens\nmit Ärger verbunden. Die Koffer sind zu schwer und fast\nimmer muss man dafür extra zahlen. Und wenn man\nkleine Kinder hat, wird die Situation noch schlimmer.\nIm Urlaub nehmen wir also das Auto und fahren überallhin, natürlich im Inland. Probleme mit dem Gepäck\ngibt es dann keine und alle sind glücklich.\nDaria,37, Leoben "
+        },
+        {
+          "ime": "Lorens",
+          "tekst": "Im Urlaub möchte ich gute Laune haben und mich erholen. Da bin ich früher meistens im Inland geblieben ...\nund habe mich über das schlechte Wetter geärgert.\nIn einem verregneten Sommer kann man doch so gut\nwie nichts unternehmen, und wenn man kleine Kinder\nhat, ist das Problem doppelt so groß. Deswegen fahre\nich lieber in Länder, wo schönes Wetter garantiert ist.\nLorens, 34, Klosterneuburg \n"
+        },
+        {
+          "ime": "Kirsten",
+          "tekst": "Als begeisterte Fahrrad- und Mountainbikefahrerin\nbin ich, wenn ich mich im Ausland befinde, meistens\ngezwungen auf mein Hobby zu verzichten, was mich\nsehr ärgert. Aus diesem Grund verbringe ich meinen\nUrlaub jedes Jahr hier in Österreich, aber natürlich\njedes Mal woanders. Nur ganz selten fahre ich mal\nüber ein Wochenende mit meinem Partner ins Ausland,\num eine Stadt anzusehen.\nKirsten, 26, Klagenfurt "
+        },
+        {
+          "ime": "Marcella ",
+          "tekst": "Ich gehöre zu den Menschen, die schreckliche Angst\nvorm Fliegen haben. Immer wenn ich für meine Firma\nins Ausland fliege, muss ich Beruhigungsmittel einnehmen und komme am Zielort völlig kaputt an. Das\nmöchte ich natürlich nicht auch im Urlaub erleben\nSchöne Fotomotive und interessante Sehenswürdigkeiten gibt es zum Glück auch in unserem Land genug.\nMarcella, 39, Wien"
+        },
+        {
+          "ime": "Wilma",
+          "tekst": "Unsere Heimat ist wirklich schön und bietet - besonders für Naturfreunde - als Urlaubsziel viele Vorteile.\nNur ist Österreich aber auch nicht gerade bil lig.\nEin Preisvergleich, zum Beispiel mit den fernöstlichen\nLändern, genügt um festzustellen, dass man - trotz der\nzusätzlichen Flugkosten - im Ausland längere Zeit\nbleiben und seinen Urlaub voll genießen kann.\nWilma, 35, Oberhausen"
+        },
+        {
+          "ime": "Ricardo",
+          "tekst": "Auslandsreisen machen Spaß, keine Frage. Im Ausland\nUrlaub machen, das finde ich jedoch problematisch,\ndenn fast immer ist die Landessprache ein Problem. Ich\nspreche leider kein Englisch, so kann ich nur in Gruppen\nmitreisen, wo ein Übersetzer ständig dabei ist. Zwei\nWochen lang so gut wie stumm bleiben und sich nur\nmit der Zeichensprache verständigen, das will ich nicht.\nRicardo, 61, Dornbirn "
+        }
+      ],
+      "aufgabe": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für Urlaub im Inland?\n"
+    },
+    "t5": {
+      "kontekst": "",
+      "hausordnung": [
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        },
+        {
+          "naslov": "",
+          "tekst": ""
+        }
+      ],
+      "pitanja": [
+        {
+          "tekst": "In den Schlafräumen darf man ... ",
+          "a": "nur Sachen essen, die man selbst zubereitet hat.",
+          "b": "elektrische Geräte für Heißgetränke aufstellen. ",
+          "c": "weder kochen noch essen. "
+        },
+        {
+          "tekst": "Familien wohnen ...",
+          "a": "getrennt nach Geschlecht. ",
+          "b": "in Mehrbettzimmern mit anderen Gästen.",
+          "c": "nach Möglichkeit in einem gemeinsamen Zimmer."
+        },
+        {
+          "tekst": "Um ein Zimmer zu bekommen, ....",
+          "a": " muss man bis spätestens 18 Uhr angekommen sein.",
+          "b": "kann man sich telefonisch informieren. ",
+          "c": " wartet man auf andere, mit denen man ein Zimmer teilen kann. "
+        },
+        {
+          "tekst": "Was ist auf keinen Fall erlaubt? ",
+          "a": " Die Schlafräume nach 10:00 Uhr zu verlassen.",
+          "b": "In den Räumen der Jugendherberge zu rauchen. ",
+          "c": "Zwischen 07:00 und 10:00 Uhr Lärm zu machen. "
+        }
+      ],
+      "tekst": "Sie übernachten in einer Jugendherberge in Deutschland und lesen die Hausordnung.\n\nHAUSORDNUNG FÜR JUGENDHERBERGEN\nAnkunft\nWenn Sie angemeldet sind, können Sie Ihre Ankunftszeit mit der Herbergsleitung vereinbaren. Zugesagte\nPlätze werden bis 18 Uhr freigehalten, danach können sie an andere Gäste vergeben werden. Wenn Sie\nnicht angemeldet sind, können Sie telefonisch oder direkt in der Jugendherberge erfahren, ob es freie\nPlatze gibt.\nWer in einer Jugendherberge übernachten möchte, muss Mitglied des Vereins Deutscher Jugendherbergen sein. Reisende ohne Mitgliedskarte können auch in der Jugendherberge Mitglied werden.\nAufenthalt\nDie Unterbringung erfolgt in Mehrbettzimmern und in der Regel nach Geschlecht getrennt. Familien\nkönnen nach Anmeldung in einem Zimmer gemeinsam untergebracht werden, sofern es verfügbar ist.\nDie Gäste werden gebeten Abfall getrennt zu sammeln oder ganz zu vermeiden und mit Energie und\nWasser sparsam umzugehen.\nIn Schlafräumen dürfen Speisen weder zubereitet noch gegessen werden. Aus brandschutztechnischen,\nversicherungs- und gesundheitsrechtlichen Gründen ist die Benutzung von elektrischen Geräten für die\nZubereitung von Speisen und heißen Getränken nicht erlaubt.\nRauchen ist in allen Räumen streng verboten. Der Konsum von mitgebrachten alkoholischen Getränken ist\nin der Jugendherberge und auf ihrem Gelände nicht erlaubt. Betrunkene Gäste müssen das Haus verlassen.\nTiere durfen grundsätzlich nicht mitgebracht werden, nur Blinden- und Servicehunde können mit Erlaubnis\nder Herbergsleitung in der Jugendherberge bleiben.\nJugendherbergen sind in der Regel bis 22 Uhr geöffnet. Die Nachtruhe beginnt um 22 Uhr und endet um 7 Uhr .\n• Abreise\nDie Schlafräume müssen bis 10 Uhr geräumt sein. Die Herbergsleitung kann Ausnahmen genehmigen. \n\n"
+    }
+  },
+  "hoeren": {
+    "t1": {
+      "primer_rf": {
+        "tekst": "01 Tablet-Computer verkaufen sich nicht mehr so gut."
+      },
+      "primer_mc": {
+        "tekst": "02 Am häufigsten kaufen Tablet-Computer die, ...",
+        "a": "bis 29- Jährigen",
+        "b": "mittleren Altersklassen",
+        "c": "über 45- Jährigen"
+      },
+      "tekstovi": [
+        {
+          "rf": "Heute gelten für alle Handys mit Vertrag sehr günstige Bedingungen. ",
+          "mc": {
+            "tekst": "Der besondere Vorteil dieses Handys ist, dass ...",
+            "a": "es jeden Tag die Farbe wechselt.",
+            "b": "man es nur alle sieben Tage aufladen muss.",
+            "c": "man einen Monat lang kostenlos telefonieren kann ."
+          }
+        },
+        {
+          "rf": "Diese Durchsage betrifft alle heutigen Flüge nach Barcelona. ",
+          "mc": {
+            "tekst": "Die neue Abflugzeit ... ",
+            "a": "weiß man noch nicht genau. ",
+            "b": "erfährt man in einer Stunde. ",
+            "c": "ist um 13:12 Uhr. "
+          }
+        },
+        {
+          "rf": "Im Moment kann man keine Bücher bestellen. ",
+          "mc": {
+            "tekst": "Der Bestseller „ Ein Zuhause für Tessa \" ... ",
+            "a": "ist im Moment nicht zu haben. ",
+            "b": "kostet ab nächste Woche mehr. ",
+            "c": " steht nicht mehr im Katalog. "
+          }
+        },
+        {
+          "rf": "Die Tanzkurse sind für Leute gedacht, die älter sind als 60. ",
+          "mc": {
+            "tekst": "Man kann...",
+            "a": "auch am Wochenende trainieren. ",
+            "b": "im ersten Monat kostenlos trainieren.",
+            "c": " den Kurs auch allein besuchen."
+          }
+        },
+        {
+          "rf": "Das Restaurant wird zurzeit renoviert. ",
+          "mc": {
+            "tekst": "In Zukunft wird die Pizza ....",
+            "a": "noch besser schmecken.",
+            "b": "noch größer sein. ",
+            "c": "nach einem neuen Rezept gebacken."
+          }
+        }
+      ],
+      "primer_rf_odg": "f",
+      "primer_mc_odg": "b"
+    },
+    "t2": {
+      "kontekst": "\nSie nehmen an einer Führung durch das Deutsche Uhrenmuseum in Furtwangen teil.",
+      "pitanja": [
+        {
+          "tekst": "In Furtwangen wurden die ersten Uhren ...",
+          "a": "hergestellt.",
+          "b": "gefunden. ",
+          "c": "gesammelt. "
+        },
+        {
+          "tekst": "In der Ausstellung sind heute ...",
+          "a": " 2.500 Uhren zu sehen. ",
+          "b": "1.000 Uhren zu sehen. ",
+          "c": "8.000 Uhren zu sehen. "
+        },
+        {
+          "tekst": "Die Sammlung von Schwarzwalduhren ...",
+          "a": "ist noch ziemlich unbekannt.",
+          "b": "dokumentiert auch die Geschichte der Region.",
+          "c": "ist über 200 Jahre alt. "
+        },
+        {
+          "tekst": "Die Besucher sind sehr interessiert an ...",
+          "a": "alten Uhren.",
+          "b": "teuren Uhren. ",
+          "c": "merkwürdigen Uhren. "
+        },
+        {
+          "tekst": " Während der Führung zeigt man auch ...",
+          "a": "Stoppuhren. ",
+          "b": "alte Kinderuhren. ",
+          "c": "mechanische Musikinstrumente. "
+        }
+      ]
+    },
+    "t3": {
+      "kontekst": "\nIn einem Cafe hören Sie, wie sich am Nebentisch ein junger Mann und eine junge Frau über\nUrlaubsreisen unterhalten .",
+      "pitanja": [
+        " Nico und seine Frau können ihren Urlaub erst in letzter Minute planen.",
+        " Letztes Jahr haben sie erst nach Protesten das versprochene Zimmer bekommen.",
+        "Elena und ihr Mann besuchen lieber große Städte als Badeorte. ",
+        "Bei einer Städtereise hat man nie genug Zeit. ",
+        "Elena und ihr Mann sind absolut gegen Gruppenreisen.",
+        "Eine große Schwierigkeit ist, dass nicht überall Deutsch gesprochen wird. ",
+        "Dieses Jahr wollen Elena und ihr Mann in ihrem Urlaub auch ans Meer fahren."
+      ]
+    },
+    "t4": {
+      "kontekst": "Die Moderatorin der Radiosendung „Schul-Chat\" spricht mit Felix Burke und Linda Mäder zum\nThema „Wie nützlich und sinnvoll sind Hausaufgaben?\". ",
+      "primer_tekst": "Sinnvolle Hausaufgaben bringen die Schüler dazu, Neues zu lernen. ",
+      "primer_odg": "c",
+      "pitanja": [
+        "Es fand meistens keine Korrektur der Schularbeiten statt. ",
+        "Das Schulwissen hilft, Probleme ohne fremde Hilfe zu lösen.",
+        " Zu Hause kann man ohne Störung und produktiv arbeiten.",
+        "Lob für gut gemachte Schularbeiten ist wichtig.",
+        "Lange Unterrichtszeiten lassen den Kindern wenig Freizeit. ",
+        "Länger als eine Stunde sollen Schüler für ihre Hausaufgaben nicht brauchen . ",
+        " Bei den Hausaufgaben soll man zum Teil den Computer verwenden.",
+        "Die Eltern sollten ihre Kinder zu Hause allein arbeiten lassen. "
+      ],
+      "osobe_naslovi": {
+        "a": "Moderatorin",
+        "b": "Felix Burke",
+        "c": " Linda Mäder"
+      }
+    }
+  },
+  "schreiben": {
+    "a1": {
+      "situacija": "Zwei gute Freunde / Freundinnen haben Ihnen letzte Woche beim Umzug in Ihre neue Wohnung\ngeholfen . Gestern haben Sie die letzte Umzugskiste ausgepackt .\n\n",
+      "tacke": [
+        "• Beschreiben Sie: Wie sieht die Wohnung jetzt aus?",
+        "• Begründen Sie: Warum wol len Sie Ihre Freunde / Freundinnen einladen?",
+        "• Machen Sie einen Vorschlag für ein gemeinsames Abendessen mit Ihren Freunden / Freundinnen.",
+        "o Schreiben Sie eine E-Mail (circa 80 Wörter)",
+        "o Schreiben Sie etwas zu allen drei Punkten.",
+        "o Achten Sie auf den Textaufbau {Anrede, Einleitung, Reihenfolge der Inhaltspunkte, Schluss)."
+      ]
+    },
+    "a2": {
+      "situacija": "In einem Forum, wo heftig über die Frage „ Hat Oma besser gekocht?\" diskutiert wird, steht\nunter anderem auch folgender Beitrag: \n\nHat Oma besser gekocht?\nSilke meint dazu : 30.06. - 22:00 Uhr\nKlare Sache, Oma hat besser gekocht, weil sie anders gekocht hat. Was war nun anders? Nicht\nnur die Rezepte, die einfacher waren und leicht nachgekocht werden konnten. Vor allem waren\nes die Zutaten, die frischer waren. \n\nSchreiben Sie nun Ihre Meinung (circa 80 Wörter. ) "
+    },
+    "a3": {
+      "situacija": "Sie sind am kommenden Mittwoch zu einem Vorstellungsgespräch bei einer deut schen Firma\neingeladen, können aber den vorgeschlagenen Termin nicht wahrnehmen.\nSchreiben Sie an die Firma. Entschuldigen Sie sich höflich und nennen Sie den Grund, warum Sie\nnicht kommen können .\no Schreiben Sie eine E-Mail (circa 40 Wörter).\no Vergessen Sie nicht die Anrede und die Grußformel am Schluss.",
+      "placeholder": "..."
+    }
+  },
+  "sprechen": {
+    "t1": {
+      "situacija": "Sie sind Grundschullehrer(in) und stellen immer wieder fest, dass viele Ihrer Schüler zu Hause\nsehr viel Zeit beim Spielen am Computer verschwenden . Sie planen deshalb eine kurze Info-Veranstaltung, auf der Sie sinnvolle außerschulische Aktivitäten vorstellen möchten. Überlegen Sie,\nwie man so eine Veranstaltung am effektivsten organisieren kann. \n\nSprechen Sie über die Punkte unten,\nmachen Sie Vorschläge und\nreagieren Sie auf die Vorschläge\nIhres Gesprächspartners/ Ihrer\nGesprächspartnerin. Planen und\nentscheiden Sie gemeinsam,\nwas Sie tun möchten.",
+      "naslov": "lnfo-Veranstaltung „ Weg vom Computer!\"- Wen und wie einladen? - Wo? (Schule - Jugendzentrum - ...) -  Wann? (Tag, Uhrzeit, Dauer) - Aktivitäten, die Sie vorstellen möchten (z.B.– eine Sammlung beginnen - Bücher und CDs mit– Freund(inn)en austauschen - Tanzen - ...) ....",
+      "tacke": [],
+      "_rich": "<strong>lnfo-Veranstaltung „ Weg vom Computer!\"- Wen und wie einladen?&nbsp;- Wo? (Schule - Jugendzentrum - ...) -&nbsp; Wann? (Tag, Uhrzeit, Dauer)&nbsp;- Aktivitäten, die Sie vorstellen möchten (z.B.</strong><br>– eine Sammlung beginnen - Bücher und CDs mit<br>– Freund(inn)en austauschen - Tanzen - ...)&nbsp;...."
+    },
+    "t2": {
+      "thema1_naslov": "",
+      "thema1_folien": [
+        "\"Lasst den Ball rollen!\"\nIst Fußball der König\nunter allen Sportarten?",
+        "Ist Fußball der König\nunter allen Sportarten?\nMeine persönlichen\nErfahrungen ",
+        "Ist Fußball der König\nunter allen Sportarten?\nDie Beliebtheit von Fußball\nin meinem Heimatland",
+        "Ist Fußball der König\nunter allen Sportarten?\nVor- und Nachteile\n& meine Meinung ",
+        "Ist Fußball der König\nunter allen Sportarten?\nAbschluss und Dank"
+      ],
+      "thema1_instrukcije": [
+        "Stellen Sie Ihr Thema\nvor. Erklären Sie den\nInhalt und die Struktur\nIhrer Präsentation. ",
+        "Berichten Sie von\nIhrer Situation oder\neinem Erlebnis\nim Zusammenhang\nmit dem Thema. ",
+        "Berichten Sie von\nder Situation in Ihrem\nHeimatland und\ngeben Sie Beispiele.",
+        "Nennen Sie die Vorteile, Nachteile und\nsagen Sie dazu Ihre\nMeinung. Geben Sie\nauch Beispiele. ",
+        "Beenden Sie Ihre\nPräsentation und\nbedanken Sie sich\nbei den Zuhörern. "
+      ],
+      "thema2_naslov": "",
+      "thema2_folien": [
+        "„Ich hätte gern einen Hund!\"\nHaustiere für Jung und Alt",
+        "Haustiere für Jung und Alt\nMeine persönlichen\nErfahrungen ",
+        "Haustiere für Jung und Alt\nDie Beliebtheit\nvon Haustieren\nin meinem Heimatland ",
+        "Vor- und Nachteile\n& meine Meinung",
+        "Haustiere für Jung und Alt\nAbschluss und Dank"
+      ],
+      "thema2_instrukcije": [
+        "Stellen Sie Ihr Thema\nvor. Erklären Sie den\nInhalt und die Struktur\nIhrer Präsentation. \n",
+        "Berichten Sie von\nIhrer Situation oder\neinem Erlebnis\nim Zusammenhang\nmit dem Thema. ",
+        "Berichten Sie von\nder Situation in Ihrem\nHeimatland und\ngeben Sie Beispiele. ",
+        "Nennen Sie die Vorteile, Nachteile und\nsagen Sie dazu Ihre\nMeinung. Geben Sie\nauch Beispiele. ",
+        "Beenden Sie Ihre\nPräsentation und\nbedanken Sie sich\nbei den Zuhörern. "
+      ]
+    },
+    "t3": {
+      "tekst1": "Nach Ihrer Präsentation:\n\nReagieren Sie auf die Rückmeldung und Fragen der Prüfer(innen) und des Gesprächspartners / der\nGesprächspartnerin. \n",
+      "tekst2": "Nach der Präsentation Ihres Partners/ Ihrer Partnerin: \n\na) Geben Sie eine Rückmeldung zur Präsentation Ihres Partners / Ihrer Partnerin . (z.B. wie Ihnen\ndie Präsentation gefallen hat, was für Sie neu oder besonders interessant war usw.)\n\nb) Stellen Sie auch eine Frage zur Präsentation Ihres Partners / Ihrer Partnerin. "
+    }
+  }
+}

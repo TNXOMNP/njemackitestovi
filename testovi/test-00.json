@@ -1,0 +1,448 @@
+{
+  "meta": {
+    "id": "test-00",
+    "naziv": "Modellsatz 0"
+  },
+  "audio": {
+    "t1": "audio/test0/horen_test0_teil1.mp3",
+    "t2": "audio/test0/horen_test0_teil2.mp3",
+    "t3": "audio/test0/horen_test0_teil3.mp3",
+    "t4": "audio/test0/horen_test0_teil4.mp3"
+  },
+  "lesen": {
+    "t1": {
+      "blog_naslov": "",
+      "blog_tagline": "",
+      "blog_datum": "",
+      "blog_tekst": "SusannesAlltagsBlog.at\n\nMein Alltag, meine Gedanken, mein Leben …\n\nDonnerstag, den 23. Juni\n\nWas mir heute passiert ist, das glaubt mir keiner: Als ich zu Mittag nichts ahnend in der Küche beim Kochen stand, läutete mein Handy. Eine Frauenstimme erklärte mir, dass meine Brieftasche in der Bankfiliale abgegeben worden war und ich sie dort abholen könnte. Mir wurde ganz heiß – mir war noch gar nicht aufgefallen, dass sie fehlte. Und ich hatte ja auch noch relativ viel Bargeld eingesteckt! Schnell holte ich meine Handtasche hervor und suchte nach der Brieftasche. Es stimmte! Auch nach längerem Kramen in der Tasche konnte ich sie nicht finden. Mein Geld war tatsächlich verschwunden!\n\nIch machte mich also auf den Weg zur Bank und überlegte, wo ich meine Brieftasche liegen gelassen hatte: Sicherlich im Supermarkt an der Kassa. Jedenfalls kam ich bei der Bank an und war schon gespannt darauf zu erfahren, wo meine Brieftasche gefunden worden war und natürlich, ob etwas fehlte. Die Bankangestellte teilte mir mit, dass ein junger Mann die Brieftasche abgegeben hatte. Er hatte sie auf dem Parkplatz vor dem Supermarkt gefunden und wollte sie eigentlich ins Fundbüro bringen – wie man es in so einem Fall eben macht. Der Weg dorthin war für ihn zu weit und so suchte er nach einer anderen Möglichkeit, mir die Brieftasche zurückzugeben.\n\nDas muss man sich einmal vorstellen: Er war so clever, dass er auf der Bankomatkarte nach meinem und dem Namen meiner Bank suchte … Die Bank würde ja die Kontaktdaten zu meinem Namen haben und könnte mich so anrufen. Er fuhr in die nächste Filiale meiner Bank und dank der Computervernetzung der Filialen konnte meine Telefonnummer schnell herausgefunden werden. Da stand ich nun mit meiner Brieftasche, die mir beim Verlassen des Supermarktes aus der Handtasche gerutscht sein muss. Zum Glück war alles noch da!\n\nNun weiß ich leider gar nicht, wie ich dem ehrlichen Finder danken kann. Vielleicht liest er ja diesen Blogeintrag: „Vielen, vielen Dank, lieber Finder!“\n\nBis bald,\neure Susanne",
+      "primer_tekst": "Zu Mittag klingelte Susannes Telefon.",
+      "pitanja": [
+        "Erst durch den Anruf bemerkte Susanne das Fehlen ihrer Brieftasche.",
+        "Susanne glaubte, die Brieftasche beim Bezahlen vergessen zu haben.",
+        "Der Finder hatte die Brieftasche ins Fundbüro gebracht.",
+        "Die Telefonnummer der Bank war in der Brieftasche.",
+        "In Susannes Brieftasche fehlte nichts.",
+        "Susanne konnte dem Finder persönlich für seine Ehrlichkeit danken."
+      ],
+      "primer_odg": "r"
+    },
+    "t2": {
+      "clanak1": {
+        "kicker": "Das Dorf Feldheim in Brandenburg macht sich unabhängig von Öl und Kohle.",
+        "naslov": "Ein Dorf für grüne Energie",
+        "kolona1": [
+          "Seit Kurzem deckt das Dorf seinen kompletten Strombedarf und drei Viertel des Wärmebedarfs durch moderne Energien. „Das funktioniert mithilfe einer modernen Anlage für Bio-Gas“, erklärt der Diplom-Physiker Eckhard Meier. „Da kommen Abfall von den Tieren, Getreide und Holz rein und werden erwärmt. Ein Motor verbrennt das Gas und erzeugt dabei Wärme. Der Motor treibt dann einen Generator an, der Strom produziert.“",
+          "Entstanden ist die Idee des „Bio-Energiedorfs“ an der Universität Göttingen. Ziel der Wissenschaftler war es, zu zeigen, dass es möglich ist, ein Dorf komplett mit erneuerbaren Energien zu versorgen."
+        ],
+        "kolona2": [
+          "Tatsächlich: Die Bio-Gasanlage erzeugt jährlich doppelt so viel Strom wie die Gemeinde verbraucht. Der Rest wird in das Stromnetz abgegeben und kostenlos anderen Dörfern zur Verfügung gestellt. Passt das Konzept auch für andere Dörfer? „Im Prinzip schon“, meint Eckhard Meier. Die technischen Anlagen könnten an anderen Orten genauso aufgebaut werden – der Raumbedarf ist gering. Man benötigt allerdings vor allem eines: aktive und begeisterte Einwohner!"
+        ],
+        "izvor": "aus einer deutschen Zeitung",
+        "clanak1_tekst": "Das Dorf Feldheim in Brandenburg macht sich unabhängig von Öl und Kohle.\n\nEin Dorf für grüne Energie\n\nSeit Kurzem deckt das Dorf seinen kompletten Strombedarf und drei Viertel des Wärmebedarfs durch moderne Energien. „Das funktioniert mithilfe einer modernen Anlage für Bio-Gas“, erklärt der Diplom-Physiker Eckhard Meier. „Da kommen Abfall von den Tieren, Getreide und Holz rein und werden erwärmt. Ein Motor verbrennt das Gas und erzeugt dabei Wärme. Der Motor treibt dann einen Generator an, der Strom produziert.“\n\nEntstanden ist die Idee des „Bio-Energiedorfs“ an der Universität Göttingen. Ziel der Wissenschaftler war es, zu zeigen, dass es möglich ist, ein Dorf komplett mit erneuerbaren Energien zu versorgen.\n\nTatsächlich: Die Bio-Gasanlage erzeugt jährlich doppelt so viel Strom wie die Gemeinde verbraucht. Der Rest wird in das Stromnetz abgegeben und kostenlos anderen Dörfern zur Verfügung gestellt. Passt das Konzept auch für andere Dörfer? „Im Prinzip schon“, meint Eckhard Meier. Die technischen Anlagen könnten an anderen Orten genauso aufgebaut werden – der Raumbedarf ist gering. Man benötigt allerdings vor allem eines: aktive und begeisterte Einwohner!\n\naus einer deutschen Zeitung"
+      },
+      "clanak2": {
+        "naslov": "Tour durch Murtens Geschichte",
+        "kolona1": [
+          "Mit der Rundfahrt «Zeitreise per Velo*» können Touristen das Städtchen Murten und seine Geschichte sportlich neu entdecken. Die Tour startet am Bahnhof von Murten, wo die sportlichen Teilnehmer auf das eigene oder ein gemietetes Velo steigen. Die weniger Sportlichen, die es schon immer ausprobieren wollten, steigen aufs Elektro-Velo. Dieses kann ebenfalls am Bahnhof gemietet werden.",
+          "Vom Bahnhof führt der Weg auf den historischen Hügel, wo Karl der Kühne sein Hauptquartier aufbaute, bevor sein Heer im Jahr 1476 besiegt wurde. Die Sportlichen kommen bei der Fahrt auf dem Hügel ins Schwitzen, während die E-Biker ganz einfach den Elektromotor nutzen."
+        ],
+        "kolona2": [
+          "Oben angekommen kann man die wunderbare Aussicht auf den Murtensee genießen. Nach einer kurzen Pause geht es weiter nach Merlach. Dort steht ein Denkmal für Soldaten, die in der Schlacht bei Murten 1476 umgekommen sind. Danach geht die Fahrt zum Hafen und in die Altstadt.",
+          "«Mit der Velorundfahrt für Gruppen wollen wir unser Angebot für aktive Radfahrer erweitern», sagt der Geschäftsführer von Murten Tourismus. Damit soll sowohl das Gebiet für Velo-Touristen interessant gemacht als auch der Trend zum E-Bike unterstützt werden."
+        ],
+        "izvor": "* Velo = Schweizer Standard für „Fahrrad“     aus einer Schweizer Broschüre",
+        "clanak2_tekst": "Tour durch Murtens Geschichte\n\nMit der Rundfahrt «Zeitreise per Velo*» können Touristen das Städtchen Murten und seine Geschichte sportlich neu entdecken. Die Tour startet am Bahnhof von Murten, wo die sportlichen Teilnehmer auf das eigene oder ein gemietetes Velo steigen. Die weniger Sportlichen, die es schon immer ausprobieren wollten, steigen aufs Elektro-Velo. Dieses kann ebenfalls am Bahnhof gemietet werden.\n\nVom Bahnhof führt der Weg auf den historischen Hügel, wo Karl der Kühne sein Hauptquartier aufbaute, bevor sein Heer im Jahr 1476 besiegt wurde. Die Sportlichen kommen bei der Fahrt auf dem Hügel ins Schwitzen, während die E-Biker ganz einfach den Elektromotor nutzen.\n\nOben angekommen kann man die wunderbare Aussicht auf den Murtensee genießen. Nach einer kurzen Pause geht es weiter nach Merlach. Dort steht ein Denkmal für Soldaten, die in der Schlacht bei Murten 1476 umgekommen sind. Danach geht die Fahrt zum Hafen und in die Altstadt.\n\n«Mit der Velorundfahrt für Gruppen wollen wir unser Angebot für aktive Radfahrer erweitern», sagt der Geschäftsführer von Murten Tourismus. Damit soll sowohl das Gebiet für Velo-Touristen interessant gemacht als auch der Trend zum E-Bike unterstützt werden.\n\n* Velo = Schweizer Standard für „Fahrrad“     aus einer Schweizer Broschüre"
+      },
+      "primer_tekst": "Die Bio-Gasanlage …",
+      "primer_odg": "c) produziert Strom und Wärme.",
+      "pitanja": [
+        {
+          "tekst": "In diesem Text geht es um …",
+          "a": "die neue Technologie von Eckhard Meier.",
+          "b": "die umweltfreundliche Stromproduktion in Feldheim.",
+          "c": "einen Studiengang an der Universität Göttingen."
+        },
+        {
+          "tekst": "Die Wissenschaftler wollten zeigen, dass …",
+          "a": "ein ganzes Dorf von modernen Energien leben kann.",
+          "b": "eine Bio-Gasanlage mehr Strom produziert, als ein Dorf braucht.",
+          "c": "man größere Mengen Strom sparen kann."
+        },
+        {
+          "tekst": "Damit die Idee auch in anderen Dörfern funktioniert, …",
+          "a": "benötigt man viel Geld.",
+          "b": "braucht man genug Platz für die Technik.",
+          "c": "muss die Bevölkerung dafür sein."
+        },
+        {
+          "tekst": "In diesem Text geht es darum, dass …",
+          "a": "die Geschichte von Murten neu erzählt wird.",
+          "b": "es ein neues Tourismus-Angebot gibt.",
+          "c": "man in Murten neue Velo-Wege bauen will."
+        },
+        {
+          "tekst": "Für die Rundfahrt …",
+          "a": "braucht man ein eigenes Velo.",
+          "b": "muss man nicht sportlich sein.",
+          "c": "sollte man mit der Bahn anreisen."
+        },
+        {
+          "tekst": "Der Geschäftsführer von Murten Tourismus will, dass …",
+          "a": "es in Murten mehr Stadtführungen für Gruppen gibt.",
+          "b": "die Leute normale Velos statt Elektro-Velos benutzen.",
+          "c": "mehr Velo-Touristen in die Region kommen."
+        }
+      ],
+      "primer_question": "Die Bio-Gasanlage …",
+      "primer_a": "gehört Eckhard Meier.",
+      "primer_b": "gibt es seit einem Dreivierteljahr.",
+      "primer_c": "produziert Strom und Wärme.",
+      "primer_ans": "c"
+    },
+    "t3": {
+      "kontekst": "Nach dem Ende Ihres gemeinsamen Deutschkurses möchten einige Ihrer Kolleginnen und Kollegen weiter Deutsch lernen und suchen dafür passende Möglichkeiten.",
+      "primer_tekst": "Mario möchte in Wien einen Sommersprachkurs besuchen.",
+      "primer_odg": "i",
+      "oglasi": {
+        "a": {
+          "tekst": "Schweizer Autoren, leicht gemacht\nNeu im Verlagsprogramm: Nach 100 Lernstunden schon literarische Kurzgeschichten, Romane und Gedichte lesen? Kein Problem!\nDie Reihe «Schweizer Autoren, leicht gemacht» bietet Deutschlernern vereinfachte Originalversionen für uneingeschränktes Lesevergnügen.\nwww.schweizer-leseverlag.ch",
+          "primer": false
+        },
+        "b": {
+          "tekst": "Trainingsprogramm Deutsch\nSie wollen Ihre Sprachkenntnisse verbessern, haben aber keine Zeit für Kurse? Dann lernen Sie Deutsch im Internet! Unser Lernportal bietet Ihnen gratis:\n10 Kurslektionen für Anfänger und Fortgeschrittene\nErklärungen zur Grammatik\nalle Übungen online verfügbar\nwww.sprachenlernen.de",
+          "primer": false
+        },
+        "c": {
+          "tekst": "DEUTSCH IN DER SCHWEIZ\nUnser Angebot:\nIntensivkurse mit 20–30 Wochenstunden\nSchreibkurse (auch als Fernstudium!)\nSommerkurse für Jugendliche und Erwachsene (mit Freizeitprogramm)\nKurs: Deutsch im Hotel\nWir bieten nur Tageskurse an!\nwww.deutschinderschweiz.ch",
+          "primer": false
+        },
+        "d": {
+          "tekst": "Job &amp; Sprache-Net\nWir bieten Jobs für Deutschlernende in Deutschland, Österreich und in der Schweiz. Perfektionieren Sie Ihre Sprachkenntnisse und sammeln Sie Erfahrungen in den Arbeitsbereichen Hotel und Restaurant.\nDauer: bis zu 3 Monate (Juni–August)\nKosten für Unterkunft und Verpflegung werden übernommen\nInformationen: www.jobundsprache-net.com",
+          "primer": false
+        },
+        "e": {
+          "tekst": "Sprachschule ORION sucht engagierte Trainer und Trainerinnen (Vollzeit)\nKurszeiten von 8:00–17:00 h\nNiveaus A1–C1\nallgemeine und berufsbezogene Sprachkurse (z. B. Deutsch für den Tourismus)\nBewerbungen an: office@deutschintensiv.de",
+          "primer": false
+        },
+        "f": {
+          "tekst": "Deutsch erLesen\nDas Magazin Deutsch erLesen richtet sich an Deutschinteressierte im In- und Ausland. Es erscheint einmal im Monat und enthält aktuelle Originalartikel aus der deutschen Presse. Deutschland erfahren &amp; Deutsch lernen! Bestellen Sie noch heute Ihr Probeexemplar:\ninfo@deutsch-erlesen.de",
+          "primer": false
+        },
+        "g": {
+          "tekst": "Verlag für deutsche Literatur sucht Lektor / Lektorin\nfür die Auswahl und Korrektur von Werken junger deutscher Autoren. Unser Verlagsprogramm umfasst Romane, Gedichtbände und Hörbücher.\nSchicken Sie Ihre Bewerbung an: junge-literatur@berlin.de",
+          "primer": false
+        },
+        "h": {
+          "tekst": "Deutsch in Linz – Deutsch-Intensivkurse\nMo bis Fr von 9:30–13:00 h und von 14:00–17:00 h\nKurse für Berufstätige: Für Berufstätige und Vielbeschäftigte bieten wir flexible Kurszeiten an (Termine nach Wunsch).\nOnline-Einstufungstest: www.deutschinlinz-schule.at",
+          "primer": false
+        },
+        "i": {
+          "tekst": "Sprache und Kultur in Wien\nDeutschkurse ganzjährig! Spezialangebote für den Sommer.\nwww.sprache-kultur@aon.at",
+          "primer": true
+        },
+        "j": {
+          "tekst": "Neues Computerprogramm von DIGITAL LEARNING\nFür Büromanagement und Buchhaltung in englischer und deutscher Sprache. Ab sofort im Buchhandel erhältlich.\nInfos: software@digital-learning.net",
+          "primer": false
+        }
+      },
+      "situacije": [
+        "Leon möchte im Sommer im Tourismus-Bereich arbeiten, um sein Deutsch zu verbessern.",
+        "Giovanna sucht deutsche Hörbücher, damit sie unterwegs Deutsch lernen kann.",
+        "Mirjeta hat keine Zeit für einen Kurs, möchte sich aber regelmäßig über Neuigkeiten aus Deutschland informieren.",
+        "Maria möchte am Computer Deutsch lernen.",
+        "Susan liest am liebsten Literatur, wenn die Texte nicht zu schwierig sind.",
+        "Miroslav will den schriftlichen Ausdruck verbessern, weil er im Studium viel schreiben muss.",
+        "Juan kann nur am Abend einen Kurs besuchen."
+      ],
+      "primer_slovo": "i"
+    },
+    "t4": {
+      "kontekst": "In einer Zeitschrift lesen Sie Kommentare zu einem Artikel über das Verbot von Videospielen, in denen viel Gewalt vorkommt (sogenannte „Killerspiele“).",
+      "primer_ime": "Niko",
+      "primer_odg": "j",
+      "primer_tekst": "Man hat bis jetzt nicht wissenschaftlich gezeigt, dass sogenannte Gewaltspiele einen Einfluss auf das Verhalten von Jugendlichen haben? So ein Blödsinn! Ist doch logisch, dass so massive Bilder die Gedanken beeinflussen! Für mich ist klar: Durch solche Spiele kann viel Unglück und Schaden entstehen, die müssen weg!",
+      "osobe": [
+        {
+          "ime": "Stefan, 19, Graz",
+          "tekst": "Ich könnte mir vorstellen, dass ein Verbot die gegenteilige Wirkung hätte, denn ein verbotenes Spiel ist doch noch interessanter als ein nicht verbotenes! Außerdem ist es gar nicht möglich, die „Killerspiele“ abzuschaffen, weil es davon schon viel zu viele gibt. Mein Fazit: Warum „Killerspiele“ verbieten, wenn es im Endeffekt sowieso alle spielen und das Ganze gerade durch ein Verbot noch interessanter wird?"
+        },
+        {
+          "ime": "Dagmar, 23, Leipzig",
+          "tekst": "Wer entscheidet letztlich darüber, welche Spiele man nicht braucht? Dürfen diese Menschen dann auch darüber entscheiden, welche Bücher, Filme oder Musik wir nicht brauchen? Viel wichtiger ist es doch, dass Kinder und Jugendliche lernen, selbst zwischen virtueller und realer Gewalt zu unterscheiden!"
+        },
+        {
+          "ime": "Kathleen, 49, Cuxhaven",
+          "tekst": "„Töten auf Probe“ soll erlaubt sein? Das bedeutet: Mal schnell zu üben, wie man jemanden umbringt, ist eine Freizeitbeschäftigung. Wie zynisch kann man sein? Nicht jeder wird zum Glück zum Monster, der sich mit so viel Gewalt und Zerstörung beschäftigt. Die Einstellung dahinter ist aber Ausdruck einer unglaublichen Gleichgültigkeit. Das muss man stoppen, und zwar schnell."
+        },
+        {
+          "ime": "Marius, 34, St. Gallen",
+          "tekst": "Ich spiele sogenannte „Killerspiele“ wie CaDu seit bald drei Jahren regelmäßig. Ich habe eine kleine Tochter, eine Frau und einen Job und spiele für den Ausgleich. Nur weil es mal dazu kommt, dass einer auf dieser Welt das Spiel als Realität sieht und durchdreht, müssen dann all die anderen ein Verbot hinnehmen? Es wäre besser, die Alterseinschränkung auf 18 Jahre festzulegen und sie auch strikt einzuhalten."
+        },
+        {
+          "ime": "Jonny, 21, Berlin",
+          "tekst": "„Killerspiele“ machen schnell aggressiv und man wird abhängig. Außerdem besteht die Gefahr, dass jemand nicht mit solchen Spielen umgehen kann und zum Nachahmungstäter wird. Das sind nur zwei Gründe, warum man gegen diese Spiele endlich etwas tun sollte."
+        },
+        {
+          "ime": "Robert, 18, Winterthur",
+          "tekst": "In dieser Diskussion fehlt immer die genaue Kenntnis! Meistens ist es bei sogenannten „Killerspielen“ nämlich so, dass man in einem Team spielt. Ein solches Spiel stärkt also den Teamgeist. Außerdem steht die Taktik im Vordergrund und nicht eine bestimmte Methode, jemanden umzubringen. So wird das taktische bzw. logische Denken gefördert!"
+        },
+        {
+          "ime": "Marinette, 38, Frankfurt",
+          "tekst": "Ich denke, dass gewisse Situationen oder Dinge einen Menschen dazu bringen können, etwas zu tun, das er sonst nicht tun würde. Das kann gerade bei sogenannten „Killerspielen“ der Fall sein. Deshalb scheint mir ein Verbot sinnvoll zu sein, auch wenn so ein Verbot allein wahrscheinlich nicht viel nützt, denn „Killerspiele“ sind ja nur eine „Inspirationsquelle“ für Gewalt."
+        }
+      ],
+      "aufgabe": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für ein Verbot?",
+      "kolona_naslov": "Für ein Verbot?"
+    },
+    "t5": {
+      "kontekst": "Sie informieren sich über die Hausordnung des Dresdner Berufsbildungszentrums BZW, in dem Sie einen Kurs gebucht haben.",
+      "hausordnung": [
+        {
+          "naslov": "Unterrichtszeiten",
+          "tekst": "Die vereinbarten Unterrichtszeiten sind verbindlich. Ist die Lehrperson zehn Minuten nach Unterrichtsbeginn nicht da, informiert die Klassenvertretung das Sekretariat."
+        },
+        {
+          "naslov": "Ordnung",
+          "tekst": "In sämtlichen Räumen und Anlagen unserer Schule ist auf Ordnung und Sauberkeit zu achten. Schulräume, Einrichtungen und Anlagen sind sorgfältig zu benützen. Außerhalb der Unterrichtszeiten dürfen sich Lernende nicht in den Klassenräumen aufhalten. Es ist untersagt, in den Klassenräumen etwas an die Wände zu kleben oder zu schreiben und Schulmöbel in andere Räume zu bringen. Mitarbeitende und Lernende, die Schäden feststellen, melden diese dem Sekretariat."
+        },
+        {
+          "naslov": "Störungen",
+          "tekst": "Mitarbeitende und Lernende sorgen dafür, dass der Schulbetrieb nicht gestört wird."
+        },
+        {
+          "naslov": "Alkohol- und Drogenkonsum",
+          "tekst": "Der Konsum von Alkohol, illegalen Drogen sowie anderen psychoaktiven Substanzen ist auf dem gesamten Schulareal und während schulischer Veranstaltungen (einschließlich aller Pausen) verboten. In Ausnahmefällen kann die Schulleitung den Konsum von Alkohol erlauben."
+        },
+        {
+          "naslov": "Rauchen",
+          "tekst": "Rauchen ist nur im Freien beziehungsweise in den dafür vorgesehenen Zonen gestattet. Wir bitten darum, die aufgestellten Aschebecher zu benutzen."
+        },
+        {
+          "naslov": "Diebstahl",
+          "tekst": "Es empfiehlt sich, Wertsachen und Bargeld sorgfältig aufzubewahren. Die Schule stellt den Lernenden und Mitarbeitenden kostenlos SchlieÝfächer zur Verfügung. Für verlorene Schlüssel wird eine Gebühr von Euro 50,– erhoben. Die Schule übernimmt für Diebstähle keine Haftung. Fundgegenstände bitte im Sekretariat abgeben."
+        },
+        {
+          "naslov": "Parkplätze",
+          "tekst": "Auf dem Schulareal stehen keine Gratis-Autoparkplätze zur Verfügung. Fahrräder müssen in den dafür vorgesehenen Fahrradkeller gebracht und abgeschlossen werden. Mopeds und Motorräder sind auf dem Schulareal nicht erlaubt."
+        }
+      ],
+      "pitanja": [
+        {
+          "tekst": "Schüler …",
+          "a": "dürfen keine Fahrräder mit zur Schule bringen.",
+          "b": "dürfen ihre Fahrräder auf den Schulhof stellen.",
+          "c": "müssen ihre Fahrräder in einen speziellen Raum stellen."
+        },
+        {
+          "tekst": "Für die Klassenräume des BZW gilt:",
+          "a": "Schüler dürfen keine Poster aufhängen.",
+          "b": "Schüler müssen dort selber aufräumen.",
+          "c": "Schüler können dort nach dem Unterricht lernen."
+        },
+        {
+          "tekst": "Um die verschließbaren Fächer benutzen zu können, muss man …",
+          "a": "einen Schlüssel im Sekretariat verlangen.",
+          "b": "einmalig 50,– Euro zahlen.",
+          "c": "Schüler sein oder im BZW arbeiten."
+        },
+        {
+          "tekst": "Das Trinken von Alkohol …",
+          "a": "kann von der Schulleitung genehmigt werden.",
+          "b": "muss der Lehrperson gemeldet werden.",
+          "c": "ist ohne Ausnahme verboten."
+        }
+      ],
+      "tekst": "Sie informieren sich über die Hausordnung des Dresdner Berufsbildungszentrums BZW, in dem Sie einen Kurs gebucht haben.\n\nHausordnung\n\nUnterrichtszeiten:\nDie vereinbarten Unterrichtszeiten sind verbindlich. Ist die Lehrperson zehn Minuten nach Unterrichtsbeginn nicht da, informiert die Klassenvertretung das Sekretariat.\n\nOrdnung:\nIn sämtlichen Räumen und Anlagen unserer Schule ist auf Ordnung und Sauberkeit zu achten. Schulräume, Einrichtungen und Anlagen sind sorgfältig zu benützen. Außerhalb der Unterrichtszeiten dürfen sich Lernende nicht in den Klassenräumen aufhalten. Es ist untersagt, in den Klassenräumen etwas an die Wände zu kleben oder zu schreiben und Schulmöbel in andere Räume zu bringen. Mitarbeitende und Lernende, die Schäden feststellen, melden diese dem Sekretariat.\n\nStörungen:\nMitarbeitende und Lernende sorgen dafür, dass der Schulbetrieb nicht gestört wird.\n\nAlkohol- und Drogenkonsum:\nDer Konsum von Alkohol, illegalen Drogen sowie anderen psychoaktiven Substanzen ist auf dem gesamten Schulareal und während schulischer Veranstaltungen (einschließlich aller Pausen) verboten. In Ausnahmefällen kann die Schulleitung den Konsum von Alkohol erlauben.\n\nRauchen:\nRauchen ist nur im Freien beziehungsweise in den dafür vorgesehenen Zonen gestattet. Wir bitten darum, die aufgestellten Aschebecher zu benutzen.\n\nDiebstahl:\nEs empfiehlt sich, Wertsachen und Bargeld sorgfältig aufzubewahren. Die Schule stellt den Lernenden und Mitarbeitenden kostenlos SchlieÝfächer zur Verfügung. Für verlorene Schlüssel wird eine Gebühr von Euro 50,– erhoben. Die Schule übernimmt für Diebstähle keine Haftung. Fundgegenstände bitte im Sekretariat abgeben.\n\nParkplätze:\nAuf dem Schulareal stehen keine Gratis-Autoparkplätze zur Verfügung. Fahrräder müssen in den dafür vorgesehenen Fahrradkeller gebracht und abgeschlossen werden. Mopeds und Motorräder sind auf dem Schulareal nicht erlaubt."
+    }
+  },
+  "hoeren": {
+    "t1": {
+      "primer_rf": {
+        "tekst": "Frank schlägt Jan vor, nach Sizilien zu fliegen."
+      },
+      "primer_mc": {
+        "tekst": "Wo möchte Frank am liebsten übernachten?",
+        "a": "bei Verwandten",
+        "b": "im Hotel",
+        "c": "im Zelt"
+      },
+      "tekstovi": [
+        {
+          "rf": "Der Termin von Frau Stein wird verschoben.",
+          "mc": {
+            "tekst": "Frau Stein soll …",
+            "a": "die Chipkarte mitbringen.",
+            "b": "zehn Euro bezahlen.",
+            "c": "zurückrufen."
+          }
+        },
+        {
+          "rf": "Herr Thomas informiert Frau Brahms über neue Versicherungstarife.",
+          "mc": {
+            "tekst": "Herr Thomas …",
+            "a": "möchte, dass Frau Brahms einen neuen Vertrag abschließt.",
+            "b": "braucht Zeugnisse von Frau Brahms.",
+            "c": "ruft später noch einmal an."
+          }
+        },
+        {
+          "rf": "Sie hören Veranstaltungstipps für München.",
+          "mc": {
+            "tekst": "Auf der Autobahn gibt es Stau wegen …",
+            "a": "einer Baustelle.",
+            "b": "des Berufsverkehrs.",
+            "c": "eines Unfalls."
+          }
+        },
+        {
+          "rf": "Sie hören eine Information für eine Reisegruppe.",
+          "mc": {
+            "tekst": "Welcher Zug fällt aus? Der Zug nach …",
+            "a": "Bern.",
+            "b": "Genf.",
+            "c": "Lausanne."
+          }
+        },
+        {
+          "rf": "Das Wetter wird im Osten Deutschlands besser.",
+          "mc": {
+            "tekst": "Vorausgesagt werden …",
+            "a": "Gewitter an der Elbe.",
+            "b": "Temperaturen unter 10 Grad.",
+            "c": "starke Regenfälle im Westen."
+          }
+        }
+      ],
+      "primer_rf_odg": "r",
+      "primer_mc_odg": "c"
+    },
+    "t2": {
+      "kontekst": "Sie nehmen an einer Führung durch das Münchner Stadtmuseum teil.",
+      "pitanja": [
+        {
+          "tekst": "Das Museum ist …",
+          "a": "sehr voll.",
+          "b": "teilweise geschlossen.",
+          "c": "ziemlich leer."
+        },
+        {
+          "tekst": "Was zeigt der Museumführer den Touristen?",
+          "a": "alle Ausstellungen",
+          "b": "die Hauptausstellung",
+          "c": "die Sonderausstellungen"
+        },
+        {
+          "tekst": "Wo ist der Treffpunkt am Nachmittag?",
+          "a": "am Eingang",
+          "b": "an der Garderobe",
+          "c": "im Café"
+        },
+        {
+          "tekst": "Die Ausstellung beschäftigt sich mit …",
+          "a": "dem Oktoberfest.",
+          "b": "der bayrischen Küche.",
+          "c": "der Geschichte Münchens."
+        },
+        {
+          "tekst": "Der Museumführer empfiehlt den Teilnehmern einen …",
+          "a": "Restaurantbesuch.",
+          "b": "Cafébesuch.",
+          "c": "Biergartenbesuch."
+        }
+      ]
+    },
+    "t3": {
+      "kontekst": "Sie sind an einer Bushaltestelle und hören, wie sich ein Mann und eine Frau über ein Fest unterhalten.",
+      "pitanja": [
+        "Bei dem Fest wurde der Geburtstag von Annas Mann gefeiert.",
+        "Nadia ist vom Haus der Gastgeber begeistert.",
+        "Nadia arbeitet beim Fernsehen.",
+        "Das Essen war ausgezeichnet.",
+        "Nadia hat zusammen mit dem Musiker gespielt.",
+        "Nadia hat auch Jazz gespielt.",
+        "Das Fest dauerte bis nach 12 Uhr nachts."
+      ]
+    },
+    "t4": {
+      "kontekst": "Der Moderator der Radiosendung „Diskussion am Abend“ diskutiert mit den Eltern Dana Schneider und Florian Bader zum Thema „Sollen kleine Kinder in die Kinderkrippe gehen?“.",
+      "primer_tekst": "Für kleine Kinder sind die ersten drei Jahre sehr wichtig.",
+      "primer_odg": "b",
+      "pitanja": [
+        "Kinder lernen soziales Verhalten erst ab einem bestimmten Alter.",
+        "Für den Erfolg im Beruf ist es wichtig, immer zu arbeiten.",
+        "Es ist möglich, Kinder zu haben und auch zu arbeiten.",
+        "In der Krippe lernen Kinder andere Dinge als zu Hause.",
+        "In Krippen müssen Erzieherinnen viele Kinder gleichzeitig betreuen.",
+        "Kinder sollen lernen, sich auch mal alleine zu beschäftigen.",
+        "Manche Kindertagesstätten haben zu wenig Geld.",
+        "Auch Familien mit wenig Geld sollen Kinder haben können."
+      ],
+      "osobe_naslovi": {
+        "a": "Moderator",
+        "b": "Dana Schneider",
+        "c": "Florian Bader"
+      }
+    }
+  },
+  "schreiben": {
+    "a1": {
+      "situacija": "Sie haben vor einer Woche Ihren Geburtstag gefeiert.\nEine Freundin/Ein Freund von Ihnen konnte nicht zu Ihrer Feier kommen, weil sie/er krank war.",
+      "tacke": [
+        "Beschreiben Sie: Wie war die Feier?",
+        "Begründen Sie: Welches Geschenk finden Sie besonders toll und warum?",
+        "Machen Sie einen Vorschlag für ein Treffen."
+      ]
+    },
+    "a2": {
+      "situacija": "Sie haben im Fernsehen eine Diskussionssendung zum Thema „Persönliche Kontakte und Internet“ gesehen.\nIm Online-Gästebuch der Sendung finden Sie folgende Meinung:\n\n15.01. 16:55 Uhr\nTanja:\nIch finde es schlimm, dass persönliche Treffen immer seltener werden. Freunde wohnen oft sehr weit auseinander. Und da ist man dann schon froh über das Internet. Aber Kontakte im Internet können doch persönliche Treffen nicht ersetzen!"
+    },
+    "a3": {
+      "situacija": "Ihre Kursleiterin, Frau Müller, hat Sie zu einem Gespräch über Ihre persönlichen Lernziele eingeladen.\nZu dem Termin können Sie aber nicht kommen.\n\nSchreiben Sie an Frau Müller. Entschuldigen Sie sich höflich und berichten Sie, warum Sie nicht kommen können.",
+      "placeholder": "Schreiben Sie hier Ihre E-Mail …\n\nSehr geehrte Frau Müller,\n\n…\n\nMit freundlichen Grüßen,\n…"
+    }
+  },
+  "sprechen": {
+    "t1": {
+      "situacija": "Ein Teilnehmer aus dem Deutschkurs hatte einen Unfall und liegt im Krankenhaus.\nDiese Woche möchten Sie ihn besuchen und ein Geschenk von der ganzen Gruppe mitbringen.\nNächste Woche kann er das Krankenhaus verlassen. Da er allein lebt, wird er Hilfe brauchen.\nÜberlegen Sie, wie Sie ihn unterstützen können.",
+      "naslov": "Besuch im Krankenhaus und Hilfe planen– Wann besuchen? (Tag, Uhrzeit?)– Wie hinkommen?– Was mitnehmen?– Wie kann man helfen? (vom Krankenhaus abholen, einkaufen …)",
+      "tacke": [],
+      "_rich": "<strong>Besuch im Krankenhaus und Hilfe planen– Wann besuchen? (Tag, Uhrzeit?)– Wie hinkommen?– Was mitnehmen?– Wie kann man helfen? (vom Krankenhaus abholen, einkaufen …)</strong><br>"
+    },
+    "t2": {
+      "thema1_naslov": "Brauchen Kinder Mobiltelefone?",
+      "thema1_folien": [
+        "„Papa, ich will ein Handy!“ Brauchen Kinder Mobiltelefone?",
+        "Brauchen Kinder Mobiltelefone?\nMeine persönlichen Erfahrungen",
+        "Brauchen Kinder Mobiltelefone?\nDie Rolle von Handys in meinem Heimatland",
+        "Brauchen Kinder Mobiltelefone?\nVor- und Nachteile & Meine Meinung",
+        "Brauchen Kinder Mobiltelefone?\nAbschluss & Dank"
+      ],
+      "thema2_naslov": "Sehen Kinder zu viel fern?",
+      "thema2_folien": [
+        "„Mama, es ist gerade so lustig ...\n... nur noch 5 Minuten!“\nSehen Kinder zu viel fern?",
+        "Sehen Kinder zu viel fern?\nMeine persönlichen Erfahrungen",
+        "Sehen Kinder zu viel fern?\nDie Situation in meinem Heimatland",
+        "Sehen Kinder zu viel fern?\nVor- und Nachteile & Meine Meinung",
+        "Sehen Kinder zu viel fern?\nAbschluss & Dank"
+      ],
+      "thema1_instrukcije": [
+        "Stellen Sie Ihr Thema vor. Erklären Sie den Inhalt und die Struktur Ihrer Präsentation.",
+        "Berichten Sie von Ihrer Situation oder einem Erlebnis im Zusammenhang mit dem Thema.",
+        "Berichten Sie von der Situation in Ihrem Heimatland und geben Sie Beispiele.",
+        "Nennen Sie die Vor- und Nachteile und sagen Sie dazu Ihre Meinung. Geben Sie auch Beispiele.",
+        "Beenden Sie Ihre Präsentation und bedanken Sie sich bei den Zuhörerinnen und Zuhörern."
+      ],
+      "thema2_instrukcije": [
+        "Stellen Sie Ihr Thema vor. Erklären Sie den Inhalt und die Struktur Ihrer Präsentation.",
+        "Berichten Sie von Ihrer Situation oder einem Erlebnis im Zusammenhang mit dem Thema.",
+        "Berichten Sie von der Situation in Ihrem Heimatland und geben Sie Beispiele.",
+        "Nennen Sie die Vor- und Nachteile und sagen Sie dazu Ihre Meinung. Geben Sie auch Beispiele.",
+        "Beenden Sie Ihre Präsentation und bedanken Sie sich bei den Zuhörerinnen und Zuhörern."
+      ]
+    },
+    "t3": {
+      "tekst1": "Nach Ihrer Präsentation:\nReagieren Sie auf die Rückmeldung und auf Fragen der Gesprächspartnerin/des Gesprächspartners und der/des Prüfenden.",
+      "tekst2": "Nach der Präsentation Ihrer Partnerin/Ihres Partners:\n\na) Geben Sie eine Rückmeldung zur Präsentation Ihrer Partnerin/Ihres Partners\n(z. B. wie Ihnen die Präsentation gefallen hat, was für Sie neu oder besonders interessant war usw.).\n\nb) Stellen Sie auch eine Frage zur Präsentation Ihrer Partnerin/Ihres Partners."
+    }
+  }
+}

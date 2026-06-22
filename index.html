@@ -1,0 +1,3301 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ÖSD Zertifikat B1 – Modellsatz</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f0ede8;
+  --paper: #fffdf9;
+  --navy: #1a2744;
+  --red: #c0392b;
+  --text: #1c1c1c;
+  --muted: #666;
+  --border: #d0ccc5;
+  --borderlt: #e5e1da;
+  --green: #2e7d32;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===================================================
+   START SCREEN
+=================================================== */
+#start-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.start-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 2.75rem 3rem;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(26,39,68,.1);
+}
+
+.osd-badge {
+  display: flex;
+  margin-bottom: 1.75rem;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+.osd-badge-l { background: var(--navy); color: #fff; padding: .32rem .9rem; }
+.osd-badge-r { background: var(--red);  color: #fff; padding: .32rem .9rem; }
+
+.start-card h1 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.7rem;
+  color: var(--navy);
+  font-weight: 600;
+  margin-bottom: .35rem;
+}
+
+.start-card .desc {
+  color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.55;
+  margin-bottom: 1.75rem;
+}
+
+.flabel {
+  display: block;
+  font-size: .72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--navy);
+  margin-bottom: .38rem;
+}
+
+.finput {
+  width: 100%;
+  padding: .68rem .9rem;
+  border: 2px solid var(--border);
+  background: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color .15s;
+  margin-bottom: 1.2rem;
+}
+.finput:focus { border-color: var(--navy); }
+
+.btn-start {
+  width: 100%;
+  padding: .78rem;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .92rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: .04em;
+  transition: background .15s;
+}
+.btn-start:hover:not(:disabled) { background: #253461; }
+.btn-start:disabled { background: #b0b0b0; cursor: not-allowed; }
+
+.start-meta {
+  margin-top: 1.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--borderlt);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .7rem;
+  font-size: .8rem;
+  color: var(--muted);
+}
+.start-meta strong { display: block; color: var(--text); font-size: .88rem; }
+
+/* ===================================================
+   TEST SCREEN
+=================================================== */
+#test-screen {
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+#test-screen.on { display: flex; }
+
+/* Header */
+.test-hdr {
+  background: var(--navy);
+  color: #fff;
+  padding: .58rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.22);
+  z-index: 10;
+}
+.hdr-left { display: flex; align-items: center; gap: .65rem; }
+.b1pill { background: var(--red); padding: .18rem .52rem; font-size: .72rem; font-weight: 700; letter-spacing: .05em; }
+.hdr-title { font-size: .88rem; font-weight: 500; opacity: .9; }
+.hdr-name  { font-size: .8rem; opacity: .65; font-style: italic; }
+.hdr-timer {
+  display: flex; align-items: center; gap: .38rem;
+  font-size: 1.05rem; font-weight: 600;
+  font-variant-numeric: tabular-nums; letter-spacing: .05em;
+}
+.hdr-timer svg { width: 15px; height: 15px; opacity: .8; }
+.hdr-timer.warn   { color: #ffb74d; }
+.hdr-timer.danger { color: #ef5350; animation: blink 1s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.45} }
+
+/* Section nav */
+.sec-nav {
+  background: var(--paper);
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+.sec-nav button {
+  padding: .62rem 1.35rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .76rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  background: none; border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  color: var(--muted);
+  cursor: pointer; white-space: nowrap;
+  transition: all .14s;
+}
+.sec-nav button:hover { color: var(--navy); }
+.sec-nav button.on { color: var(--navy); border-bottom-color: var(--red); }
+
+/* Scrollable body */
+.test-body { flex: 1; overflow-y: auto; min-height: 0; }
+
+/* Section panels */
+.sp { display: none; }
+.sp.on { display: block; }
+
+/* Teil nav */
+.teil-nav {
+  display: flex;
+  padding: 1.2rem 1.4rem 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  gap: 2px;
+}
+.teil-nav button {
+  padding: .42rem .95rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .76rem; font-weight: 600;
+  background: var(--bg); color: var(--muted);
+  border: 1px solid var(--border); border-bottom: none;
+  margin-bottom: -1px;
+  cursor: pointer; transition: all .14s;
+}
+.teil-nav button.on {
+  background: var(--paper);
+  color: var(--navy);
+  border-bottom: 1px solid var(--paper);
+}
+
+/* Teil panels */
+.tp { display: none; }
+.tp.on { display: block; padding: 1.6rem 1.4rem; }
+
+/* Task head */
+.task-head {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding-bottom: .85rem;
+  border-bottom: 2px solid var(--navy);
+  margin-bottom: 1.2rem;
+}
+.task-head-info h3 {
+  font-size: .7rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: var(--muted); margin-bottom: .28rem;
+}
+.task-head-info p { font-size: .87rem; line-height: 1.5; }
+.task-time {
+  background: var(--navy); color: #fff;
+  padding: .22rem .62rem; font-size: .73rem; font-weight: 600;
+  white-space: nowrap; flex-shrink: 0; margin-left: 1rem;
+}
+
+/* Reading box */
+.rbox { border: 1px solid var(--border); background: #fff; margin-bottom: 1.4rem; }
+.rbox-bar {
+  background: var(--navy); padding: .38rem .85rem;
+  display: flex; align-items: center; gap: 5px;
+}
+.rdot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.32); }
+.rbox-url { font-size: .68rem; color: rgba(255,255,255,.55); margin-left: 4px; }
+.rbox-body { padding: 1.4rem; }
+.rbox-body h2 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.25rem; font-weight: 600;
+  color: var(--navy); margin-bottom: .18rem;
+}
+.rbox-tagline { font-style: italic; font-size: .83rem; color: var(--muted); margin-bottom: .55rem; }
+.rbox-date    { font-size: .8rem; color: var(--muted); margin-bottom: .9rem; }
+.rbox-body p  {
+  font-family: 'Source Serif 4', serif;
+  font-size: .9rem; line-height: 1.8; color: var(--text);
+  margin-bottom: .85rem;
+}
+.rbox-body p:last-child { margin-bottom: 0; }
+
+/* QA table */
+.qa-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.qa-table thead tr { background: var(--navy); color: #fff; }
+.qa-table thead th {
+  padding: .52rem .85rem; font-size: .7rem; font-weight: 600;
+  letter-spacing: .08em; text-align: left;
+}
+.qa-table thead th.thc { text-align: center; width: 85px; }
+.qa-table tbody tr { border-bottom: 1px solid var(--borderlt); }
+.qa-table tbody tr.exrow { background: #ece8e0; }
+.qa-table tbody tr:not(.exrow):hover { background: #faf7f2; }
+.qa-table td { padding: .72rem .85rem; vertical-align: middle; }
+.td-num { font-weight: 600; color: var(--muted); font-size: .8rem; width: 34px; }
+.td-txt { font-family: 'Source Serif 4', serif; }
+.td-c   { text-align: center; width: 85px; }
+
+.rfbtn {
+  display: inline-block;
+  padding: .26rem .7rem;
+  border: 2px solid var(--border);
+  background: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .74rem; font-weight: 600;
+  cursor: pointer; transition: all .12s;
+  width: 70px; text-align: center;
+}
+.rfbtn:hover:not(:disabled) { border-color: var(--navy); color: var(--navy); }
+.rfbtn.selR { background: var(--green); border-color: var(--green); color: #fff; }
+.rfbtn.selF { background: var(--red);   border-color: var(--red);   color: #fff; }
+.rfbtn:disabled { cursor: default; }
+
+/* Placeholder */
+.placeholder { padding: 3rem 1.4rem; text-align: center; }
+.phbox { border: 2px dashed var(--border); padding: 2.5rem 2rem; display: inline-block; max-width: 480px; }
+.phbox h3 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.2rem; color: var(--navy); margin-bottom: .4rem;
+}
+.phbox p { font-size: .85rem; color: var(--muted); line-height: 1.5; }
+
+/* Schreiben */
+.write-prompt {
+  background: var(--bg);
+  border-left: 3px solid var(--navy);
+  padding: .75rem .95rem;
+  font-size: .86rem; line-height: 1.55;
+  margin-bottom: .9rem;
+}
+.write-area {
+  width: 100%; min-height: 260px;
+  padding: .95rem;
+  border: 2px solid var(--border);
+  font-family: 'Source Serif 4', serif;
+  font-size: .92rem; line-height: 1.75;
+  color: var(--text); resize: vertical; outline: none; background: #fff;
+}
+.write-area:focus { border-color: var(--navy); }
+.wctr { text-align: right; font-size: .76rem; color: var(--muted); margin-top: .3rem; }
+
+/* Footer */
+.test-ftr {
+  background: var(--paper);
+  border-top: 1px solid var(--border);
+  padding: .8rem 1.4rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+.ftr-info { font-size: .8rem; color: var(--muted); }
+.ftr-info strong { color: var(--text); }
+
+.btn {
+  padding: .52rem 1.25rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .8rem; font-weight: 600;
+  cursor: pointer; border: 2px solid var(--border);
+  letter-spacing: .03em; transition: all .12s;
+}
+.btn-done { background: var(--red); color: #fff; border-color: var(--red); }
+.btn-done:hover { background: #a93226; }
+
+/* ===================================================
+   RESULTS SCREEN
+=================================================== */
+#results-screen {
+  display: none;
+  background: var(--bg);
+  min-height: 100vh;
+  padding: 2rem;
+}
+#results-screen.on { display: block; }
+
+.res-wrap { max-width: 820px; margin: 0 auto; }
+
+.res-top {
+  background: var(--navy); color: #fff;
+  padding: 1.65rem 1.9rem; margin-bottom: 1.4rem;
+}
+.res-top h1 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.55rem; margin-bottom: .55rem;
+}
+.res-meta { display: flex; gap: 1.5rem; font-size: .82rem; opacity: .82; flex-wrap: wrap; }
+
+.r-sec { background: var(--paper); border: 1px solid var(--border); margin-bottom: 1.2rem; }
+.r-sec-hd {
+  background: var(--navy); color: #fff;
+  padding: .56rem 1.2rem;
+  font-size: .73rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+}
+.r-teil { padding: 1rem 1.2rem; border-bottom: 1px solid var(--borderlt); }
+.r-teil:last-child { border-bottom: none; }
+.r-teil-title {
+  font-size: .7rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--muted); margin-bottom: .6rem;
+}
+.r-rows { display: flex; flex-direction: column; gap: .32rem; }
+.r-row { display: flex; align-items: baseline; gap: .7rem; font-size: .86rem; }
+.r-num { font-weight: 600; color: var(--muted); font-size: .78rem; min-width: 26px; }
+.rtag { padding: .14rem .58rem; font-size: .7rem; font-weight: 700; letter-spacing: .04em; }
+.tagR { background: #e8f5e9; color: var(--green); border: 1px solid #a5d6a7; }
+.tagF { background: #fce8e8; color: var(--red);   border: 1px solid #ef9a9a; }
+.tag0 { background: #f5f5f5; color: #9e9e9e;      border: 1px solid #e0e0e0; }
+.r-q  { color: var(--muted); font-family: 'Source Serif 4', serif; font-size: .83rem; }
+.r-textblock {
+  background: var(--bg); padding: .85rem;
+  font-family: 'Source Serif 4', serif;
+  font-size: .86rem; line-height: 1.65; color: var(--text);
+  white-space: pre-wrap; border: 1px solid var(--borderlt);
+}
+.r-empty { color: #aaa; font-style: italic; font-size: .84rem; }
+
+.res-actions { text-align: center; padding: 1.5rem; color: var(--muted); font-size: .8rem; }
+.btn-print {
+  margin-top: .7rem; padding: .58rem 1.65rem;
+  background: var(--navy); color: #fff; border: none;
+  font-family: 'DM Sans', sans-serif; font-size: .8rem; font-weight: 600;
+  cursor: pointer; display: inline-block;
+}
+/* Locked Teil overlay */
+.teil-locked {
+  position: relative;
+  pointer-events: none;
+}
+.teil-locked::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(240,237,232,.65);
+  z-index: 5;
+}
+.teil-locked-banner {
+  background: #b0b0b0;
+  color: #fff;
+  text-align: center;
+  padding: .45rem;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  position: sticky;
+  top: 0;
+  z-index: 6;
+}
+
+/* Confirmation modal */
+#confirm-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+#confirm-modal.show { display: flex; }
+.confirm-box {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 2rem 2.25rem;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0,0,0,.22);
+}
+.confirm-box h3 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: .6rem;
+}
+.confirm-box p { font-size: .88rem; color: var(--muted); line-height: 1.55; margin-bottom: 1.4rem; }
+.confirm-btns { display: flex; gap: .75rem; justify-content: flex-end; }
+.confirm-btns button {
+  padding: .55rem 1.3rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .85rem; font-weight: 600;
+  cursor: pointer; border: 2px solid var(--border);
+}
+.confirm-yes { background: var(--red); color: #fff; border-color: var(--red); }
+.confirm-no  { background: #fff; color: var(--text); }
+
+@media print { .btn-print, .res-actions p { display: none; } #results-screen { padding: 0; } }
+
+/* MC questions (Teil 2 style) */
+.mc-block {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--borderlt);
+  display: grid;
+  grid-template-columns: 2.2rem 1fr auto;
+  gap: 0 .7rem;
+  align-items: start;
+}
+.mc-block:last-child { border-bottom: none; }
+.mc-num { font-weight: 600; font-size: .85rem; padding-top: .05rem; }
+.mc-q   { font-weight: 600; font-size: .88rem; line-height: 1.4; padding-top: .04rem; }
+.mc-opts {
+  grid-column: 2 / 4;
+  display: flex; flex-direction: column; gap: .28rem;
+  margin-top: .55rem;
+}
+.mc-opt {
+  display: flex; align-items: center; gap: .55rem;
+  font-size: .86rem; cursor: pointer;
+}
+.mc-lbl {
+  min-width: 22px; height: 22px;
+  border: 2px solid var(--border);
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .72rem; font-weight: 700;
+  flex-shrink: 0;
+  transition: all .12s; cursor: pointer;
+}
+.mc-opt:hover .mc-lbl { border-color: var(--navy); color: var(--navy); }
+.mc-opt.mc-on .mc-lbl { background: var(--navy); border-color: var(--navy); color: #fff; }
+.mc-opt-txt { font-family: 'Source Serif 4', serif; font-size: .87rem; line-height: 1.4; }
+
+
+
+.section-divider {
+  border: none; border-top: 2px solid var(--navy);
+  margin: 1.5rem 0;
+}
+
+/* Hören Teil 4 – Wer sagt was? */
+.person-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.person-table thead tr { background: transparent; }
+.person-table thead th { padding: 0; border-bottom: 2px solid var(--navy); vertical-align: bottom; }
+.person-table thead th.ph-rot {
+  width: 72px;
+  height: 88px;
+  padding: 0;
+  text-align: center;
+  vertical-align: bottom;
+  position: relative;
+}
+.person-table thead th.ph-rot div {
+  display: block;
+  transform: rotate(-40deg);
+  transform-origin: center bottom;
+  white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .72rem; font-weight: 600;
+  color: var(--navy);
+  padding-bottom: 6px;
+  overflow: visible;
+}
+.person-table tbody tr { border-bottom: 1px solid var(--borderlt); }
+.person-table tbody tr.pt-example { background: #ece8e0; }
+.person-table tbody tr:not(.pt-example):hover { background: #faf7f2; }
+.person-table td { padding: .72rem .85rem; vertical-align: middle; }
+.pt-num { font-weight: 600; color: var(--muted); font-size: .8rem; width: 34px; }
+.pt-txt { font-family: 'Source Serif 4', serif; }
+.pt-c   { text-align: center; width: 68px; }
+.pfbtn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px;
+  border: 2px solid var(--border); background: #fff;
+  font-family: 'DM Sans', sans-serif; font-size: .75rem; font-weight: 700;
+  cursor: pointer; transition: all .12s;
+}
+.pfbtn:hover:not(:disabled) { border-color: var(--navy); color: var(--navy); }
+.pfbtn.pfA { background: var(--navy);  border-color: var(--navy);  color: #fff; }
+.pfbtn.pfB { background: var(--green); border-color: var(--green); color: #fff; }
+.pfbtn.pfC { background: #e65100;      border-color: #e65100;      color: #fff; }
+.pfbtn:disabled { cursor: default; }
+.hoer-intro {
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 1.4rem;
+  font-size: .85rem;
+  line-height: 1.6;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .25rem .75rem;
+  color: var(--muted);
+}
+/* Test selection */
+#select-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--bg);
+}
+.test-btn {
+  width: 100%;
+  padding: .85rem 1.25rem;
+  background: var(--paper);
+  border: 2px solid var(--border);
+  font-family: 'DM Sans', sans-serif;
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--navy);
+  cursor: pointer;
+  text-align: left;
+  transition: all .15s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.test-btn:hover { border-color: var(--navy); background: var(--navy); color: #fff; }
+.test-btn .badge-sm {
+  font-size: .7rem;
+  font-weight: 600;
+  background: var(--red);
+  color: #fff;
+  padding: .15rem .5rem;
+  letter-spacing: .05em;
+}
+
+/* Start screen hidden by default until test selected */
+#start-screen { display: none; }
+
+/* Sprechen Teil 2 – Folien */
+.folie-grid { display:flex; flex-direction:column; gap:.85rem; margin-bottom:1.25rem; }
+.folie-row { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; align-items:start; padding-bottom:.9rem; border-bottom:1px solid var(--borderlt); }
+.folie-row:last-child { border-bottom:none; }
+.folie-instr { font-size:.82rem; line-height:1.65; color:var(--text); background:var(--bg); border-left:3px solid var(--navy); padding:.55rem .75rem; min-height:60px; }
+.folie-box { border:2px solid var(--border); background:#fff; padding:.65rem .75rem; min-height:60px; font-size:.83rem; line-height:1.6; }
+.folie-title { font-weight:700; font-size:.76rem; line-height:1.35; color:var(--navy); }
+.folie-notes { grid-column: 1 / 3;
+  width: 100%;
+  height: 100%;
+  min-height: 130px;
+  padding: .5rem .6rem;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-family: 'Source Serif 4', serif;
+  font-size: .83rem;
+  line-height: 1.9;
+  color: var(--text);
+  resize: vertical;
+  outline: none;
+  /* lined paper effect */
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 1.85rem,
+    var(--borderlt) 1.85rem,
+    var(--borderlt) calc(1.85rem + 1px)
+  );
+  background-attachment: local;
+}
+.folie-notes:focus { border-color: var(--navy); }
+
+/* Hören – text groups */
+.hoer-group {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+.hoer-group-hd {
+  background: var(--navy);
+  color: #fff;
+  padding: .38rem .85rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+.hoer-group-hd.example-hd { background: #6b7a99; }
+.audio-ph {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .65rem .85rem;
+  background: #f7f5f1;
+  border-bottom: 1px solid var(--borderlt);
+  font-size: .8rem;
+  color: var(--muted);
+  font-style: italic;
+}
+.audio-ph-icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .9rem; flex-shrink: 0;
+  color: var(--muted);
+}
+
+/* RF row inside hoer-group */
+.rf-group {
+  display: flex;
+  align-items: center;
+  padding: .65rem .85rem;
+  gap: .6rem;
+  border-bottom: 1px solid var(--borderlt);
+}
+.rf-group.example-row { background: #ece8e0; }
+.rf-qnum { font-weight: 600; color: var(--muted); font-size: .8rem; min-width: 26px; }
+.rf-qtxt { font-family: 'Source Serif 4', serif; font-size: .88rem; flex: 1; }
+.rf-btns { display: flex; gap: .3rem; margin-left: auto; flex-shrink: 0; }
+.hausordnung {
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.5rem;
+  font-size: .85rem;
+  line-height: 1.7;
+}
+.hausordnung-title {
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  margin-bottom: 1rem;
+  padding-bottom: .6rem;
+  border-bottom: 2px solid var(--text);
+}
+.hausordnung p { margin-bottom: .55rem; }
+.hausordnung p:last-child { margin-bottom: 0; }
+.hausordnung strong { font-weight: 700; }
+
+/* T5 questions layout — two-column grid */
+.t5-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1.5rem;
+}
+@media (max-width: 640px) { .t5-grid { grid-template-columns: 1fr; } }
+.leserbriefe {
+  border: 1px solid var(--border);
+  background: #fff;
+  margin-bottom: 1.5rem;
+}
+.leserbriefe-title {
+  text-align: center;
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  padding: .8rem 1.5rem;
+  border-bottom: 2px solid var(--navy);
+  color: var(--navy);
+}
+.leserbriefe-cols {
+  column-count: 2;
+  column-gap: 1.5rem;
+  padding: 1.2rem 1.4rem;
+}
+.leserbrief {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  font-size: .82rem;
+  line-height: 1.6;
+}
+.leserbrief.lb-example {
+  background: #ece8e0;
+  padding: .6rem .75rem;
+  border-left: 3px solid var(--muted);
+}
+.leserbrief p { margin-bottom: .2rem; }
+.leserbrief .lb-sig {
+  font-style: italic;
+  color: var(--muted);
+  font-size: .76rem;
+  margin-top: .3rem;
+}
+.leserbrief .lb-num {
+  font-weight: 700;
+  color: var(--navy);
+  margin-right: .3rem;
+}
+
+/* Teil 4 quick-answer grid */
+.jn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  margin-bottom: 1.25rem;
+  background: #fff;
+}
+.jn-row {
+  display: flex;
+  align-items: center;
+  padding: .55rem .85rem;
+  border-bottom: 1px solid var(--borderlt);
+  gap: .6rem;
+}
+.jn-row:nth-child(odd):not(.jn-example) { border-right: 1px solid var(--borderlt); }
+.jn-row.jn-example {
+  background: #ece8e0;
+  grid-column: 1 / 3;
+  border-bottom: 2px solid var(--border);
+}
+.jn-num { font-weight: 600; font-size: .8rem; color: var(--muted); min-width: 26px; }
+.jn-name { font-family: 'Source Serif 4', serif; font-size: .87rem; flex: 1; }
+.jn-btns { display: flex; gap: .3rem; margin-left: auto; }
+.ads-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .85rem;
+  margin-bottom: 1.5rem;
+}
+
+.ad-card {
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: .9rem 1rem;
+  position: relative;
+  font-size: .82rem;
+  line-height: 1.55;
+}
+
+.ad-card.example-ad {
+  opacity: .55;
+}
+
+.ad-letter {
+  position: absolute;
+  top: .5rem;
+  right: .55rem;
+  font-weight: 700;
+  font-size: .82rem;
+  color: var(--navy);
+  background: var(--bg);
+  padding: .1rem .38rem;
+  border: 1px solid var(--border);
+}
+
+.ad-card.example-ad .ad-letter::after {
+  content: ' ✗';
+  color: var(--red);
+}
+
+.ad-card h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: .82rem;
+  font-weight: 700;
+  margin-bottom: .4rem;
+  padding-right: 1.5rem;
+}
+
+.ad-card ul {
+  margin: .3rem 0 .3rem .9rem;
+  font-size: .8rem;
+}
+
+.ad-card ul li { margin-bottom: .15rem; }
+
+.ad-card .ad-url {
+  font-size: .75rem;
+  color: var(--muted);
+  margin-top: .4rem;
+  font-style: italic;
+}
+
+/* Situation matching rows */
+.sit-table { width: 100%; border-collapse: collapse; }
+.sit-table tbody tr { border-bottom: 1px solid var(--borderlt); }
+.sit-table tbody tr.sit-example { background: #ece8e0; }
+.sit-table tbody tr:not(.sit-example):hover { background: #faf7f2; }
+.sit-table td { padding: .7rem .85rem; font-size: .88rem; vertical-align: middle; }
+.sit-num { font-weight: 600; color: var(--muted); font-size: .82rem; width: 34px; }
+.sit-txt { font-family: 'Source Serif 4', serif; }
+.sit-ans { width: 120px; text-align: right; }
+
+.anzeige-select {
+  padding: .3rem .5rem;
+  border: 2px solid var(--border);
+  background: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  outline: none;
+  min-width: 80px;
+  transition: border-color .15s;
+}
+.anzeige-select:focus { border-color: var(--navy); }
+.anzeige-select.filled { border-color: var(--navy); background: #f0f2fa; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     TEST SELECTION SCREEN
+============================================================ -->
+<div id="select-screen">
+  <div class="start-card" style="max-width:420px; text-align:center;">
+    <div class="osd-badge" style="justify-content:center; margin-bottom:1.5rem;">
+      <div class="osd-badge-l">ÖSD Zertifikat B1</div>
+      <div class="osd-badge-r">MODELLSATZ</div>
+    </div>
+    <h1 style="font-family:'Source Serif 4',serif; font-size:1.6rem; color:var(--navy); margin-bottom:.4rem;">Test auswählen</h1>
+    <p style="font-size:.88rem; color:var(--muted); margin-bottom:1.75rem;">Bitte wählen Sie den Modellsatz aus, den Sie absolvieren möchten.</p>
+    <div style="display:flex; flex-direction:column; gap:.65rem;" id="test-list">
+      <!-- filled by JS -->
+    <a href="editor-en.html" style="font-size:.8rem;color:var(--muted);">Editor →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     START SCREEN
+============================================================ -->
+<div id="start-screen">
+  <div class="start-card">
+    <!-- Back button -->
+    <button onclick="goBackToSelect()" style="background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.82rem;color:var(--muted);padding:0;margin-bottom:1.25rem;display:flex;align-items:center;gap:.35rem;transition:color .15s;" onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='var(--muted)'">
+      ← Zurück zur Testauswahl
+    </button>
+
+    <div class="osd-badge">
+      <div class="osd-badge-l">ÖSD Zertifikat B1</div>
+      <div class="osd-badge-r" id="start-test-label">MODELLSATZ · KANDIDATENBOGEN</div>
+    </div>
+    <h1>Prüfungsbogen</h1>
+    <p class="desc">Bitte geben Sie Ihren Namen ein und klicken Sie auf „Test starten". Der Timer startet automatisch. Ihre Antworten werden am Ende angezeigt.</p>
+
+    <label class="flabel" for="namein">Vor- und Nachname</label>
+    <input class="finput" type="text" id="namein" placeholder="z.B. Ana Kovač" autocomplete="off"
+           oninput="document.getElementById('sbtn').disabled = this.value.trim().length < 2">
+
+    <button class="btn-start" id="sbtn" onclick="startTest()" disabled>Test starten &rarr;</button>
+
+    <div class="start-meta">
+      <div><strong>180 Minuten</strong>Gesamtzeit</div>
+      <div><strong>5 Abschnitte</strong>Lesen, Hören, Schreiben …</div>
+      <div><strong>Niveau B1</strong>ÖSD Zertifikat</div>
+      <div><strong>Automatisch</strong>Antworten gespeichert</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     TEST SCREEN
+============================================================ -->
+<div id="test-screen">
+
+  <!-- Header -->
+  <div class="test-hdr">
+    <div class="hdr-left">
+      <div class="b1pill">B1</div>
+      <span class="hdr-title">ÖSD Zertifikat – Modellsatz</span>
+    </div>
+    <span class="hdr-name" id="hdrname">–</span>
+    <div class="hdr-timer" id="timer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg>
+      <span id="tval-label" style="font-size:.7rem; opacity:.75; margin-right:.25rem;"></span>
+      <span id="tval">–</span>
+    </div>
+  </div>
+
+  <!-- Section Tabs -->
+  <nav class="sec-nav">
+    <button class="on" onclick="gotoSec('lesen',this)">LESEN</button>
+    <button onclick="gotoSec('hoeren',this)">HÖREN</button>
+    <button onclick="gotoSec('schreiben',this)">SCHREIBEN</button>
+    <button onclick="gotoSec('sprechen',this)">SPRECHEN</button>
+  </nav>
+
+  <!-- Body -->
+  <div class="test-body">
+
+    <!-- ===== LESEN ===== -->
+    <div class="sp on" id="sp-lesen">
+      <div class="teil-nav">
+        <button class="on" onclick="gotoTeil('lesen',1,this)">Teil 1</button>
+        <button onclick="gotoTeil('lesen',2,this)">Teil 2</button>
+        <button onclick="gotoTeil('lesen',3,this)">Teil 3</button>
+        <button onclick="gotoTeil('lesen',4,this)">Teil 4</button>
+        <button onclick="gotoTeil('lesen',5,this)">Teil 5</button>
+      </div>
+
+      <!-- LESEN TEIL 1 -->
+      <div class="tp on" id="lesen-1">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Lesen &mdash; Teil 1</h3>
+            <p>Lesen Sie den Text und die Aufgaben 1 bis 6 dazu.<br>
+            Wählen Sie: Sind die Aussagen <strong>Richtig</strong> oder <strong>Falsch</strong>?</p>
+          </div>
+          <div class="task-time">10 Min.</div>
+        </div>
+
+        <div id="l1-lese-text" style="border:1px solid var(--border); background:#fff; padding:1.4rem; margin-bottom:1.4rem; font-family:'Source Serif 4',serif; font-size:.9rem; line-height:1.8; white-space:pre-wrap;"></div>
+
+        <table class="qa-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Aussage</th>
+              <th class="thc">Richtig</th>
+              <th class="thc">Falsch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="exrow">
+              <td class="td-num">0</td>
+              <td class="td-txt" id="l1-primer-txt"></td>
+              <td class="td-c"><button class="rfbtn selR" disabled>Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" disabled>Falsch</button></td>
+            </tr>
+            <tr>
+              <td class="td-num">1</td>
+              <td class="td-txt"></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('lesen','t1','q1','r',this)">Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('lesen','t1','q1','f',this)">Falsch</button></td>
+            </tr>
+            <tr>
+              <td class="td-num">2</td>
+              <td class="td-txt"></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('lesen','t1','q2','r',this)">Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('lesen','t1','q2','f',this)">Falsch</button></td>
+            </tr>
+            <tr>
+              <td class="td-num">3</td>
+              <td class="td-txt"></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('lesen','t1','q3','r',this)">Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('lesen','t1','q3','f',this)">Falsch</button></td>
+            </tr>
+            <tr>
+              <td class="td-num">4</td>
+              <td class="td-txt"></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('lesen','t1','q4','r',this)">Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('lesen','t1','q4','f',this)">Falsch</button></td>
+            </tr>
+            <tr>
+              <td class="td-num">5</td>
+              <td class="td-txt"></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('lesen','t1','q5','r',this)">Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('lesen','t1','q5','f',this)">Falsch</button></td>
+            </tr>
+            <tr>
+              <td class="td-num">6</td>
+              <td class="td-txt"></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('lesen','t1','q6','r',this)">Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('lesen','t1','q6','f',this)">Falsch</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /lesen-1 -->
+
+      <!-- LESEN TEIL 2 -->
+      <div class="tp" id="lesen-2">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Lesen &mdash; Teil 2</h3>
+            <p>Lesen Sie die Texte aus der Presse und die Aufgaben 7 bis 12 dazu.<br>
+            Wählen Sie bei jeder Aufgabe die richtige Lösung <strong>a</strong>, <strong>b</strong> oder <strong>c</strong>.</p>
+          </div>
+          <div class="task-time">20 Min.</div>
+        </div>
+
+        <!-- TEXT 1 -->
+        <div id="l2-art1" style="border:1px solid var(--border);background:#fff;padding:1.4rem;margin-bottom:1.2rem;font-family:'Source Serif 4',serif;font-size:.9rem;line-height:1.8;white-space:pre-wrap;"></div>
+
+        <!-- Example – same style as Q7–12 but locked -->
+        <div style="background:#ece8e0;padding:.5rem .85rem;margin-bottom:.35rem;">
+          <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.4rem;">Beispiel</div>
+          <div class="mc-block-beispiel" style="padding:0;border:none;pointer-events:none;display:grid;grid-template-columns:2.2rem 1fr auto;gap:0 .7rem;align-items:start;">
+            <span class="mc-num">0</span>
+            <span class="mc-q" id="l2-pq">Die Bio-Gasanlage …</span>
+            <div class="mc-opts">
+              <div class="mc-opt" id="l2-po-a"><span class="mc-lbl">a</span><span class="mc-opt-txt" id="l2-pa"></span></div>
+              <div class="mc-opt" id="l2-po-b"><span class="mc-lbl">b</span><span class="mc-opt-txt" id="l2-pb"></span></div>
+              <div class="mc-opt" id="l2-po-c"><span class="mc-lbl">c</span><span class="mc-opt-txt" id="l2-pc"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Questions 7–9 -->
+        <div style="margin-bottom:1.5rem;">
+          <div class="mc-block">
+            <span class="mc-num">7</span>
+            <span class="mc-q"></span>
+            <div class="mc-opts">
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q7','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q7','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q7','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+            </div>
+          </div>
+          <div class="mc-block">
+            <span class="mc-num">8</span>
+            <span class="mc-q"></span>
+            <div class="mc-opts">
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q8','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q8','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q8','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+            </div>
+          </div>
+          <div class="mc-block">
+            <span class="mc-num">9</span>
+            <span class="mc-q"></span>
+            <div class="mc-opts">
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q9','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q9','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q9','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- TEXT 2 -->
+        <div id="l2-art2" style="border:1px solid var(--border);background:#fff;padding:1.4rem;margin-bottom:1.2rem;font-family:'Source Serif 4',serif;font-size:.9rem;line-height:1.8;white-space:pre-wrap;"></div>
+
+        <!-- Questions 10–12 -->
+        <div>
+          <div class="mc-block">
+            <span class="mc-num">10</span>
+            <span class="mc-q"></span>
+            <div class="mc-opts">
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q10','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q10','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q10','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+            </div>
+          </div>
+          <div class="mc-block">
+            <span class="mc-num">11</span>
+            <span class="mc-q"></span>
+            <div class="mc-opts">
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q11','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q11','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q11','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+            </div>
+          </div>
+          <div class="mc-block">
+            <span class="mc-num">12</span>
+            <span class="mc-q"></span>
+            <div class="mc-opts">
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q12','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q12','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t2','q12','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- LESEN TEIL 3 -->
+      <div class="tp" id="lesen-3">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Lesen &mdash; Teil 3</h3>
+            <p>Lesen Sie die Situationen 13 bis 19 und die Anzeigen <strong>a</strong> bis <strong>j</strong> aus verschiedenen deutschsprachigen Medien.<br>
+            Wählen Sie: Welche Anzeige passt zu welcher Situation? Sie können <strong>jede Anzeige nur einmal</strong> verwenden.<br>
+            Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine Situation gibt es <strong>keine passende Anzeige</strong>. In diesem Fall schreiben Sie <strong>0</strong>.</p>
+          </div>
+          <div class="task-time">10 Min.</div>
+        </div>
+
+        <div id="l3-kontekst-box" style="background:var(--bg); border-left:3px solid var(--navy); padding:.7rem 1rem; margin-bottom:1.25rem; font-size:.87rem; font-style:italic;"></div>
+
+        <!-- ADS GRID a–j (filled by renderL3) -->
+        <div class="ads-grid" id="l3-ads-grid"></div><!-- /ads-grid -->
+
+        <!-- SITUATIONS TABLE -->
+        <table class="sit-table">
+          <thead>
+            <tr style="background:var(--navy); color:#fff;">
+              <th style="padding:.5rem .85rem; font-size:.72rem; letter-spacing:.08em; text-align:left; width:34px;"></th>
+              <th style="padding:.5rem .85rem; font-size:.72rem; letter-spacing:.08em; text-align:left;">Situation</th>
+              <th style="padding:.5rem .85rem; font-size:.72rem; letter-spacing:.08em; text-align:right; width:120px;">Anzeige</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="sit-example">
+              <td class="sit-num">0</td>
+              <td class="sit-txt"></td>
+              <td class="sit-ans" style="font-weight:700; color:var(--navy);">i &nbsp;(Beispiel)</td>
+            </tr>
+            <tr>
+              <td class="sit-num">13</td>
+              <td class="sit-txt"></td>
+              <td class="sit-ans"><select class="anzeige-select" onchange="pickMatch('q13',this)"><option value="">–</option><option>0</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td>
+            </tr>
+            <tr>
+              <td class="sit-num">14</td>
+              <td class="sit-txt"></td>
+              <td class="sit-ans"><select class="anzeige-select" onchange="pickMatch('q14',this)"><option value="">–</option><option>0</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td>
+            </tr>
+            <tr>
+              <td class="sit-num">15</td>
+              <td class="sit-txt"></td>
+              <td class="sit-ans"><select class="anzeige-select" onchange="pickMatch('q15',this)"><option value="">–</option><option>0</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td>
+            </tr>
+            <tr>
+              <td class="sit-num">16</td>
+              <td class="sit-txt"></td>
+              <td class="sit-ans"><select class="anzeige-select" onchange="pickMatch('q16',this)"><option value="">–</option><option>0</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td>
+            </tr>
+            <tr>
+              <td class="sit-num">17</td>
+              <td class="sit-txt"></td>
+              <td class="sit-ans"><select class="anzeige-select" onchange="pickMatch('q17',this)"><option value="">–</option><option>0</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td>
+            </tr>
+            <tr>
+              <td class="sit-num">18</td>
+              <td class="sit-txt"></td>
+              <td class="sit-ans"><select class="anzeige-select" onchange="pickMatch('q18',this)"><option value="">–</option><option>0</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td>
+            </tr>
+            <tr>
+              <td class="sit-num">19</td>
+              <td class="sit-txt"></td>
+              <td class="sit-ans"><select class="anzeige-select" onchange="pickMatch('q19',this)"><option value="">–</option><option>0</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <!-- LESEN TEIL 4 -->
+      <div class="tp" id="lesen-4">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Lesen &mdash; Teil 4</h3>
+            <p id="l4-aufgabe"></p>
+          </div>
+          <div class="task-time">15 Min.</div>
+        </div>
+
+        <div id="l4-kontekst-box" style="background:var(--bg); border-left:3px solid var(--navy); padding:.7rem 1rem; margin-bottom:1.25rem; font-size:.87rem; font-style:italic;"></div>
+
+        <!-- Quick-answer grid -->
+        <div class="jn-grid">
+          <!-- Header -->
+          <div style="grid-column:1/3; background:var(--navy); color:#fff; display:flex; padding:.42rem .85rem; font-size:.7rem; font-weight:600; letter-spacing:.08em;">
+            <span style="min-width:26px;"></span>
+            <span style="flex:1;">Person</span>
+            <span style="margin-left:auto; min-width:140px; text-align:center;" id="l4-kolona-naslov"></span>
+          </div>
+          <!-- Example (filled by renderL4) -->
+          <div class="jn-row jn-example">
+            <span class="jn-num">0</span>
+            <span class="jn-name" id="l4-primer-name">Niko</span>
+            <div class="jn-btns">
+              <button class="rfbtn" id="l4-primer-ja" disabled>Ja</button>
+              <button class="rfbtn" id="l4-primer-nein" disabled>Nein</button>
+            </div>
+          </div>
+          <!-- Q20–26 in 2 columns -->
+          <div class="jn-row">
+            <span class="jn-num">20</span><span class="jn-name"></span>
+            <div class="jn-btns">
+              <button class="rfbtn" onclick="pickJN('q20','j',this)">Ja</button>
+              <button class="rfbtn" onclick="pickJN('q20','n',this)">Nein</button>
+            </div>
+          </div>
+          <div class="jn-row">
+            <span class="jn-num">24</span><span class="jn-name"></span>
+            <div class="jn-btns">
+              <button class="rfbtn" onclick="pickJN('q24','j',this)">Ja</button>
+              <button class="rfbtn" onclick="pickJN('q24','n',this)">Nein</button>
+            </div>
+          </div>
+          <div class="jn-row">
+            <span class="jn-num">21</span><span class="jn-name"></span>
+            <div class="jn-btns">
+              <button class="rfbtn" onclick="pickJN('q21','j',this)">Ja</button>
+              <button class="rfbtn" onclick="pickJN('q21','n',this)">Nein</button>
+            </div>
+          </div>
+          <div class="jn-row">
+            <span class="jn-num">25</span><span class="jn-name"></span>
+            <div class="jn-btns">
+              <button class="rfbtn" onclick="pickJN('q25','j',this)">Ja</button>
+              <button class="rfbtn" onclick="pickJN('q25','n',this)">Nein</button>
+            </div>
+          </div>
+          <div class="jn-row">
+            <span class="jn-num">22</span><span class="jn-name"></span>
+            <div class="jn-btns">
+              <button class="rfbtn" onclick="pickJN('q22','j',this)">Ja</button>
+              <button class="rfbtn" onclick="pickJN('q22','n',this)">Nein</button>
+            </div>
+          </div>
+          <div class="jn-row">
+            <span class="jn-num">26</span><span class="jn-name"></span>
+            <div class="jn-btns">
+              <button class="rfbtn" onclick="pickJN('q26','j',this)">Ja</button>
+              <button class="rfbtn" onclick="pickJN('q26','n',this)">Nein</button>
+            </div>
+          </div>
+          <div class="jn-row" style="border-right:none;">
+            <span class="jn-num">23</span><span class="jn-name"></span>
+            <div class="jn-btns">
+              <button class="rfbtn" onclick="pickJN('q23','j',this)">Ja</button>
+              <button class="rfbtn" onclick="pickJN('q23','n',this)">Nein</button>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--borderlt);"></div>
+        </div>
+
+        <!-- LESERBRIEFE texts -->
+        <div class="leserbriefe">
+          <div class="leserbriefe-title">LESERBRIEFE</div>
+          <div class="leserbriefe-cols">
+
+            <div class="leserbrief lb-example">
+              <p><span class="lb-num">Beispiel</span> <span id="l4-primer-tekst"></span></p>
+              <div class="lb-sig" id="l4-primer-sig">Niko</div>
+            </div>
+
+            <div class="leserbrief">
+              <p><span class="lb-num">20</span> </p>
+              <div class="lb-sig"></div>
+            </div>
+
+            <div class="leserbrief">
+              <p><span class="lb-num">21</span> </p>
+              <div class="lb-sig"></div>
+            </div>
+
+            <div class="leserbrief">
+              <p><span class="lb-num">22</span> </p>
+              <div class="lb-sig"></div>
+            </div>
+
+            <div class="leserbrief">
+              <p><span class="lb-num">23</span> </p>
+              <div class="lb-sig"></div>
+            </div>
+
+            <div class="leserbrief">
+              <p><span class="lb-num">24</span> </p>
+              <div class="lb-sig"></div>
+            </div>
+
+            <div class="leserbrief">
+              <p><span class="lb-num">25</span> </p>
+              <div class="lb-sig"></div>
+            </div>
+
+            <div class="leserbrief">
+              <p><span class="lb-num">26</span> </p>
+              <div class="lb-sig"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- LESEN TEIL 5 -->
+      <div class="tp" id="lesen-5">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Lesen &mdash; Teil 5</h3>
+            <p>Lesen Sie die Aufgaben 27 bis 30 und den Text dazu.<br>
+            Wählen Sie bei jeder Aufgabe die richtige Lösung <strong>a</strong>, <strong>b</strong> oder <strong>c</strong>.</p>
+          </div>
+          <div class="task-time">10 Min.</div>
+        </div>
+
+
+        <!-- Questions 27–30 in 2-col grid -->
+        <div class="t5-grid">
+          <div class="mc-block">
+            <span class="mc-num">27</span>
+            <span class="mc-q"></span>
+            <div class="mc-opts">
+              <div class="mc-opt" onclick="pickMC('lesen','t5','q27','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t5','q27','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t5','q27','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+            </div>
+          </div>
+          <div class="mc-block">
+            <span class="mc-num">28</span>
+            <span class="mc-q"></span>
+            <div class="mc-opts">
+              <div class="mc-opt" onclick="pickMC('lesen','t5','q28','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t5','q28','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t5','q28','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+            </div>
+          </div>
+          <div class="mc-block">
+            <span class="mc-num">29</span>
+            <span class="mc-q"></span>
+            <div class="mc-opts">
+              <div class="mc-opt" onclick="pickMC('lesen','t5','q29','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t5','q29','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t5','q29','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+            </div>
+          </div>
+          <div class="mc-block">
+            <span class="mc-num">30</span>
+            <span class="mc-q"></span>
+            <div class="mc-opts">
+              <div class="mc-opt" onclick="pickMC('lesen','t5','q30','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t5','q30','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+              <div class="mc-opt" onclick="pickMC('lesen','t5','q30','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Task text (filled by renderL5) -->
+        <div id="l5-tekst" style="border:1px solid var(--border);background:#fff;padding:1.4rem;margin-top:1.2rem;font-family:'Source Serif 4',serif;font-size:.9rem;line-height:1.8;white-space:pre-wrap;"></div>
+
+      </div>
+
+    </div><!-- /sp-lesen -->
+
+    <!-- ===== HÖREN ===== -->
+    <div class="sp" id="sp-hoeren">
+
+      <!-- Module intro -->
+      <div class="hoer-intro">
+        <p>Das Modul <em>Hören</em> hat vier Teile. Sie hören mehrere Texte und lösen Aufgaben dazu.</p>
+        <p>Lesen Sie jeweils zuerst die Aufgaben und hören Sie dann den Text dazu.</p>
+        <p>Für jede Aufgabe gibt es nur eine richtige Lösung.</p>
+        <p>Hilfsmittel wie z. B. Wörterbücher oder Mobiltelefone sind nicht erlaubt.</p>
+      </div>
+
+      <div class="teil-nav">
+        <button class="on" onclick="gotoTeil('hoeren',1,this)">Teil 1</button>
+        <button onclick="gotoTeil('hoeren',2,this)">Teil 2</button>
+        <button onclick="gotoTeil('hoeren',3,this)">Teil 3</button>
+        <button onclick="gotoTeil('hoeren',4,this)">Teil 4</button>
+      </div>
+
+      <!-- HÖREN TEIL 1 -->
+      <div class="tp on" id="hoeren-1">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Hören &mdash; Teil 1</h3>
+            <p>Sie hören nun fünf kurze Texte. Sie hören jeden Text <strong>zweimal</strong>. Zu jedem Text lösen Sie zwei Aufgaben.<br>
+            Wählen Sie bei jeder Aufgabe die richtige Lösung.<br>
+            Lesen Sie zuerst das Beispiel. Dazu haben Sie 10 Sekunden Zeit.</p>
+          </div>
+          <div class="task-time">40 Min.</div>
+        </div>
+
+        <!-- AUDIO PLAYER – samo jednom, bez pauze -->
+        <div style="background:#fff; border:1px solid var(--border); padding:.75rem 1rem; margin-bottom:1.25rem; display:flex; align-items:center; gap:.65rem; flex-wrap:wrap;">
+          <div style="font-size:.82rem; color:var(--muted); flex-shrink:0; font-weight:600;">Hören – Teil 1</div>
+          <audio id="audio-t1" style="display:none;" src=""
+                 onplay="handleAudioPlay(this)"
+                 onpause="handleAudioPause(this)"
+                 onended="handleAudioEnded(this)">
+          </audio>
+          <button id="audio-t1-btn" onclick="toggleAudio('audio-t1')"
+                  style="padding:.38rem 1rem; background:var(--navy); color:#fff; border:none; font-family:'DM Sans',sans-serif; font-size:.82rem; font-weight:600; cursor:pointer; flex-shrink:0;">
+            ▶ Abspielen
+          </button>
+          <button id="audio-t1-stop" onclick="stopAudio('audio-t1')" disabled
+                  style="padding:.38rem 1rem; background:#ccc; color:#fff; border:none; font-family:'DM Sans',sans-serif; font-size:.82rem; font-weight:600; cursor:not-allowed; flex-shrink:0;">
+            ■ Stopp
+          </button>
+          <span id="audio-t1-status" style="font-size:.76rem; color:var(--muted); flex-shrink:0;"></span>
+        </div>
+
+        <!-- BEISPIEL -->
+        <div class="hoer-group" style="margin-bottom:1rem;">
+          <div class="hoer-group-hd example-hd">Beispiel</div>
+          <div class="rf-group example-row">
+            <span class="rf-qnum">01</span>
+            <span class="rf-qtxt" id="h1-ex-rf-txt"></span>
+            <div class="rf-btns">
+              <button class="rfbtn" id="h1-ex-richtig" disabled>Richtig</button>
+              <button class="rfbtn" id="h1-ex-falsch" disabled>Falsch</button>
+            </div>
+          </div>
+          <div style="padding:.65rem .85rem; background:#ece8e0; border-bottom:1px solid var(--borderlt);">
+            <div class="mc-block" style="padding:0; border:none; margin:0;">
+              <span class="mc-num">02</span>
+              <span class="mc-q" id="h1-ex-mc-q"></span>
+              <div class="mc-opts">
+                <div class="mc-opt" id="h1-ex-mc-opt-a" style="pointer-events:none;"><span class="mc-lbl">a</span><span class="mc-opt-txt" id="h1-ex-mc-a"></span></div>
+                <div class="mc-opt" id="h1-ex-mc-opt-b" style="pointer-events:none;"><span class="mc-lbl">b</span><span class="mc-opt-txt" id="h1-ex-mc-b"></span></div>
+                <div class="mc-opt" id="h1-ex-mc-opt-c" style="pointer-events:none;"><span class="mc-lbl">c</span><span class="mc-opt-txt" id="h1-ex-mc-c"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEXT 1 -->
+        <div class="hoer-group">
+          <div class="hoer-group-hd">Text 1</div>
+          <div class="rf-group">
+            <span class="rf-qnum">1</span>
+            <span class="rf-qtxt"></span>
+            <div class="rf-btns">
+              <button class="rfbtn" onclick="pickRF('hoeren','t1','q1','r',this)">Richtig</button>
+              <button class="rfbtn" onclick="pickRF('hoeren','t1','q1','f',this)">Falsch</button>
+            </div>
+          </div>
+          <div style="padding:.5rem .85rem .85rem;">
+            <div class="mc-block" style="border:none; padding-top:.5rem;">
+              <span class="mc-num">2</span>
+              <span class="mc-q"></span>
+              <div class="mc-opts">
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q2','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q2','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q2','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEXT 2 -->
+        <div class="hoer-group">
+          <div class="hoer-group-hd">Text 2</div>
+          <div class="rf-group">
+            <span class="rf-qnum">3</span>
+            <span class="rf-qtxt"></span>
+            <div class="rf-btns">
+              <button class="rfbtn" onclick="pickRF('hoeren','t1','q3','r',this)">Richtig</button>
+              <button class="rfbtn" onclick="pickRF('hoeren','t1','q3','f',this)">Falsch</button>
+            </div>
+          </div>
+          <div style="padding:.5rem .85rem .85rem;">
+            <div class="mc-block" style="border:none; padding-top:.5rem;">
+              <span class="mc-num">4</span>
+              <span class="mc-q"></span>
+              <div class="mc-opts">
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q4','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q4','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q4','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEXT 3 -->
+        <div class="hoer-group">
+          <div class="hoer-group-hd">Text 3</div>
+          <div class="rf-group">
+            <span class="rf-qnum">5</span>
+            <span class="rf-qtxt"></span>
+            <div class="rf-btns">
+              <button class="rfbtn" onclick="pickRF('hoeren','t1','q5','r',this)">Richtig</button>
+              <button class="rfbtn" onclick="pickRF('hoeren','t1','q5','f',this)">Falsch</button>
+            </div>
+          </div>
+          <div style="padding:.5rem .85rem .85rem;">
+            <div class="mc-block" style="border:none; padding-top:.5rem;">
+              <span class="mc-num">6</span>
+              <span class="mc-q"></span>
+              <div class="mc-opts">
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q6','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q6','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q6','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEXT 4 -->
+        <div class="hoer-group">
+          <div class="hoer-group-hd">Text 4</div>
+          <div class="rf-group">
+            <span class="rf-qnum">7</span>
+            <span class="rf-qtxt"></span>
+            <div class="rf-btns">
+              <button class="rfbtn" onclick="pickRF('hoeren','t1','q7','r',this)">Richtig</button>
+              <button class="rfbtn" onclick="pickRF('hoeren','t1','q7','f',this)">Falsch</button>
+            </div>
+          </div>
+          <div style="padding:.5rem .85rem .85rem;">
+            <div class="mc-block" style="border:none; padding-top:.5rem;">
+              <span class="mc-num">8</span>
+              <span class="mc-q"></span>
+              <div class="mc-opts">
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q8','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q8','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q8','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEXT 5 -->
+        <div class="hoer-group">
+          <div class="hoer-group-hd">Text 5</div>
+          <div class="rf-group">
+            <span class="rf-qnum">9</span>
+            <span class="rf-qtxt"></span>
+            <div class="rf-btns">
+              <button class="rfbtn" onclick="pickRF('hoeren','t1','q9','r',this)">Richtig</button>
+              <button class="rfbtn" onclick="pickRF('hoeren','t1','q9','f',this)">Falsch</button>
+            </div>
+          </div>
+          <div style="padding:.5rem .85rem .85rem;">
+            <div class="mc-block" style="border:none; padding-top:.5rem;">
+              <span class="mc-num">10</span>
+              <span class="mc-q"></span>
+              <div class="mc-opts">
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q10','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q10','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+                <div class="mc-opt" onclick="pickMC('hoeren','t1','q10','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /hoeren-1 -->
+
+      <div class="tp" id="hoeren-2">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Hören &mdash; Teil 2</h3>
+            <p>Sie hören nun einen Text. Sie hören den Text <strong>einmal</strong>. Dazu lösen Sie fünf Aufgaben.<br>
+            Wählen Sie bei jeder Aufgabe die richtige Lösung <strong>a</strong>, <strong>b</strong> oder <strong>c</strong>.<br>
+            Lesen Sie jetzt die Aufgaben 11 bis 15. Dazu haben Sie 60 Sekunden Zeit.</p>
+          </div>
+          <div class="task-time">–</div>
+        </div>
+
+        <div id="h2-kontekst-box" style="background:var(--bg); border-left:3px solid var(--navy); padding:.7rem 1rem; margin-bottom:1.25rem; font-size:.87rem; font-style:italic;"></div>
+
+        <!-- Audio Player Teil 2 -->
+        <div style="background:#fff; border:1px solid var(--border); padding:.75rem 1rem; margin-bottom:1.25rem; display:flex; align-items:center; gap:.65rem; flex-wrap:wrap;">
+          <div style="font-size:.82rem; color:var(--muted); flex-shrink:0; font-weight:600;">Hören – Teil 2</div>
+          <audio id="audio-t2" style="display:none;" src=""
+                 onplay="handleAudioPlay(this)"
+                 onpause="handleAudioPause(this)"
+                 onended="handleAudioEnded(this)">
+          </audio>
+          <button id="audio-t2-btn" onclick="toggleAudio('audio-t2')"
+                  style="padding:.38rem 1rem; background:var(--navy); color:#fff; border:none; font-family:'DM Sans',sans-serif; font-size:.82rem; font-weight:600; cursor:pointer; flex-shrink:0;">
+            ▶ Abspielen
+          </button>
+          <button id="audio-t2-stop" onclick="stopAudio('audio-t2')" disabled
+                  style="padding:.38rem 1rem; background:#ccc; color:#fff; border:none; font-family:'DM Sans',sans-serif; font-size:.82rem; font-weight:600; cursor:not-allowed; flex-shrink:0;">
+            ■ Stopp
+          </button>
+          <span id="audio-t2-status" style="font-size:.76rem; color:var(--muted); flex-shrink:0;"></span>
+        </div>
+
+        <!-- 5 MC questions -->
+        <div class="mc-block">
+          <span class="mc-num">11</span>
+          <span class="mc-q"></span>
+          <div class="mc-opts">
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q11','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q11','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q11','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+          </div>
+        </div>
+        <div class="mc-block">
+          <span class="mc-num">12</span>
+          <span class="mc-q"></span>
+          <div class="mc-opts">
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q12','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q12','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q12','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+          </div>
+        </div>
+        <div class="mc-block">
+          <span class="mc-num">13</span>
+          <span class="mc-q"></span>
+          <div class="mc-opts">
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q13','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q13','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q13','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+          </div>
+        </div>
+        <div class="mc-block">
+          <span class="mc-num">14</span>
+          <span class="mc-q"></span>
+          <div class="mc-opts">
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q14','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q14','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q14','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+          </div>
+        </div>
+        <div class="mc-block">
+          <span class="mc-num">15</span>
+          <span class="mc-q"></span>
+          <div class="mc-opts">
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q15','a',this)"><span class="mc-lbl">a</span><span class="mc-opt-txt"></span></div>
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q15','b',this)"><span class="mc-lbl">b</span><span class="mc-opt-txt"></span></div>
+            <div class="mc-opt" onclick="pickMC('hoeren','t2','q15','c',this)"><span class="mc-lbl">c</span><span class="mc-opt-txt"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tp" id="hoeren-3">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Hören &mdash; Teil 3</h3>
+            <p>Sie hören nun ein Gespräch. Sie hören das Gespräch <strong>einmal</strong>. Dazu lösen Sie sieben Aufgaben.<br>
+            Wählen Sie: Sind die Aussagen <strong>Richtig</strong> oder <strong>Falsch</strong>?<br>
+            Lesen Sie jetzt die Aufgaben 16 bis 22. Dazu haben Sie 60 Sekunden Zeit.</p>
+          </div>
+          <div class="task-time">–</div>
+        </div>
+
+        <div id="h3-kontekst-box" style="background:var(--bg); border-left:3px solid var(--navy); padding:.7rem 1rem; margin-bottom:1.25rem; font-size:.87rem; font-style:italic;"></div>
+
+        <!-- Audio Player Teil 3 -->
+        <div style="background:#fff; border:1px solid var(--border); padding:.75rem 1rem; margin-bottom:1.25rem; display:flex; align-items:center; gap:.65rem; flex-wrap:wrap;">
+          <div style="font-size:.82rem; color:var(--muted); flex-shrink:0; font-weight:600;">Hören – Teil 3</div>
+          <audio id="audio-t3" style="display:none;" src=""
+                 onplay="handleAudioPlay(this)"
+                 onpause="handleAudioPause(this)"
+                 onended="handleAudioEnded(this)">
+          </audio>
+          <button id="audio-t3-btn" onclick="toggleAudio('audio-t3')"
+                  style="padding:.38rem 1rem; background:var(--navy); color:#fff; border:none; font-family:'DM Sans',sans-serif; font-size:.82rem; font-weight:600; cursor:pointer; flex-shrink:0;">
+            ▶ Abspielen
+          </button>
+          <button id="audio-t3-stop" onclick="stopAudio('audio-t3')" disabled
+                  style="padding:.38rem 1rem; background:#ccc; color:#fff; border:none; font-family:'DM Sans',sans-serif; font-size:.82rem; font-weight:600; cursor:not-allowed; flex-shrink:0;">
+            ■ Stopp
+          </button>
+          <span id="audio-t3-status" style="font-size:.76rem; color:var(--muted); flex-shrink:0;"></span>
+        </div>
+
+        <!-- 7 Richtig/Falsch questions -->
+        <table class="qa-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Aussage</th>
+              <th class="thc">Richtig</th>
+              <th class="thc">Falsch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-num">16</td>
+              <td class="td-txt"></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q16','r',this)">Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q16','f',this)">Falsch</button></td>
+            </tr>
+            <tr>
+              <td class="td-num">17</td>
+              <td class="td-txt"></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q17','r',this)">Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q17','f',this)">Falsch</button></td>
+            </tr>
+            <tr>
+              <td class="td-num">18</td>
+              <td class="td-txt"></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q18','r',this)">Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q18','f',this)">Falsch</button></td>
+            </tr>
+            <tr>
+              <td class="td-num">19</td>
+              <td class="td-txt"></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q19','r',this)">Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q19','f',this)">Falsch</button></td>
+            </tr>
+            <tr>
+              <td class="td-num">20</td>
+              <td class="td-txt"></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q20','r',this)">Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q20','f',this)">Falsch</button></td>
+            </tr>
+            <tr>
+              <td class="td-num">21</td>
+              <td class="td-txt"></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q21','r',this)">Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q21','f',this)">Falsch</button></td>
+            </tr>
+            <tr>
+              <td class="td-num">22</td>
+              <td class="td-txt"></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q22','r',this)">Richtig</button></td>
+              <td class="td-c"><button class="rfbtn" onclick="pickRF('hoeren','t3','q22','f',this)">Falsch</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tp" id="hoeren-4">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Hören &mdash; Teil 4</h3>
+            <p>Sie hören nun eine Diskussion. Sie hören die Diskussion <strong>zweimal</strong>. Dazu lösen Sie acht Aufgaben.<br>
+            Ordnen Sie die Aussagen zu: <strong>Wer sagt was?</strong><br>
+            Lesen Sie jetzt die Aussagen 23 bis 30. Dazu haben Sie 60 Sekunden Zeit.</p>
+          </div>
+          <div class="task-time">–</div>
+        </div>
+
+        <div id="h4-kontekst-box" style="background:var(--bg); border-left:3px solid var(--navy); padding:.7rem 1rem; margin-bottom:1.25rem; font-size:.87rem; font-style:italic;"></div>
+
+        <!-- Audio Player Teil 4 -->
+        <div style="background:#fff; border:1px solid var(--border); padding:.75rem 1rem; margin-bottom:1.25rem; display:flex; align-items:center; gap:.65rem; flex-wrap:wrap;">
+          <div style="font-size:.82rem; color:var(--muted); flex-shrink:0; font-weight:600;">Hören – Teil 4</div>
+          <audio id="audio-t4" style="display:none;" src=""
+                 onplay="handleAudioPlay(this)"
+                 onpause="handleAudioPause(this)"
+                 onended="handleAudioEnded(this)">
+          </audio>
+          <button id="audio-t4-btn" onclick="toggleAudio('audio-t4')"
+                  style="padding:.38rem 1rem; background:var(--navy); color:#fff; border:none; font-family:'DM Sans',sans-serif; font-size:.82rem; font-weight:600; cursor:pointer; flex-shrink:0;">
+            ▶ Abspielen
+          </button>
+          <button id="audio-t4-stop" onclick="stopAudio('audio-t4')" disabled
+                  style="padding:.38rem 1rem; background:#ccc; color:#fff; border:none; font-family:'DM Sans',sans-serif; font-size:.82rem; font-weight:600; cursor:not-allowed; flex-shrink:0;">
+            ■ Stopp
+          </button>
+          <span id="audio-t4-status" style="font-size:.76rem; color:var(--muted); flex-shrink:0;"></span>
+        </div>
+
+        <table class="person-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th style="text-align:left; padding-left:.85rem; padding-bottom:.5rem; font-size:.72rem; font-weight:600; letter-spacing:.08em;">Aussage</th>
+              <th class="ph-rot"><div id="h4-lbl-a">Moderator</div></th>
+              <th class="ph-rot"><div id="h4-lbl-b">Dana Schneider</div></th>
+              <th class="ph-rot"><div id="h4-lbl-c">Florian Bader</div></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Example -->
+            <tr class="pt-example">
+              <td class="pt-num">0</td>
+              <td class="pt-txt" id="h4-ex-txt"></td>
+              <td class="pt-c"><button class="pfbtn" disabled>a</button></td>
+              <td class="pt-c"><button class="pfbtn pfB" disabled>b</button></td>
+              <td class="pt-c"><button class="pfbtn" disabled>c</button></td>
+            </tr>
+            <!-- Q23–30 -->
+            <tr>
+              <td class="pt-num">23</td>
+              <td class="pt-txt"></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q23','a',this)">a</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q23','b',this)">b</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q23','c',this)">c</button></td>
+            </tr>
+            <tr>
+              <td class="pt-num">24</td>
+              <td class="pt-txt"></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q24','a',this)">a</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q24','b',this)">b</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q24','c',this)">c</button></td>
+            </tr>
+            <tr>
+              <td class="pt-num">25</td>
+              <td class="pt-txt"></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q25','a',this)">a</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q25','b',this)">b</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q25','c',this)">c</button></td>
+            </tr>
+            <tr>
+              <td class="pt-num">26</td>
+              <td class="pt-txt"></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q26','a',this)">a</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q26','b',this)">b</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q26','c',this)">c</button></td>
+            </tr>
+            <tr>
+              <td class="pt-num">27</td>
+              <td class="pt-txt"></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q27','a',this)">a</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q27','b',this)">b</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q27','c',this)">c</button></td>
+            </tr>
+            <tr>
+              <td class="pt-num">28</td>
+              <td class="pt-txt"></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q28','a',this)">a</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q28','b',this)">b</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q28','c',this)">c</button></td>
+            </tr>
+            <tr>
+              <td class="pt-num">29</td>
+              <td class="pt-txt"></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q29','a',this)">a</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q29','b',this)">b</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q29','c',this)">c</button></td>
+            </tr>
+            <tr>
+              <td class="pt-num">30</td>
+              <td class="pt-txt"></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q30','a',this)">a</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q30','b',this)">b</button></td>
+              <td class="pt-c"><button class="pfbtn" onclick="pickPerson('q30','c',this)">c</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div><!-- /sp-hoeren -->
+
+    <!-- ===== SCHREIBEN ===== -->
+    <div class="sp" id="sp-schreiben">
+      <div class="teil-nav">
+        <button class="on" onclick="gotoTeil('schreiben',1,this)">Aufgabe 1</button>
+        <button onclick="gotoTeil('schreiben',2,this)">Aufgabe 2</button>
+        <button onclick="gotoTeil('schreiben',3,this)">Aufgabe 3</button>
+      </div>
+      <div class="tp on" id="schreiben-1">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Schreiben &mdash; Aufgabe 1</h3>
+            <p>Schreiben Sie eine E-Mail (circa 80 Wörter). Schreiben Sie etwas zu allen drei Punkten.<br>
+            Achten Sie auf den Textaufbau (Anrede, Einleitung, Reihenfolge der Inhaltspunkte, Schluss).</p>
+          </div>
+          <div class="task-time">20 Min.</div>
+        </div>
+
+        <!-- Situation -->
+        <div style="background:var(--bg); border-left:3px solid var(--navy); padding:.75rem 1rem; margin-bottom:1rem; font-size:.88rem; font-style:italic; line-height:1.6;"></div>
+
+        <!-- Task points -->
+        <div style="background:#fff; border:1px solid var(--border); padding:.85rem 1rem; margin-bottom:1.1rem; font-size:.88rem; line-height:1.8;"></div>
+
+        <!-- Text input -->
+        <textarea class="write-area" id="sch1"
+                  oninput="wcount(this,'wc1')"
+                  onchange="saveTxt('schreiben','t1',this.value)"
+                  placeholder="Schreiben Sie hier Ihre E-Mail …&#10;&#10;Liebe/r …,&#10;&#10;…&#10;&#10;Mit freundlichen Grüßen,&#10;…"></textarea>
+        <div class="wctr" id="wc1">0 Wörter &nbsp;·&nbsp; Ziel: ~80 Wörter</div>
+      </div>
+      <div class="tp" id="schreiben-2">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Schreiben &mdash; Aufgabe 2</h3>
+            <p>Schreiben Sie nun Ihre Meinung (circa 80 Wörter).</p>
+          </div>
+          <div class="task-time">25 Min.</div>
+        </div>
+
+        <!-- Situation + task (filled by renderS2) -->
+        <div id="s2-box" style="background:var(--bg); border-left:3px solid var(--navy); padding:.85rem 1rem; margin-bottom:1.1rem; font-size:.88rem; line-height:1.7; white-space:pre-wrap;"></div>
+
+        <!-- Text input -->
+        <textarea class="write-area" id="sch2"
+                  oninput="wcount(this,'wc2')"
+                  onchange="saveTxt('schreiben','t2',this.value)"
+                  placeholder="Schreiben Sie hier Ihre Meinung …"></textarea>
+        <div class="wctr" id="wc2">0 Wörter &nbsp;·&nbsp; Ziel: ~80 Wörter</div>
+      </div>
+      <div class="tp" id="schreiben-3">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Schreiben &mdash; Aufgabe 3</h3>
+            <p>Schreiben Sie eine E-Mail (circa 40 Wörter).<br>
+            Vergessen Sie nicht die Anrede und den Gruß am Schluss.</p>
+          </div>
+          <div class="task-time">15 Min.</div>
+        </div>
+
+        <!-- Situation + task (filled by renderS3) -->
+        <div id="s3-box" style="background:var(--bg); border-left:3px solid var(--navy); padding:.85rem 1rem; margin-bottom:1.1rem; font-size:.88rem; line-height:1.7; white-space:pre-wrap;"></div>
+
+        <!-- Text input -->
+        <textarea class="write-area" id="sch3"
+                  oninput="wcount(this,'wc3')"
+                  onchange="saveTxt('schreiben','t3',this.value)"></textarea>
+        <div class="wctr" id="wc3">0 Wörter &nbsp;·&nbsp; Ziel: ~40 Wörter</div>
+      </div>
+    </div><!-- /sp-schreiben -->
+
+    <!-- ===== SPRECHEN ===== -->
+    <div class="sp" id="sp-sprechen">
+
+      <!-- Module intro -->
+      <div class="hoer-intro">
+        <p>Das Modul <em>Sprechen</em> hat drei Teile. Vorbereitungszeit: 15 Minuten (allein).</p>
+        <p>Sie dürfen sich zu jeder Aufgabe Notizen machen. In der Prüfung sollen Sie frei sprechen.</p>
+        <p><strong>Teil 1:</strong> Gemeinsam etwas planen (ca. 3 Min.)</p>
+        <p><strong>Teil 2:</strong> Ein Thema präsentieren (ca. 3 Min.)</p>
+        <p><strong>Teil 3:</strong> Über das Thema sprechen (ca. 2 Min.)</p>
+      </div>
+
+      <div class="teil-nav">
+        <button class="on" onclick="gotoTeil('sprechen',1,this)">Teil 1</button>
+        <button onclick="gotoTeil('sprechen',2,this)">Teil 2</button>
+        <button onclick="gotoTeil('sprechen',3,this)">Teil 3</button>
+      </div>
+
+      <!-- SPRECHEN TEIL 1 -->
+      <div class="tp on" id="sprechen-1">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Sprechen &mdash; Teil 1 &nbsp; <span style="font-weight:400; font-size:.85rem;">Gemeinsam etwas planen</span></h3>
+            <p>Sprechen Sie über die Punkte unten, machen Sie Vorschläge und reagieren Sie auf die Vorschläge Ihrer Gesprächspartnerin/Ihres Gesprächspartners.<br>
+            Planen und entscheiden Sie gemeinsam, was Sie tun möchten.</p>
+          </div>
+          <div class="task-time">ca. 3 Min.</div>
+        </div>
+
+        <!-- Situation -->
+        <div style="background:var(--bg); border-left:3px solid var(--navy); padding:.75rem 1rem; margin-bottom:1.25rem; font-size:.88rem; font-style:italic; line-height:1.7;"></div>
+
+        <!-- Discussion points card -->
+        <div style="border:2px solid var(--navy); background:#fff; padding:1.4rem 1.75rem; margin-bottom:1.25rem; max-width:520px;">
+          <div style="font-family:'Source Serif 4',serif; font-size:1.1rem; font-weight:700; color:var(--navy); margin-bottom:1rem;" id="sp1-card-title">
+          </div>
+          <div style="font-size:.9rem; line-height:2; color:var(--text);" id="sp1-card-tacke">
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <label class="flabel">Notizen für Teil 1</label>
+        <textarea class="write-area" style="min-height:130px"
+                  onchange="saveTxt('sprechen','t1notizen',this.value)"
+                  placeholder="Hier können Sie Ihre Notizen für Teil 1 machen …"></textarea>
+      </div>
+
+      <!-- SPRECHEN TEIL 2 -->
+      <div class="tp" id="sprechen-2">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Sprechen &mdash; Teil 2 &nbsp; <span style="font-weight:400;font-size:.85rem;">Ein Thema präsentieren</span></h3>
+            <p>Wählen Sie <u>ein</u> Thema (Thema 1 oder Thema 2) aus. Sie sollen Ihren Zuhörerinnen und Zuhörern ein aktuelles Thema präsentieren. Dazu finden Sie hier fünf Folien. Folgen Sie den Anweisungen links und schreiben Sie Ihre Notizen rechts daneben.</p>
+          </div>
+          <div class="task-time">ca. 3 Min.</div>
+        </div>
+
+        <div style="background:var(--bg);border-left:3px solid var(--navy);padding:.55rem 1rem;margin-bottom:1.1rem;font-size:.87rem;font-weight:600;color:var(--navy);">Thema 1</div>
+
+        <div class="folie-grid">
+          <div class="folie-row">
+            <div class="folie-instr"></div>
+            <div class="folie-box"><div class="folie-title"></div></div>
+            <textarea class="folie-notes" placeholder="Notizen …" onchange="saveTxt('sprechen','folie_t1_f1',this.value)"></textarea>
+          </div>
+          <div class="folie-row">
+            <div class="folie-instr"></div>
+            <div class="folie-box"><div class="folie-title"></div></div>
+            <textarea class="folie-notes" placeholder="Notizen …" onchange="saveTxt('sprechen','folie_t1_f2',this.value)"></textarea>
+          </div>
+          <div class="folie-row">
+            <div class="folie-instr"></div>
+            <div class="folie-box"><div class="folie-title"></div></div>
+            <textarea class="folie-notes" placeholder="Notizen …" onchange="saveTxt('sprechen','folie_t1_f3',this.value)"></textarea>
+          </div>
+          <div class="folie-row">
+            <div class="folie-instr"></div>
+            <div class="folie-box"><div class="folie-title"></div></div>
+            <textarea class="folie-notes" placeholder="Notizen …" onchange="saveTxt('sprechen','folie_t1_f4',this.value)"></textarea>
+          </div>
+          <div class="folie-row">
+            <div class="folie-instr"></div>
+            <div class="folie-box"><div class="folie-title"></div></div>
+            <textarea class="folie-notes" placeholder="Notizen …" onchange="saveTxt('sprechen','folie_t1_f5',this.value)"></textarea>
+          </div>
+        </div><!-- /folie-grid Thema 1 -->
+
+        <!-- Thema 2 divider -->
+        <div style="background:var(--bg);border-left:3px solid #1565c0;padding:.55rem 1rem;margin:1.25rem 0 1.1rem;font-size:.87rem;font-weight:600;color:#1565c0;">Thema 2</div>
+
+        <div class="folie-grid">
+          <div class="folie-row">
+            <div class="folie-instr"></div>
+            <div class="folie-box"><div class="folie-title"></div></div>
+            <textarea class="folie-notes" placeholder="Notizen …" onchange="saveTxt('sprechen','folie_t2_f1',this.value)"></textarea>
+          </div>
+          <div class="folie-row">
+            <div class="folie-instr"></div>
+            <div class="folie-box"><div class="folie-title"></div></div>
+            <textarea class="folie-notes" placeholder="Notizen …" onchange="saveTxt('sprechen','folie_t2_f2',this.value)"></textarea>
+          </div>
+          <div class="folie-row">
+            <div class="folie-instr"></div>
+            <div class="folie-box"><div class="folie-title"></div></div>
+            <textarea class="folie-notes" placeholder="Notizen …" onchange="saveTxt('sprechen','folie_t2_f3',this.value)"></textarea>
+          </div>
+          <div class="folie-row">
+            <div class="folie-instr"></div>
+            <div class="folie-box"><div class="folie-title"></div></div>
+            <textarea class="folie-notes" placeholder="Notizen …" onchange="saveTxt('sprechen','folie_t2_f4',this.value)"></textarea>
+          </div>
+          <div class="folie-row">
+            <div class="folie-instr"></div>
+            <div class="folie-box"><div class="folie-title"></div></div>
+            <textarea class="folie-notes" placeholder="Notizen …" onchange="saveTxt('sprechen','folie_t2_f5',this.value)"></textarea>
+          </div>
+        </div><!-- /folie-grid Thema 2 -->
+
+        <label class="flabel">Zusätzliche Notizen für Teil 2</label>
+        <textarea class="write-area" style="min-height:90px"
+                  onchange="saveTxt('sprechen','t2notizen',this.value)"
+                  placeholder="Weitere Notizen …"></textarea>
+      </div>
+
+      <!-- SPRECHEN TEIL 3 -->
+      <div class="tp" id="sprechen-3">
+        <div class="task-head">
+          <div class="task-head-info">
+            <h3>Sprechen &mdash; Teil 3 &nbsp; <span style="font-weight:400;font-size:.85rem;">Über ein Thema sprechen</span></h3>
+          </div>
+          <div class="task-time">ca. 2 Min.</div>
+        </div>
+
+        <div style="background:#fff; border:1px solid var(--border); padding:1rem 1.25rem; margin-bottom:1.25rem; font-size:.88rem; line-height:1.75;">
+          <div id="sp3-box1" style="margin-bottom:.85rem;"></div>
+          <div id="sp3-box2"></div>
+        </div>
+
+        <label class="flabel">Notizen für Teil 3</label>
+        <textarea class="write-area" style="min-height:130px"
+                  onchange="saveTxt('sprechen','t3notizen',this.value)"
+                  placeholder="Hier können Sie Ihre Notizen für Teil 3 machen …&#10;&#10;Rückmeldung: …&#10;Frage: …"></textarea>
+      </div>
+
+    </div><!-- /sp-sprechen -->
+
+  </div><!-- /test-body -->
+
+  <!-- Confirmation modal -->
+  <div id="confirm-modal">
+    <div class="confirm-box">
+      <h3>Teil verlassen?</h3>
+      <p>Sind Sie sicher, dass Sie diesen Teil verlassen möchten?<br>
+      <strong>Sie können nicht zurückkehren</strong> und der Teil wird gesperrt.</p>
+      <div class="confirm-btns">
+        <button class="confirm-no"  onclick="cancelSwitch()">Nein, zurück</button>
+        <button class="confirm-yes" onclick="confirmSwitch()">Ja, weiter →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="test-ftr">
+    <div class="ftr-info">Kandidat/in: <strong id="ftrname">–</strong></div>
+    <button class="btn btn-done" onclick="doSubmit()">Test abgeben ✓</button>
+  </div>
+
+</div><!-- /test-screen -->
+
+<!-- ============================================================
+     RESULTS SCREEN
+============================================================ -->
+<div id="results-screen">
+  <div class="res-wrap">
+    <div class="res-top">
+      <h1>ÖSD Zertifikat B1 – Abgegebene Antworten</h1>
+      <div class="res-meta">
+        <span>Kandidat/in: <strong id="rname">–</strong></span>
+        <span>Datum: <strong id="rdate">–</strong></span>
+        <span>Abgabe um: <strong id="rtime">–</strong></span>
+      </div>
+    </div>
+
+    <div id="res-content"></div>
+
+    <div class="res-actions">
+      <p>Diese Seite kann ausgedruckt oder als PDF gespeichert werden.</p>
+      <button class="btn-print" onclick="window.print()">Drucken / Als PDF speichern</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+
+// ══════════════════════════════════════════════════════════
+// ▌ STATE & CONSTANTS                                      ▐
+// ▌ Answer tracking objects + timer config                 ▐
+// ══════════════════════════════════════════════════════════
+// ----- State -----
+let cName = '';
+
+// ---- Per-Teil timer ----
+const TEIL_TIMES = {
+  'lesen-1':600, 'lesen-2':1200, 'lesen-3':600, 'lesen-4':900, 'lesen-5':600,
+  'hoeren-section':2400,                               // 40 min za cijeli Hören
+  'schreiben-1':1200, 'schreiben-2':1500, 'schreiben-3':900,
+  'sprechen-1':240, 'sprechen-2':240, 'sprechen-3':240 // 4 min svaki
+};
+
+const TEIL_LABELS = {
+  'lesen-1':'Lesen 1', 'lesen-2':'Lesen 2', 'lesen-3':'Lesen 3', 'lesen-4':'Lesen 4', 'lesen-5':'Lesen 5',
+  'hoeren-section':'Hören (gesamt)',
+  'schreiben-1':'Schreiben 1', 'schreiben-2':'Schreiben 2', 'schreiben-3':'Schreiben 3',
+  'sprechen-1':'Sprechen 1', 'sprechen-2':'Sprechen 2', 'sprechen-3':'Sprechen 3'
+};
+
+let activeTeilId  = null;   // actual panel id e.g. 'hoeren-1'
+let activeTimerKey = null;  // timer key e.g. 'hoeren-section'
+let teilTimerIv   = null;
+let teilSecondsLeft = {};   // remaining seconds per teil
+let lockedTeile   = new Set();
+
+// Pending switch (for confirmation modal)
+let pendingSwitchFn = null;
+
+const ANS = {
+  lesen:   { t1: {q1:null,q2:null,q3:null,q4:null,q5:null,q6:null},
+             t2: {q7:null,q8:null,q9:null,q10:null,q11:null,q12:null},
+             t3: {q13:null,q14:null,q15:null,q16:null,q17:null,q18:null,q19:null},
+             t4: {q20:null,q21:null,q22:null,q23:null,q24:null,q25:null,q26:null},
+             t5: {q27:null,q28:null,q29:null,q30:null} },
+  hoeren:  { t1:{q1:null,q2:null,q3:null,q4:null,q5:null,q6:null,q7:null,q8:null,q9:null,q10:null},
+             t2:{q11:null,q12:null,q13:null,q14:null,q15:null},
+             t3:{q16:null,q17:null,q18:null,q19:null,q20:null,q21:null,q22:null},
+             t4:{q23:null,q24:null,q25:null,q26:null,q27:null,q28:null,q29:null,q30:null} },
+  schreiben: { t1:'', t2:'', t3:'' },
+  sprechen:  {
+    t1notizen:'', t2notizen:'', t3notizen:'',
+    folie_t1_f1:'', folie_t1_f2:'', folie_t1_f3:'', folie_t1_f4:'', folie_t1_f5:'',
+    folie_t2_f1:'', folie_t2_f2:'', folie_t2_f3:'', folie_t2_f4:'', folie_t2_f5:''
+  }
+};
+
+const L1Q = { q1:'', q2:'', q3:'', q4:'', q5:'', q6:'' };
+
+const L2Q = { q7:'', q8:'', q9:'', q10:'', q11:'', q12:'' };
+
+const L2Opts = { q7:{a:'',b:'',c:'' }, q8:{a:'',b:'',c:'' }, q9:{a:'',b:'',c:'' }, q10:{a:'',b:'',c:'' }, q11:{a:'',b:'',c:'' }, q12:{a:'',b:'',c:'' } };
+
+const L3Q = { q13:'', q14:'', q15:'', q16:'', q17:'', q18:'', q19:'' };
+
+const L5Q = { q27:'', q28:'', q29:'', q30:'' };
+
+const L5Opts = { q27:{a:'',b:'',c:'' }, q28:{a:'',b:'',c:'' }, q29:{a:'',b:'',c:'' }, q30:{a:'',b:'',c:'' } };
+
+const H1_RF = { q1:'', q3:'', q5:'', q7:'', q9:'' };
+const H1_MC = { q2:'', q4:'', q6:'', q8:'', q10:'' };
+const H1_Opts = { q2:{a:'',b:'',c:'' }, q4:{a:'',b:'',c:'' }, q6:{a:'',b:'',c:'' }, q8:{a:'',b:'',c:'' }, q10:{a:'',b:'',c:'' } };
+
+const H2Q = { q11:'', q12:'', q13:'', q14:'', q15:'' };
+const H2Opts = { q11:{a:'',b:'',c:'' }, q12:{a:'',b:'',c:'' }, q13:{a:'',b:'',c:'' }, q14:{a:'',b:'',c:'' }, q15:{a:'',b:'',c:'' } };
+
+const H3Q = { q16:'', q17:'', q18:'', q19:'', q20:'', q21:'', q22:'' };
+
+const H4Q = { q23:'', q24:'', q25:'', q26:'', q27:'', q28:'', q29:'', q30:'' };
+const H4Labels = { a:'', b:'', c:'' };
+
+// ---- L4Q: DO NOT REMOVE THIS LINE ----
+const L4Q = { q20:'', q21:'', q22:'', q23:'', q24:'', q25:'', q26:'' };
+
+
+// ══════════════════════════════════════════════════════════
+// ▌ TEST STARTUP                                           ▐
+// ══════════════════════════════════════════════════════════
+// Reads candidate name, hides start screen, kicks off the first teil timer
+function startTest() {
+  const name = document.getElementById('namein').value.trim();
+  
+  // Log candidate name
+  fetch('log.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name })
+  }).catch(() => {}); // silent fail
+  
+  // ... rest of startTest()
+  
+  cName = document.getElementById('namein').value.trim();
+  if (!cName) return;
+  document.getElementById('start-screen').style.display = 'none';
+  document.getElementById('test-screen').classList.add('on');
+  document.getElementById('hdrname').textContent = cName;
+  document.getElementById('ftrname').textContent = cName;
+  // Start first teil timer (lesen-1 is active by default)
+  activeTeilId = 'lesen-1';
+  startTeilTimer('lesen-1');
+}
+
+
+// ══════════════════════════════════════════════════════════
+// ▌ TIMER SYSTEM                                           ▐
+// ▌ Per-teil countdown, locking and expiry                 ▐
+// ══════════════════════════════════════════════════════════
+// Starts a countdown for the given teil panel; ticks every second
+function startTeilTimer(teilId) {
+  clearInterval(teilTimerIv);
+  if (!TEIL_TIMES[teilId]) { document.getElementById('tval').textContent = '–'; return; }
+  if (teilSecondsLeft[teilId] === undefined) teilSecondsLeft[teilId] = TEIL_TIMES[teilId];
+  document.getElementById('tval-label').textContent = TEIL_LABELS[teilId];
+  renderTeilTimer(teilId);
+  teilTimerIv = setInterval(() => {
+    teilSecondsLeft[teilId]--;
+    renderTeilTimer(teilId);
+    if (teilSecondsLeft[teilId] <= 0) {
+      clearInterval(teilTimerIv);
+      expireTeil(teilId);
+    }
+  }, 1000);
+}
+
+// Updates the header timer display (MM:SS) for the active teil
+function renderTeilTimer(teilId) {
+  const s = Math.max(0, teilSecondsLeft[teilId] || 0);
+  const m = String(Math.floor(s / 60)).padStart(2,'0');
+  const sec = String(s % 60).padStart(2,'0');
+  document.getElementById('tval').textContent = m + ':' + sec;
+  const el = document.getElementById('timer');
+  el.classList.remove('warn','danger');
+  if (s <= 60)      el.classList.add('danger');
+  else if (s <= 300) el.classList.add('warn');
+}
+
+// Lock a panel without stopping the running timer (used for Hören teile)
+// Disables all inputs in a teil panel WITHOUT stopping the timer (used for Hören)
+function lockTeilNoTimer(teilId) {
+  lockedTeile.add(teilId);
+  const panel = document.getElementById(teilId);
+  if (!panel) return;
+  panel.querySelectorAll('button:not(.audio-exempt), textarea, select, input').forEach(el => {
+    el.disabled = true; el.style.cursor = 'not-allowed';
+  });
+  panel.querySelectorAll('.mc-opt, .rf-group').forEach(el => el.style.pointerEvents = 'none');
+  panel.classList.add('teil-locked');
+  if (!panel.querySelector('.teil-locked-banner')) {
+    const banner = document.createElement('div');
+    banner.className = 'teil-locked-banner';
+    banner.textContent = '✓ Teil abgeschlossen – Rückkehr nicht möglich';
+    panel.insertBefore(banner, panel.firstChild);
+  }
+  greyTeilTab(teilId);
+}
+
+// Disables inputs, adds a greyed banner, stops timer; expired=true shows red "Zeit abgelaufen"
+function lockTeil(teilId, expired) {
+  clearInterval(teilTimerIv);
+  lockedTeile.add(teilId);
+  const panel = document.getElementById(teilId);
+  if (panel) {
+    // Disable all inputs
+    panel.querySelectorAll('button:not(.audio-exempt), textarea, select, input').forEach(el => {
+      el.disabled = true;
+      el.style.cursor = 'not-allowed';
+    });
+    panel.querySelectorAll('.mc-opt, .rf-group').forEach(el => el.style.pointerEvents = 'none');
+    panel.classList.add('teil-locked');
+    // Add banner
+    if (!panel.querySelector('.teil-locked-banner')) {
+      const banner = document.createElement('div');
+      banner.className = 'teil-locked-banner';
+      banner.textContent = expired ? '⏱ Zeit abgelaufen – Teil gesperrt' : '✓ Teil abgeschlossen – Rückkehr nicht möglich';
+      panel.insertBefore(banner, panel.firstChild);
+    }
+  }
+  // Grey out the teil tab button
+  greyTeilTab(teilId);
+  // Update timer display
+  document.getElementById('tval').textContent = expired ? '00:00' : '–';
+}
+
+// Greys out the teil navigation button after the teil is locked
+function greyTeilTab(teilId) {
+  const parts = teilId.match(/^([a-z]+)-(\d+)$/);
+  if (!parts) return;
+  const [, sec, num] = parts;
+  const panel = document.getElementById('sp-' + sec);
+  if (!panel) return;
+  const btns = panel.querySelectorAll('.teil-nav button');
+  const idx = parseInt(num) - 1;
+  if (btns[idx]) {
+    btns[idx].disabled = true;
+    btns[idx].style.opacity = '.35';
+    btns[idx].style.cursor = 'not-allowed';
+    btns[idx].style.textDecoration = 'line-through';
+  }
+}
+
+
+// ══════════════════════════════════════════════════════════
+// ▌ NAVIGATION                                             ▐
+// ▌ Section/teil switching, confirmation modal, Hören lock ▐
+// ══════════════════════════════════════════════════════════
+// ---- Navigation with confirmation ----
+// Switches to a main section tab (Lesen/Hören/Schreiben/Sprechen); triggers confirmation if needed
+function gotoSec(name, btn) {
+  const isHoeren = name === 'hoeren';
+  // For hoeren: no per-teil lock, just start section timer if not running
+  requestSwitch(isHoeren ? 'hoeren-section' : name + '-1', () => {
+    document.querySelectorAll('.sp').forEach(p => p.classList.remove('on'));
+    document.querySelectorAll('.sec-nav button').forEach(b => b.classList.remove('on'));
+    document.getElementById('sp-' + name).classList.add('on');
+    btn.classList.add('on');
+    const panel = document.getElementById('sp-' + name);
+    const tPanels = panel.querySelectorAll('.tp');
+    const teilBtns = panel.querySelectorAll('.teil-nav button');
+    tPanels.forEach(p => p.classList.remove('on'));
+    teilBtns.forEach(b => b.classList.remove('on'));
+    // Activate first non-locked teil
+    let activated = false;
+    teilBtns.forEach((b, i) => {
+      if (!activated && !b.disabled) {
+        b.classList.add('on');
+        if (tPanels[i]) tPanels[i].classList.add('on');
+        activated = true;
+      }
+    });
+    if (isHoeren) {
+      activeTeilId  = 'hoeren-1';   // first panel, not the virtual key
+      activeTimerKey = 'hoeren-section';
+      startTeilTimer('hoeren-section');
+    } else {
+      const tNum = activated ? [...teilBtns].findIndex(b => b.classList.contains('on')) + 1 : 1;
+      activeTeilId  = name + '-' + tNum;
+      activeTimerKey = activeTeilId;
+      startTeilTimer(activeTeilId);
+    }
+  });
+}
+
+// Switches to a specific teil within the current section; handles Hören timer continuity
+function gotoTeil(sec, num, btn) {
+  const targetId = sec + '-' + num;
+  if (lockedTeile.has(targetId)) return;
+
+  if (sec === 'hoeren') {
+    if (lockedTeile.has(targetId)) return;
+    requestSwitch(targetId, () => {
+      const panel = document.getElementById('sp-hoeren');
+      panel.querySelectorAll('.tp').forEach(p => p.classList.remove('on'));
+      panel.querySelectorAll('.teil-nav button').forEach(b => b.classList.remove('on'));
+      document.getElementById(targetId).classList.add('on');
+      btn.classList.add('on');
+      if (activeTeilId && activeTeilId.startsWith('hoeren-') && activeTeilId !== targetId) {
+        lockTeilNoTimer(activeTeilId);
+      }
+      activeTeilId   = targetId;
+      activeTimerKey = 'hoeren-section'; // timer keeps running
+    });
+    return;
+  }
+
+  requestSwitch(targetId, () => {
+    const panel = document.getElementById('sp-' + sec);
+    panel.querySelectorAll('.tp').forEach(p => p.classList.remove('on'));
+    panel.querySelectorAll('.teil-nav button').forEach(b => b.classList.remove('on'));
+    document.getElementById(targetId).classList.add('on');
+    btn.classList.add('on');
+    activeTeilId   = targetId;
+    activeTimerKey = targetId;
+    startTeilTimer(targetId);
+  });
+}
+
+// Called when a teil timer hits 0 — locks the teil and advances to the next
+function expireTeil(teilId) {
+  if (teilId === 'hoeren-section') {
+    expireSection('hoeren');
+  } else {
+    lockTeil(teilId, true);
+  }
+}
+
+// Locks all teile in an entire section (used when section time runs out)
+function expireSection(sec) {
+  lockedTeile.add(sec + '-section');
+  clearInterval(teilTimerIv);
+  document.getElementById('tval').textContent = '00:00';
+  // Lock all teile in the section
+  const panel = document.getElementById('sp-' + sec);
+  if (!panel) return;
+  [1,2,3,4].forEach(n => {
+    const tp = document.getElementById(sec + '-' + n);
+    if (!tp) return;
+    tp.querySelectorAll('button:not(.audio-exempt), textarea, select, input').forEach(el => {
+      el.disabled = true; el.style.cursor = 'not-allowed';
+    });
+    tp.querySelectorAll('.mc-opt, .rf-group').forEach(el => el.style.pointerEvents = 'none');
+    tp.classList.add('teil-locked');
+    if (!tp.querySelector('.teil-locked-banner')) {
+      const banner = document.createElement('div');
+      banner.className = 'teil-locked-banner';
+      banner.textContent = '⏱ Zeit abgelaufen – Hören gesperrt';
+      tp.insertBefore(banner, tp.firstChild);
+    }
+  });
+  // Grey all teil tabs
+  panel.querySelectorAll('.teil-nav button').forEach(b => {
+    b.disabled = true; b.style.opacity = '.35';
+    b.style.cursor = 'not-allowed'; b.style.textDecoration = 'line-through';
+  });
+}
+
+// Shows confirmation modal before switching; skips if target is already locked
+function requestSwitch(targetId, doSwitch) {
+  if (!activeTeilId || activeTeilId === targetId) { doSwitch(); return; }
+  if (lockedTeile.has(activeTeilId)) { doSwitch(); return; }
+  pendingSwitchFn = () => {
+    if (activeTimerKey === 'hoeren-section') {
+      if (targetId.startsWith('hoeren-')) {
+        // Switching within Hören → locking handled by gotoTeil, timer keeps running
+      } else {
+        // Leaving Hören entirely → lock all hoeren teile + stop timer
+        lockHoerenSection();
+      }
+    } else {
+      lockTeil(activeTeilId, false);
+    }
+    doSwitch();
+  };
+  document.getElementById('confirm-modal').classList.add('show');
+}
+
+// Locks all 4 Hören teile at once and stops the shared 40-min timer
+function lockHoerenSection() {
+  clearInterval(teilTimerIv);
+  lockedTeile.add('hoeren-section');
+  [1,2,3,4].forEach(n => {
+    const id = 'hoeren-' + n;
+    if (!lockedTeile.has(id)) lockTeilNoTimer(id);
+  });
+  document.getElementById('tval').textContent = '\u2013';
+  document.getElementById('tval-label').textContent = '';
+}
+
+// Executes the pending switch after user confirms in the modal
+function confirmSwitch() {
+  document.getElementById('confirm-modal').classList.remove('show');
+  if (pendingSwitchFn) { pendingSwitchFn(); pendingSwitchFn = null; }
+}
+
+// Cancels the pending switch; modal stays on current teil
+function cancelSwitch() {
+  document.getElementById('confirm-modal').classList.remove('show');
+  pendingSwitchFn = null;
+}
+
+
+// ══════════════════════════════════════════════════════════
+// ▌ ANSWER HANDLERS                                        ▐
+// ▌ User clicks — store answer, update button highlight    ▐
+// ══════════════════════════════════════════════════════════
+// ----- Answer handlers -----
+// Richtig/Falsch: toggles button highlight and stores r/f in ANS
+function pickRF(sec, teil, q, val, btn) {
+  ANS[sec][teil][q] = val;
+  const row = btn.closest('tr') || btn.closest('.rf-group');
+  row.querySelectorAll('.rfbtn').forEach(b => b.classList.remove('selR','selF'));
+  btn.classList.add(val === 'r' ? 'selR' : 'selF');
+}
+
+// Multiple-choice a/b/c: highlights selected option and stores in ANS
+function pickMC(sec, teil, q, val, optDiv) {
+  ANS[sec][teil][q] = val;
+  const block = optDiv.closest('.mc-block');
+  block.querySelectorAll('.mc-opt').forEach(o => o.classList.remove('mc-on'));
+  optDiv.classList.add('mc-on');
+}
+
+// Hören T4 person attribution: stores which speaker (a/b/c) said the statement
+function pickPerson(q, val, btn) {
+  ANS.hoeren.t4[q] = val;
+  const row = btn.closest('tr');
+  row.querySelectorAll('.pfbtn').forEach(b => b.classList.remove('pfA','pfB','pfC'));
+  btn.classList.add(val === 'a' ? 'pfA' : val === 'b' ? 'pfB' : 'pfC');
+}
+
+// Lesen T3 matching: stores selected Anzeige letter for a situation
+function pickMatch(q, sel) {
+  const val = sel.value;
+  ANS.lesen.t3[q] = val || null;
+  sel.classList.toggle('filled', !!val);
+}
+
+// Ja/Nein: toggles button and stores j/n in ANS (used in Lesen T4)
+function pickJN(q, val, btn) {
+  ANS.lesen.t4[q] = val;
+  const row = btn.closest('.jn-row');
+  row.querySelectorAll('.rfbtn').forEach(b => b.classList.remove('selR','selF'));
+  btn.classList.add(val === 'j' ? 'selR' : 'selF');
+}
+
+// Saves textarea content (Schreiben/Sprechen) to ANS on every keystroke
+function saveTxt(sec, teil, val) {
+  ANS[sec][teil] = val;
+}
+
+// Updates live word-count display next to a textarea
+function wcount(ta, cid) {
+  const n = ta.value.trim() ? ta.value.trim().split(/\s+/).length : 0;
+  document.getElementById(cid).textContent = n + ' Wörter';
+}
+
+
+// ══════════════════════════════════════════════════════════
+// ▌ SUBMIT & RESULTS                                       ▐
+// ▌ End-of-test flow and results screen builder            ▐
+// ══════════════════════════════════════════════════════════
+// ----- Submit -----
+// Confirms submission, locks all sections, shows results screen
+function doSubmit() {
+  if (!confirm('Möchten Sie den Test wirklich abgeben?\nDiese Aktion kann nicht rückgängig gemacht werden.')) return;
+  clearInterval(teilTimerIv);
+  showResults();
+}
+
+// Renders the results header (candidate name, timestamp) and calls buildResults
+function showResults() {
+  document.getElementById('test-screen').classList.remove('on');
+  document.getElementById('results-screen').classList.add('on');
+
+  const now = new Date();
+  document.getElementById('rname').textContent = cName;
+  document.getElementById('rdate').textContent = now.toLocaleDateString('de-AT', {day:'2-digit',month:'2-digit',year:'numeric'});
+  document.getElementById('rtime').textContent = now.toLocaleTimeString('de-AT', {hour:'2-digit',minute:'2-digit'}) + ' Uhr';
+  buildResults();
+}
+
+// Builds the full results HTML — loops through ANS for all sections
+function buildResults() {
+  const cont = document.getElementById('res-content');
+  let h = '';
+
+  // --- LESEN ---
+  h += `<div class="r-sec"><div class="r-sec-hd">LESEN</div>`;
+
+  // Teil 1
+  h += `<div class="r-teil"><div class="r-teil-title">Teil 1 &mdash; Richtig / Falsch</div><div class="r-rows">`;
+  h += `<div class="r-row"><span class="r-num">0</span><span class="rtag tagR">Richtig</span><span class="r-q">${T?.lesen?.t1?.primer_tekst||''} <em>(Beispiel)</em></span></div>`;
+  for (const [k, txt] of Object.entries(L1Q)) {
+    const a = ANS.lesen.t1[k];
+    const n = k.replace('q','');
+    const tag = a === 'r' ? `<span class="rtag tagR">Richtig</span>` :
+                a === 'f' ? `<span class="rtag tagF">Falsch</span>` :
+                            `<span class="rtag tag0">&ndash;</span>`;
+    h += `<div class="r-row"><span class="r-num">${n}</span>${tag}<span class="r-q">${esc(txt)}</span></div>`;
+  }
+  h += `</div></div>`;
+
+  // Teil 2–5
+  // Teil 2 (MC)
+  h += `<div class="r-teil"><div class="r-teil-title">Teil 2 &mdash; Multiple Choice (a / b / c)</div><div class="r-rows">`;
+  for (const [k, txt] of Object.entries(L2Q)) {
+    const a = ANS.lesen.t2[k];
+    const n = k.replace('q','');
+    const optTxt = a ? L2Opts[k][a] : null;
+    const tag = a ? `<span class="rtag" style="background:#e8eaf6;color:#303f9f;border:1px solid #9fa8da;">${a.toUpperCase()}</span>` :
+                    `<span class="rtag tag0">&ndash;</span>`;
+    h += `<div class="r-row"><span class="r-num">${n}</span>${tag}<span class="r-q">${esc(txt)}${optTxt ? ' <em>→ '+esc(optTxt)+'</em>' : ''}</span></div>`;
+  }
+  h += `</div></div>`;
+
+  // Teil 3 (Matching)
+  h += `<div class="r-teil"><div class="r-teil-title">Teil 3 &mdash; Anzeigen zuordnen</div><div class="r-rows">`;
+  h += `<div class="r-row"><span class="r-num">0</span><span class="rtag tagR">i</span><span class="r-q">Mario möchte in Wien einen Sommersprachkurs besuchen. <em>(Beispiel)</em></span></div>`;
+  for (const [k, txt] of Object.entries(L3Q)) {
+    const a = ANS.lesen.t3[k];
+    const n = k.replace('q','');
+    const tag = a ? `<span class="rtag" style="background:#e8eaf6;color:#303f9f;border:1px solid #9fa8da;">${a.toUpperCase()}</span>` :
+                    `<span class="rtag tag0">&ndash;</span>`;
+    h += `<div class="r-row"><span class="r-num">${n}</span>${tag}<span class="r-q">${esc(txt)}</span></div>`;
+  }
+  h += `</div></div>`;
+
+  // Teil 4 (Ja/Nein)
+  h += `<div class="r-teil"><div class="r-teil-title">Teil 4 &mdash; Für ein Verbot? (Ja / Nein)</div><div class="r-rows">`;
+  h += `<div class="r-row"><span class="r-num">0</span><span class="rtag tagR">Ja</span><span class="r-q">Niko, 52, Saarbrücken <em>(Beispiel)</em></span></div>`;
+  for (const [k, name] of Object.entries(L4Q)) {
+    const a = ANS.lesen.t4[k];
+    const n = k.replace('q','');
+    const tag = a === 'j' ? `<span class="rtag tagR">Ja</span>` :
+                a === 'n' ? `<span class="rtag tagF">Nein</span>` :
+                            `<span class="rtag tag0">&ndash;</span>`;
+    h += `<div class="r-row"><span class="r-num">${n}</span>${tag}<span class="r-q">${esc(name)}</span></div>`;
+  }
+  h += `</div></div>`;
+
+  h += `<div class="r-teil"><div class="r-teil-title">Teil 5 &mdash; Multiple Choice (a / b / c)</div><div class="r-rows">`;
+  for (const [k, txt] of Object.entries(L5Q)) {
+    const a = ANS.lesen.t5[k];
+    const n = k.replace('q','');
+    const optTxt = a ? L5Opts[k][a] : null;
+    const tag = a ? `<span class="rtag" style="background:#e8eaf6;color:#303f9f;border:1px solid #9fa8da;">${a.toUpperCase()}</span>` :
+                    `<span class="rtag tag0">&ndash;</span>`;
+    h += `<div class="r-row"><span class="r-num">${n}</span>${tag}<span class="r-q">${esc(txt)}${optTxt ? ' <em>→ '+esc(optTxt)+'</em>' : ''}</span></div>`;
+  }
+  h += `</div></div>`;
+  h += `</div>`;
+
+  // --- HÖREN ---
+  h += `<div class="r-sec"><div class="r-sec-hd">HÖREN</div>`;
+
+  // Teil 1 — mixed RF + MC
+  h += `<div class="r-teil"><div class="r-teil-title">Teil 1 &mdash; Richtig/Falsch + Multiple Choice</div><div class="r-rows">`;
+  const textLabels = { q1:'Text 1', q3:'Text 2', q5:'Text 3', q7:'Text 4', q9:'Text 5' };
+  for (let i = 1; i <= 9; i += 2) {
+    const rfKey = 'q'+i, mcKey = 'q'+(i+1);
+    h += `<div class="r-row" style="font-size:.75rem; color:var(--muted); padding-top:.3rem;"><span style="font-weight:600;">${textLabels[rfKey]}</span></div>`;
+    // RF
+    const rf = ANS.hoeren.t1[rfKey];
+    const rfTag = rf === 'r' ? `<span class="rtag tagR">Richtig</span>` : rf === 'f' ? `<span class="rtag tagF">Falsch</span>` : `<span class="rtag tag0">&ndash;</span>`;
+    h += `<div class="r-row"><span class="r-num">${i}</span>${rfTag}<span class="r-q">${esc(H1_RF[rfKey])}</span></div>`;
+    // MC
+    const mc = ANS.hoeren.t1[mcKey];
+    const mcOptTxt = mc ? H1_Opts[mcKey][mc] : null;
+    const mcTag = mc ? `<span class="rtag" style="background:#e8eaf6;color:#303f9f;border:1px solid #9fa8da;">${mc.toUpperCase()}</span>` : `<span class="rtag tag0">&ndash;</span>`;
+    h += `<div class="r-row"><span class="r-num">${i+1}</span>${mcTag}<span class="r-q">${esc(H1_MC[mcKey])}${mcOptTxt ? ' <em>→ '+esc(mcOptTxt)+'</em>' : ''}</span></div>`;
+  }
+  h += `</div></div>`;
+
+  for (let i = 2; i <= 4; i++) {
+    if (i === 2) {
+      h += `<div class="r-teil"><div class="r-teil-title">Teil 2 &mdash; Multiple Choice (Museumsführung)</div><div class="r-rows">`;
+      for (const [k, txt] of Object.entries(H2Q)) {
+        const a = ANS.hoeren.t2[k];
+        const n = k.replace('q','');
+        const optTxt = a ? H2Opts[k][a] : null;
+        const tag = a ? `<span class="rtag" style="background:#e8eaf6;color:#303f9f;border:1px solid #9fa8da;">${a.toUpperCase()}</span>` : `<span class="rtag tag0">&ndash;</span>`;
+        h += `<div class="r-row"><span class="r-num">${n}</span>${tag}<span class="r-q">${esc(txt)}${optTxt ? ' <em>→ '+esc(optTxt)+'</em>' : ''}</span></div>`;
+      }
+      h += `</div></div>`;
+    } else if (i === 3) {
+      h += `<div class="r-teil"><div class="r-teil-title">Teil 3 &mdash; Richtig / Falsch (Gespräch)</div><div class="r-rows">`;
+      for (const [k, txt] of Object.entries(H3Q)) {
+        const a = ANS.hoeren.t3[k];
+        const n = k.replace('q','');
+        const tag = a === 'r' ? `<span class="rtag tagR">Richtig</span>` : a === 'f' ? `<span class="rtag tagF">Falsch</span>` : `<span class="rtag tag0">&ndash;</span>`;
+        h += `<div class="r-row"><span class="r-num">${n}</span>${tag}<span class="r-q">${esc(txt)}</span></div>`;
+      }
+      h += `</div></div>`;
+    } else if (i === 4) {
+      h += `<div class="r-teil"><div class="r-teil-title">Teil 4 &mdash; Wer sagt was? (Diskussion)</div><div class="r-rows">`;
+      h += `<div class="r-row"><span class="r-num">0</span><span class="rtag" style="background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7;">B</span><span class="r-q">${T?.hoeren?.t4?.primer_tekst||''} <em>(Beispiel – ${H4Labels[T?.hoeren?.t4?.primer_odg||'b']||''})</em></span></div>`;
+      for (const [k, txt] of Object.entries(H4Q)) {
+        const a = ANS.hoeren.t4[k];
+        const n = k.replace('q','');
+        const lbl = a ? H4Labels[a] : null;
+        const tagStyle = a === 'a' ? 'background:#e8eaf6;color:#1a2744;border:1px solid #9fa8da;' :
+                         a === 'b' ? 'background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7;' :
+                         a === 'c' ? 'background:#fff3e0;color:#e65100;border:1px solid #ffcc80;' : '';
+        const tag = a ? `<span class="rtag" style="${tagStyle}">${a.toUpperCase()}</span>` : `<span class="rtag tag0">&ndash;</span>`;
+        h += `<div class="r-row"><span class="r-num">${n}</span>${tag}<span class="r-q">${esc(txt)}${lbl ? ' <em>→ '+lbl+'</em>' : ''}</span></div>`;
+      }
+      h += `</div></div>`;
+    } else {
+      h += `<div class="r-teil"><div class="r-teil-title">Teil ${i} &mdash; Platzhalter</div><span class="r-empty">Inhalte werden später hinzugefügt.</span></div>`;
+    }
+  }
+  h += `</div>`;
+
+  // --- SCHREIBEN ---
+  const s1 = ANS.schreiben.t1, s2 = ANS.schreiben.t2, s3 = ANS.schreiben.t3;
+  const w1 = s1 ? s1.trim().split(/\s+/).filter(Boolean).length : 0;
+  const w2 = s2 ? s2.trim().split(/\s+/).filter(Boolean).length : 0;
+  const w3 = s3 ? s3.trim().split(/\s+/).filter(Boolean).length : 0;
+  h += `<div class="r-sec"><div class="r-sec-hd">SCHREIBEN</div>`;
+  h += `<div class="r-teil"><div class="r-teil-title">Aufgabe 1 &mdash; ${w1} Wörter (Ziel: ~80)</div>${s1 ? `<div class="r-textblock">${esc(s1)}</div>` : `<span class="r-empty">Kein Text eingegeben.</span>`}</div>`;
+  h += `<div class="r-teil"><div class="r-teil-title">Aufgabe 2 &mdash; ${w2} Wörter (Ziel: ~80)</div>${s2 ? `<div class="r-textblock">${esc(s2)}</div>` : `<span class="r-empty">Kein Text eingegeben.</span>`}</div>`;
+  h += `<div class="r-teil"><div class="r-teil-title">Aufgabe 3 &mdash; ${w3} Wörter (Ziel: ~40)</div>${s3 ? `<div class="r-textblock">${esc(s3)}</div>` : `<span class="r-empty">Kein Text eingegeben.</span>`}</div>`;
+  h += `</div>`;
+
+  // --- SPRECHEN ---
+  const sp1 = ANS.sprechen.t1notizen, sp2 = ANS.sprechen.t2notizen, sp3 = ANS.sprechen.t3notizen;
+  h += `<div class="r-sec"><div class="r-sec-hd">SPRECHEN</div>`;
+  h += `<div class="r-teil"><div class="r-teil-title">Teil 1 &mdash; Notizen (Krankenhaus)</div>${sp1 ? `<div class="r-textblock">${esc(sp1)}</div>` : `<span class="r-empty">Keine Notizen eingegeben.</span>`}</div>`;
+
+  // Teil 2 — folie notes
+  const folieLabelsT1 = ['Thema 1 – Folie 1 (Einleitung)','Thema 1 – Folie 2 (Erfahrungen)','Thema 1 – Folie 3 (Heimatland)','Thema 1 – Folie 4 (Vor-/Nachteile)','Thema 1 – Folie 5 (Abschluss)'];
+  const folieLabelsT2 = ['Thema 2 – Folie 1 (Einleitung)','Thema 2 – Folie 2 (Erfahrungen)','Thema 2 – Folie 3 (Heimatland)','Thema 2 – Folie 4 (Vor-/Nachteile)','Thema 2 – Folie 5 (Abschluss)'];
+  const folieKeysT1 = ['folie_t1_f1','folie_t1_f2','folie_t1_f3','folie_t1_f4','folie_t1_f5'];
+  const folieKeysT2 = ['folie_t2_f1','folie_t2_f2','folie_t2_f3','folie_t2_f4','folie_t2_f5'];
+
+  const hasT1 = folieKeysT1.some(k => ANS.sprechen[k]);
+  const hasT2 = folieKeysT2.some(k => ANS.sprechen[k]);
+
+  h += `<div class="r-teil"><div class="r-teil-title">Teil 2 &mdash; Folien-Notizen</div>`;
+  if (!hasT1 && !hasT2 && !sp2) {
+    h += `<span class="r-empty">Keine Notizen eingegeben.</span>`;
+  } else {
+    // Thema 1
+    if (hasT1) {
+      h += `<div style="font-size:.75rem;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.07em;margin:.5rem 0 .4rem;">Thema 1 — Brauchen Kinder Mobiltelefone?</div>`;
+      folieKeysT1.forEach((k,i) => {
+        const v = ANS.sprechen[k];
+        h += `<div style="margin-bottom:.5rem;"><span style="font-size:.72rem;font-weight:600;color:var(--muted);">${folieLabelsT1[i]}</span><br>${v ? `<div class="r-textblock" style="margin-top:.25rem;">${esc(v)}</div>` : `<span class="r-empty">–</span>`}</div>`;
+      });
+    }
+    // Thema 2
+    if (hasT2) {
+      h += `<div style="font-size:.75rem;font-weight:600;color:#1565c0;text-transform:uppercase;letter-spacing:.07em;margin:.5rem 0 .4rem;">Thema 2 — Sehen Kinder zu viel fern?</div>`;
+      folieKeysT2.forEach((k,i) => {
+        const v = ANS.sprechen[k];
+        h += `<div style="margin-bottom:.5rem;"><span style="font-size:.72rem;font-weight:600;color:var(--muted);">${folieLabelsT2[i]}</span><br>${v ? `<div class="r-textblock" style="margin-top:.25rem;">${esc(v)}</div>` : `<span class="r-empty">–</span>`}</div>`;
+      });
+    }
+    if (sp2) h += `<div style="margin-top:.5rem;"><span style="font-size:.72rem;font-weight:600;color:var(--muted);">Zusätzliche Notizen</span><br><div class="r-textblock" style="margin-top:.25rem;">${esc(sp2)}</div></div>`;
+  }
+  h += `</div>`;
+
+  h += `<div class="r-teil"><div class="r-teil-title">Teil 3 &mdash; Notizen (Diskussion)</div>${sp3 ? `<div class="r-textblock">${esc(sp3)}</div>` : `<span class="r-empty">Keine Notizen eingegeben.</span>`}</div>`;
+  h += `</div>`;
+
+  // --- SPRACHBAUSTEINE ---
+  h += `<div class="r-sec"><div class="r-sec-hd">SPRACHBAUSTEINE</div><div class="r-teil"><span class="r-empty">Platzhalter – Inhalte werden später hinzugefügt.</span></div></div>`;
+
+  cont.innerHTML = h;
+}
+
+
+// ══════════════════════════════════════════════════════════
+// ▌ AUDIO                                                  ▐
+// ▌ One-play-only audio player; locks navigation while playing▐
+// ══════════════════════════════════════════════════════════
+// ---- Audio: one-play, no-pause, tab-lock, stop button ----
+const audioPlayed = {};
+
+// Disables all section/teil tabs while audio is playing
+function lockTabs() {
+  document.querySelectorAll('.sec-nav button, .teil-nav button').forEach(b => {
+    b.dataset.wasDisabled = b.disabled ? '1' : '0';
+    b.disabled = true;
+    b.style.opacity = '.4';
+    b.style.cursor = 'not-allowed';
+  });
+}
+
+// Re-enables tabs that were active before audio started
+function unlockTabs() {
+  document.querySelectorAll('.sec-nav button, .teil-nav button').forEach(b => {
+    if (b.dataset.wasDisabled !== '1') {
+      b.disabled = false;
+      b.style.opacity = '';
+      b.style.cursor = '';
+    }
+    delete b.dataset.wasDisabled;
+  });
+}
+
+// Play/pause toggle — blocks replay if audio already finished
+function toggleAudio(audioId) {
+  if (audioPlayed[audioId]) return;
+  const audio = document.getElementById(audioId);
+  audio.play();
+}
+
+// On play: updates button label to Pause, activates Stop, locks tabs
+function handleAudioPlay(audio) {
+  lockTabs();
+  const btn  = document.getElementById(audio.id + '-btn');
+  const stop = document.getElementById(audio.id + '-stop');
+  if (btn)  { btn.textContent = '▶ Läuft …'; btn.style.background = '#555'; btn.style.cursor = 'not-allowed'; btn.disabled = true; }
+  if (stop) { stop.disabled = false; stop.style.background = '#c0392b'; stop.style.cursor = 'pointer'; }
+}
+
+// On pause: restores Play label, unlocks tabs
+function handleAudioPause(audio) {
+  // only resume if not intentionally stopped/ended
+  if (!audioPlayed[audio.id]) audio.play();
+}
+
+// On end: permanently marks audio as done, finalises UI
+function handleAudioEnded(audio) {
+  _finishAudio(audio.id, '✓ Abgespielt');
+}
+
+// Manual stop: pauses, marks as done, finalises UI
+function stopAudio(audioId) {
+  const audio = document.getElementById(audioId);
+  if (!audio || audioPlayed[audioId]) return;
+  audioPlayed[audioId] = true; // set BEFORE pause so handleAudioPause doesn't resume
+  audio.pause();
+  audio.currentTime = 0;
+  _finishAudio(audioId, '■ Gestoppt');
+}
+
+// Internal helper: resets button states after audio ends or is stopped
+function _finishAudio(audioId, label) {
+  audioPlayed[audioId] = true;
+  unlockTabs();
+  const btn    = document.getElementById(audioId + '-btn');
+  const stop   = document.getElementById(audioId + '-stop');
+  const status = document.getElementById(audioId + '-status');
+  if (btn)    { btn.textContent = label; btn.style.background = '#888'; btn.style.cursor = 'not-allowed'; btn.disabled = true; }
+  if (stop)   { stop.disabled = true; stop.style.background = '#ccc'; stop.style.cursor = 'not-allowed'; }
+  if (status) status.textContent = 'Nicht mehr verfügbar.';
+}
+
+
+// ══════════════════════════════════════════════════════════
+// ▌ TEST LOADER                                            ▐
+// ▌ Test selection screen, JSON fetch, data routing        ▐
+// ══════════════════════════════════════════════════════════
+// ============================================================
+// TEST SELECTION & DYNAMIC CONTENT LOADING
+// ============================================================
+const TESTOVI = [
+  { id: 'test-00', naziv: 'Modellsatz 0' },
+  { id: 'test-01', naziv: 'Modellsatz 1' },
+  { id: 'test-02', naziv: 'Modellsatz 2' },
+  { id: 'test-03', naziv: 'Modellsatz 3' }
+];
+
+let selectedTestId = null;
+let T = null; // loaded test data
+
+// Build test selection buttons
+(function initSelectScreen() {
+  const list = document.getElementById('test-list');
+  TESTOVI.forEach(t => {
+    const btn = document.createElement('button');
+    btn.className = 'test-btn';
+    btn.innerHTML = `<span>${t.naziv}</span><span class="badge-sm">B1</span>`;
+    btn.onclick = () => loadTest(t.id);
+    list.appendChild(btn);
+  });
+})();
+
+// Returns to the test selection screen; resets name field
+function goBackToSelect() {
+  T = null;
+  selectedTestId = null;
+  document.getElementById('namein').value = '';
+  document.getElementById('sbtn').disabled = true;
+  document.getElementById('start-screen').style.display = 'none';
+  document.getElementById('select-screen').style.display = 'flex';
+}
+
+// Fetches testovi/{id}.json, calls applyTestData, shows start screen
+async function loadTest(testId) {
+  const url = `testovi/${testId}.json`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status} – Datei nicht gefunden`);
+    T = await res.json();
+    selectedTestId = testId;
+    try { applyTestData(); } catch(re) {
+      console.error('Render error:', re);
+    }
+    document.getElementById('select-screen').style.display = 'none';
+    document.getElementById('start-screen').style.display = 'flex';
+    // Show selected test name in badge
+    const lbl = document.getElementById('start-test-label');
+    if (lbl) lbl.textContent = T.meta.naziv.toUpperCase();
+  } catch(e) {
+    alert(
+      'Fehler beim Laden: ' + url + '\n\n' +
+      'Stellen Sie sicher, dass:\n' +
+      '1. Die Ordnerstruktur stimmt:\n' +
+      '   index.html\n' +
+      '   testovi/test-01.json\n' +
+      '   testovi/test-02.json\n\n' +
+      '2. Sie Live Server verwenden (nicht direktes Öffnen)\n\n' +
+      'Fehler: ' + e.message
+    );
+  }
+}
+
+// Dispatches JSON data to all render functions; updates audio src attributes
+function applyTestData() {
+  if (!T) return;
+  const run = (fn, name) => { try { fn(); } catch(e) { console.warn('Render error', name, e.message); } };
+  run(renderL1,'L1'); run(renderL2,'L2'); run(renderL3,'L3'); run(renderL4,'L4'); run(renderL5,'L5');
+  run(renderH1,'H1'); run(renderH2,'H2'); run(renderH3,'H3'); run(renderH4,'H4');
+  run(renderS1,'S1'); run(renderS2,'S2'); run(renderS3,'S3');
+  run(renderSp1,'Sp1'); run(renderSp2,'Sp2'); run(renderSp3,'Sp3');
+  ['t1','t2','t3','t4'].forEach(k => {
+    const el = document.getElementById('audio-' + k);
+    if (el && T.audio?.[k]) el.src = T.audio[k];
+  });
+}
+
+// helpers
+
+// ══════════════════════════════════════════════════════════
+// ▌ RENDER HELPERS & CONTENT POPULATION                    ▐
+// ▌ One function per teil — reads T (loaded JSON) and fills the DOM▐
+// ══════════════════════════════════════════════════════════
+
+// ── Utility ───────────────────────────────────────────────
+// Shorthand: sets textContent or innerHTML on a single DOM element
+function _set(sel, val, html) { const e=document.querySelector(sel); if(e){ if(html) e.innerHTML=val; else e.textContent=val; } }
+
+
+// ── LESEN ─────────────────────────────────────────────────
+// ── Teil 1 · Reading text + True/False statements
+
+// Fills single plain-text reading box; populates example row and 6 R/F questions
+function renderL1() {
+  const d = T.lesen.t1;
+  // Single plain text box — combine all content
+  const box = document.getElementById('l1-lese-text');
+  if (box) {
+    const parts = [];
+    if (d.blog_naslov)  parts.push(d.blog_naslov);
+    if (d.blog_tagline) parts.push(d.blog_tagline);
+    if (d.blog_datum)   parts.push(d.blog_datum);
+    const tekst = Array.isArray(d.blog_tekst)
+      ? d.blog_tekst.join('\n\n')
+      : (d.blog_tekst || '');
+    if (tekst) parts.push(tekst);
+    box.textContent = parts.filter(Boolean).join('\n\n');
+  }
+  const primerTd = document.getElementById('l1-primer-txt');
+  if (primerTd) primerTd.textContent = d.primer_tekst || '';
+  document.querySelectorAll('#lesen-1 .qa-table tbody tr:not(.exrow)').forEach((r,i) => {
+    const td=r.querySelector('.td-txt'); if(td && d.pitanja[i]) td.textContent=d.pitanja[i];
+  });
+}
+
+
+// ── Teil 2 · Newspaper articles + Multiple Choice
+
+// Fills two article text boxes, Beispiel MC block, and questions 7–12
+function renderL2() {
+  const d = T.lesen.t2;
+  const c1 = d.clanak1, c2 = d.clanak2;
+  // Article 1 plain text box
+  const art1 = document.getElementById('l2-art1');
+  if (art1) {
+    const t = (c1 && c1.clanak1_tekst) || [
+      c1&&c1.kicker, c1&&c1.naslov,
+      ...((c1&&c1.kolona1)||[]),
+      ...((c1&&c1.kolona2)||[]),
+      c1&&c1.izvor
+    ].filter(Boolean).join('\n\n');
+    art1.textContent = t;
+  }
+  // Article 2 plain text box
+  const art2 = document.getElementById('l2-art2');
+  if (art2) {
+    const t = (c2 && c2.clanak2_tekst) || [
+      c2&&c2.naslov,
+      ...((c2&&c2.kolona1)||[]),
+      ...((c2&&c2.kolona2)||[]),
+      c2&&c2.izvor
+    ].filter(Boolean).join('\n\n');
+    art2.textContent = t;
+  }
+  // Beispiel – fill + mark correct (uses only primer_* fields, not pitanja)
+  const pq=document.getElementById('l2-pq'); if(pq) pq.textContent=d.primer_question||d.primer_tekst||'';
+  const pa=document.getElementById('l2-pa'); if(pa) pa.textContent=d.primer_a||'';
+  const pb=document.getElementById('l2-pb'); if(pb) pb.textContent=d.primer_b||'';
+  const pc=document.getElementById('l2-pc'); if(pc) pc.textContent=d.primer_c||(d.primer_odg||'');
+  const ans=d.primer_ans||'c';
+  ['a','b','c'].forEach(k=>{ const el=document.getElementById('l2-po-'+k); if(el) el.classList.toggle('mc-on',k===ans); });
+  // MC questions 7–12 — explicitly exclude beispiel block
+  document.querySelectorAll('#lesen-2 .mc-block').forEach((b,i) => {
+    const q=d.pitanja[i]; if(!q) return;
+    b.querySelector('.mc-q') && (b.querySelector('.mc-q').textContent=q.tekst);
+    const o=b.querySelectorAll('.mc-opt .mc-opt-txt');
+    if(o[0]) o[0].textContent=q.a; if(o[1]) o[1].textContent=q.b; if(o[2]) o[2].textContent=q.c;
+    const k='q'+(7+i); if(L2Q[k]!==undefined){L2Q[k]=q.tekst; L2Opts[k]={a:q.a,b:q.b,c:q.c};}
+  });
+}
+
+
+
+// ── Teil 3 · Anzeigen matching
+
+// Builds ad cards (a–j) dynamically; marks Beispiel; fills situations 13–19
+function renderL3() {
+  const d = T.lesen.t3;
+  const letters = ['a','b','c','d','e','f','g','h','i','j'];
+  const primer = d.primer_slovo || 'i';
+  const l3ctx=document.getElementById('l3-kontekst-box'); if(l3ctx) l3ctx.textContent=d.kontekst||'';
+
+  // Build ad cards dynamically
+  const grid = document.getElementById('l3-ads-grid');
+  if (grid) {
+    grid.innerHTML = '';
+    letters.forEach(l => {
+      const ad = d.oglasi[l]; if(!ad) return;
+      const isExample = (l === primer);
+      const card = document.createElement('div');
+      card.className = 'ad-card' + (isExample ? ' example-ad' : '');
+      const letterDiv = document.createElement('div');
+      letterDiv.className = 'ad-letter';
+      letterDiv.textContent = l;
+      const textDiv = document.createElement('div');
+      textDiv.style.cssText = 'white-space:pre-wrap;font-size:.82rem;line-height:1.6;';
+      textDiv.textContent = ad.tekst || '';
+      card.appendChild(letterDiv);
+      card.appendChild(textDiv);
+      grid.appendChild(card);
+    });
+  }
+
+  // Update dropdowns: include all letters + 0
+  const allOpts = ['0','a','b','c','d','e','f','g','h','i','j'];
+  document.querySelectorAll('#lesen-3 .anzeige-select').forEach(sel => {
+    const current = sel.value;
+    sel.innerHTML = '<option value="">–</option>';
+    allOpts.forEach(l => {
+      const opt = document.createElement('option');
+      opt.value = l; opt.textContent = l;
+      sel.appendChild(opt);
+    });
+    sel.value = current;
+  });
+
+  // Update sit-example answer letter
+  const exAns = document.querySelector('#lesen-3 .sit-example .sit-ans');
+  if (exAns) exAns.innerHTML = `${primer} &nbsp;(Beispiel)`;
+
+  // Situations
+  const exTxt = document.querySelector('#lesen-3 .sit-example .sit-txt');
+  if (exTxt && d.primer_tekst) exTxt.textContent = d.primer_tekst;
+  document.querySelectorAll('#lesen-3 .sit-table tbody tr:not(.sit-example)').forEach((r,i) => {
+    const td=r.querySelector('.sit-txt'); if(td && d.situacije[i]) td.textContent=d.situacije[i];
+    const k='q'+(13+i); if(L3Q[k]!==undefined) L3Q[k]=d.situacije[i];
+  });
+}
+
+
+// ── Teil 4 · Leserbriefe Ja/Nein
+
+// Fills task instruction, Beispiel row, 7 reader letters and Ja/Nein name list
+function renderL4() {
+  const d = T.lesen.t4;
+  const l4ctx=document.getElementById('l4-kontekst-box'); if(l4ctx) l4ctx.textContent=d.kontekst||'';
+  // Task instruction
+  const aufgEl = document.getElementById('l4-aufgabe');
+  if (aufgEl && d.aufgabe) aufgEl.textContent = d.aufgabe;
+  // Beispiel row
+  const pName = document.getElementById('l4-primer-name');
+  if (pName) pName.textContent = d.primer_ime || '';
+  const pJa   = document.getElementById('l4-primer-ja');
+  const pNein = document.getElementById('l4-primer-nein');
+  if (pJa && pNein) {
+    const isJa = (d.primer_odg === 'j');
+    pJa.classList.toggle('selR', isJa);
+    pNein.classList.toggle('selR', !isJa);
+  }
+  const pTxt = document.getElementById('l4-primer-tekst');
+  if (pTxt) pTxt.textContent = d.primer_tekst || '';
+  const pSig = document.getElementById('l4-primer-sig');
+  if (pSig) pSig.textContent = d.primer_ime || '';
+  // Persons (letters + leserbriefe)
+  document.querySelectorAll('#lesen-4 .leserbrief:not(.lb-example)').forEach((lb,i) => {
+    const p=d.osobe[i]; if(!p) return;
+    const sig=lb.querySelector('.lb-sig'); if(sig) sig.textContent=p.ime;
+    const pEl=lb.querySelector('p');
+    if(pEl) {
+      const numSpan=pEl.querySelector('.lb-num');
+      if(numSpan) { pEl.innerHTML=''; pEl.appendChild(numSpan); pEl.appendChild(document.createTextNode(' '+p.tekst)); }
+    }
+    const k='q'+(20+i); if(L4Q[k]!==undefined) L4Q[k]=p.ime;
+  });
+  const jnNames=document.querySelectorAll('#lesen-4 .jn-row:not(.jn-example) .jn-name');
+  [0,3,1,4,2,5,6].forEach((oi,ri) => { if(jnNames[ri]&&d.osobe[oi]) jnNames[ri].textContent=d.osobe[oi].ime; });
+}
+
+
+// ── Teil 5 · House rules + Multiple Choice
+
+// Fills single house-rules text box and MC questions 27–30
+function renderL5() {
+  const d = T.lesen.t5;
+  // Single plain text box - use tekst if available, otherwise combine kontekst + hausordnung
+  const box = document.getElementById('l5-tekst');
+  if (box) {
+    if (d.tekst) {
+      box.textContent = d.tekst;
+    } else {
+      const parts = [];
+      if (d.kontekst) parts.push(d.kontekst);
+      (d.hausordnung||[]).forEach(s => parts.push(`${s.naslov}:\n${s.tekst}`));
+      box.textContent = parts.join('\n\n');
+    }
+  }
+  // MC questions 27–30
+  document.querySelectorAll('#lesen-5 .mc-block').forEach((b,i) => {
+    const q=d.pitanja[i]; if(!q) return;
+    b.querySelector('.mc-q') && (b.querySelector('.mc-q').textContent=q.tekst);
+    const o=b.querySelectorAll('.mc-opt .mc-opt-txt');
+    if(o[0]) o[0].textContent=q.a; if(o[1]) o[1].textContent=q.b; if(o[2]) o[2].textContent=q.c;
+    const k='q'+(27+i); if(L5Q[k]!==undefined){L5Q[k]=q.tekst; L5Opts[k]={a:q.a,b:q.b,c:q.c};}
+  });
+}
+
+
+// ── HÖREN ─────────────────────────────────────────────────
+// ── Teil 1 · Radio clips — True/False + Multiple Choice pairs
+
+// Sets example RF answer, then fills 5 text groups (RF statement + MC a/b/c each)
+function renderH1() {
+  const d = T.hoeren.t1;
+  // Example RF (01)
+  const exTxt = document.getElementById('h1-ex-rf-txt');
+  if (exTxt) exTxt.textContent = d.primer_rf.tekst;
+  const exR = document.getElementById('h1-ex-richtig');
+  const exF = document.getElementById('h1-ex-falsch');
+  if (exR && exF) {
+    const isR = (d.primer_rf_odg || 'r') === 'r';
+    exR.classList.toggle('selR', isR);
+    exF.classList.toggle('selR', !isR);
+  }
+  // Example MC (02)
+  const exMcQ = document.getElementById('h1-ex-mc-q');
+  if (exMcQ) exMcQ.textContent = d.primer_mc.tekst || '';
+  const exMcA = document.getElementById('h1-ex-mc-a'); if (exMcA) exMcA.textContent = d.primer_mc.a || '';
+  const exMcB = document.getElementById('h1-ex-mc-b'); if (exMcB) exMcB.textContent = d.primer_mc.b || '';
+  const exMcC = document.getElementById('h1-ex-mc-c'); if (exMcC) exMcC.textContent = d.primer_mc.c || '';
+  const exMcAns = d.primer_mc_odg || 'c';
+  ['a','b','c'].forEach(k => {
+    const el = document.getElementById('h1-ex-mc-opt-' + k);
+    if (el) el.classList.toggle('mc-on', k === exMcAns);
+  });
+  const groups=document.querySelectorAll('#hoeren-1 .hoer-group');
+  // groups[0]=Beispiel, groups[1-5]=Text 1-5 (audio player is NOT a .hoer-group)
+  d.tekstovi.forEach((txt,i) => {
+    const g=groups[i+1]; if(!g) return;
+    const rfQ=g.querySelector('.rf-qtxt'); if(rfQ) rfQ.textContent=txt.rf;
+    const mcQ=g.querySelector('.mc-q'); if(mcQ) mcQ.textContent=txt.mc.tekst;
+    const o=g.querySelectorAll('.mc-opt .mc-opt-txt');
+    if(o[0]) o[0].textContent=txt.mc.a; if(o[1]) o[1].textContent=txt.mc.b; if(o[2]) o[2].textContent=txt.mc.c;
+    const rk='q'+(1+i*2), mk='q'+(2+i*2);
+    if(H1_RF[rk]!==undefined) H1_RF[rk]=txt.rf;
+    if(H1_MC[mk]!==undefined){H1_MC[mk]=txt.mc.tekst; H1_Opts[mk]={a:txt.mc.a,b:txt.mc.b,c:txt.mc.c};}
+  });
+}
+
+
+// ── Teil 2 · Museum tour — Multiple Choice
+
+// Fills 5 MC question blocks (questions 11–15)
+function renderH2() {
+  const d = T.hoeren.t2;
+  const h2ctx=document.getElementById('h2-kontekst-box'); if(h2ctx) h2ctx.textContent=d.kontekst||'';
+  document.querySelectorAll('#hoeren-2 .mc-block').forEach((b,i) => {
+    const q=d.pitanja[i]; if(!q) return;
+    b.querySelector('.mc-q') && (b.querySelector('.mc-q').textContent=q.tekst);
+    const o=b.querySelectorAll('.mc-opt .mc-opt-txt');
+    if(o[0]) o[0].textContent=q.a; if(o[1]) o[1].textContent=q.b; if(o[2]) o[2].textContent=q.c;
+    const k='q'+(11+i); if(H2Q[k]!==undefined){H2Q[k]=q.tekst; H2Opts[k]={a:q.a,b:q.b,c:q.c};}
+  });
+}
+
+
+// ── Teil 3 · Bus stop conversation — True/False
+
+// Fills 7 True/False statement rows (questions 16–22)
+function renderH3() {
+  const d = T.hoeren.t3;
+  const h3ctx=document.getElementById('h3-kontekst-box'); if(h3ctx) h3ctx.textContent=d.kontekst||'';
+  document.querySelectorAll('#hoeren-3 .qa-table tbody tr').forEach((r,i) => {
+    const td=r.querySelector('.td-txt'); const q=d.pitanja[i];
+    if(td&&q) td.textContent=q;
+    const k='q'+(16+i); if(H3Q[k]!==undefined) H3Q[k]=q||H3Q[k];
+  });
+}
+
+
+// ── Teil 4 · Radio discussion — Person attribution
+
+// Updates column headers (person names), H4Labels, and 8 attribution rows (23–30)
+function renderH4() {
+  const d = T.hoeren.t4;
+  const h4ctx=document.getElementById('h4-kontekst-box'); if(h4ctx) h4ctx.textContent=d.kontekst||'';
+  // Person names (column headers + H4Labels for results)
+  const names = d.osobe_naslovi || {a:'Moderator',b:'Dana Schneider',c:'Florian Bader'};
+  const la=document.getElementById('h4-lbl-a'); if(la) la.textContent=names.a;
+  const lb=document.getElementById('h4-lbl-b'); if(lb) lb.textContent=names.b;
+  const lc=document.getElementById('h4-lbl-c'); if(lc) lc.textContent=names.c;
+  H4Labels.a = names.a; H4Labels.b = names.b; H4Labels.c = names.c;
+  _set('#hoeren-4 .pt-example .pt-txt', d.primer_tekst);
+  const h4ex = document.getElementById('h4-ex-txt');
+  if (h4ex) h4ex.textContent = d.primer_tekst || '';
+  document.querySelectorAll('#hoeren-4 .person-table tbody tr:not(.pt-example)').forEach((r,i) => {
+    const td=r.querySelector('.pt-txt'); const q=d.pitanja[i];
+    if(td&&q) td.textContent=q;
+    const k='q'+(23+i); if(H4Q[k]!==undefined) H4Q[k]=q||H4Q[k];
+  });
+}
+
+
+// ── SCHREIBEN ─────────────────────────────────────────────
+
+// Fills situation text and content points for Aufgabe 1 (e-mail ~80 words)
+function renderS1() {
+  const d = T.schreiben.a1;
+  const ctx=document.querySelector('#schreiben-1 div[style*="italic"]'); if(ctx) ctx.innerHTML=d.situacija.replace(/\n/g,'<br>');
+  const td=document.querySelector('#schreiben-1 div[style*="border:1px solid var(--border)"]');
+  if(td) td.innerHTML=d.tacke.map(t=>`<div style="display:flex;gap:.5rem;margin-bottom:.25rem;"><span style="color:var(--navy);font-weight:700;">–</span><span>${t}</span></div>`).join('');
+}
+// Fills situation and guestbook entry (author, timestamp, rich text) for Aufgabe 2
+function renderS2() {
+  const d = T.schreiben.a2;
+  const box = document.getElementById('s2-box');
+  if (box) box.innerHTML = (d.situacija || '').replace(/\n/g,'<br>');
+}
+// Fills situation and task description for Aufgabe 3 (apology e-mail ~40 words)
+function renderS3() {
+  const d = T.schreiben.a3;
+  const box = document.getElementById('s3-box');
+  if (box) box.innerHTML = (d.situacija || '').replace(/\n/g,'<br>');
+  const ta = document.getElementById('sch3');
+  if (ta && d.placeholder) ta.placeholder = d.placeholder;
+}
+
+
+// ── SPRECHEN ──────────────────────────────────────────────
+
+// Fills situation text and planning card (title + bullet points) for Teil 1
+function renderSp1() {
+  const d = T.sprechen.t1;
+  const ctx=document.querySelector('#sprechen-1 div[style*="italic"]'); if(ctx) ctx.innerHTML=d.situacija.replace(/\n/g,'<br>');
+  const titleEl = document.getElementById('sp1-card-title');
+  const tackeEl = document.getElementById('sp1-card-tacke');
+  if (d._rich) {
+    if (titleEl) titleEl.innerHTML = d._rich;
+    if (tackeEl) tackeEl.style.display = 'none';
+  } else {
+    if (titleEl) titleEl.textContent = d.naslov || '';
+    if (tackeEl) tackeEl.innerHTML = (d.tacke||[]).map(t=>`<div style="display:flex;gap:.6rem;"><span style="font-weight:700;color:var(--navy);">–</span><span>${t}</span></div>`).join('');
+  }
+}
+// Fills folie headers, titles and instruction text for both Thema 1 and Thema 2
+function renderSp2() {
+  const d = T.sprechen.t2;
+  const titles=document.querySelectorAll('#sprechen-2 .folie-title');
+  const instrs=document.querySelectorAll('#sprechen-2 .folie-instr');
+  // Thema 1
+  for(let i=0;i<5;i++){
+    if(titles[i]) titles[i].innerHTML=d.thema1_folien[i];
+    if(instrs[i] && d.thema1_instrukcije && d.thema1_instrukcije[i]) instrs[i].textContent=d.thema1_instrukcije[i];
+  }
+  // Thema 2
+  for(let i=5;i<10;i++){
+    if(titles[i]) titles[i].innerHTML=d.thema2_folien[i-5];
+    if(instrs[i] && d.thema2_instrukcije && d.thema2_instrukcije[i-5]) instrs[i].textContent=d.thema2_instrukcije[i-5];
+  }
+}
+// Fills the task instructions box for Teil 3 (discussion after presentations)
+function renderSp3() {
+  if (!T.sprechen.t3) return;
+  const d = T.sprechen.t3;
+  const box1 = document.getElementById('sp3-box1');
+  const box2 = document.getElementById('sp3-box2');
+  if (box1) box1.innerHTML = (d.tekst1 || '').replace(/\n/g,'<br>');
+  if (box2) box2.innerHTML = (d.tekst2 || '').replace(/\n/g,'<br>');
+}
+
+
+
+
+// ── UTILITIES ─────────────────────────────────────────────
+// HTML-escapes a string (& < > → entities; \n → <br>)
+function esc(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+}
+</script>
+</body>
+</html>

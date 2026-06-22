@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test Editor – ÖSD B1 (EN)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f0ede8;
+  --paper: #fffdf9;
+  --navy: #1a2744;
+  --red: #c0392b;
+  --green: #2e7d32;
+  --border: #d0ccc5;
+  --borderlt: #e5e1da;
+  --text: #1c1c1c;
+  --muted: #777;
+  --accent: #e87722;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+/* ── RICH TEXT EDITOR ── */
+.rich-wrap { border: 2px solid var(--border); background: #fff; }
+.rich-wrap:focus-within { border-color: var(--navy); }
+.rich-toolbar {
+  display: flex; align-items: center; gap: 3px;
+  padding: 4px 6px; background: #f5f3ef;
+  border-bottom: 1px solid var(--borderlt);
+  flex-wrap: wrap;
+}
+.rich-toolbar button {
+  width: 26px; height: 26px;
+  border: 1px solid var(--border); background: #fff;
+  cursor: pointer; font-family: inherit; font-size: .82rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .12s;
+}
+.rich-toolbar button:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+.rich-toolbar button.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.rich-toolbar select {
+  height: 26px; border: 1px solid var(--border);
+  font-family: 'DM Sans', sans-serif; font-size: .75rem;
+  padding: 0 4px; background: #fff; cursor: pointer;
+}
+.rich-toolbar input[type="color"] {
+  width: 26px; height: 26px;
+  border: 1px solid var(--border); padding: 1px; cursor: pointer;
+}
+.rich-toolbar .tb-sep {
+  width: 1px; height: 18px; background: var(--border); margin: 0 2px;
+}
+.rich-editor {
+  padding: .65rem .85rem;
+  min-height: 120px; max-height: 400px; overflow-y: auto;
+  font-family: 'DM Sans', sans-serif; font-size: .88rem;
+  line-height: 1.65; color: var(--text); outline: none;
+}
+.rich-editor.tall { min-height: 220px; }
+
+/* ── TRUE/FALSE TOGGLE ── */
+.tf-toggle {
+  display: flex; gap: .5rem;
+}
+.tf-btn {
+  padding: .38rem 1.1rem;
+  border: 2px solid var(--border); background: #fff;
+  font-family: 'DM Sans', sans-serif; font-size: .82rem; font-weight: 600;
+  cursor: pointer; transition: all .13s;
+}
+.tf-btn.sel-r { background: #2e7d32; border-color: #2e7d32; color: #fff; }
+.tf-btn.sel-f { background: var(--red); border-color: var(--red); color: #fff; }
+
+/* ── ABC TOGGLE ── */
+.abc-toggle { display:flex; gap:.5rem; }
+.abc-btn {
+  padding: .38rem .9rem; border: 2px solid var(--border); background: #fff;
+  font-family: 'DM Sans',sans-serif; font-size:.85rem; font-weight:700;
+  cursor:pointer; transition: all .13s; min-width:40px; text-align:center;
+}
+.abc-btn.sel { background: var(--navy); border-color: var(--navy); color: #fff; }
+/* folie 2-col grid */
+.folie-edit-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: .75rem;
+  margin-bottom: .75rem; padding-bottom: .75rem;
+  border-bottom: 1px solid var(--borderlt);
+}
+.folie-edit-row:last-child { border-bottom: none; margin-bottom: 0; }
+.folie-edit-label {
+  font-size:.7rem; font-weight:700; text-transform:uppercase;
+  letter-spacing:.08em; color:var(--navy); margin-bottom:.3rem;
+}
+.topbar {
+  background: var(--navy);
+  color: #fff;
+  padding: .65rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.topbar-left { display: flex; align-items: center; gap: .75rem; }
+.topbar-badge { background: var(--red); padding: .2rem .55rem; font-size: .72rem; font-weight: 700; letter-spacing: .05em; }
+.topbar-title { font-size: .92rem; font-weight: 600; }
+.topbar-right { display: flex; align-items: center; gap: .65rem; }
+
+.btn { padding: .45rem 1.1rem; font-family: 'DM Sans', sans-serif; font-size: .8rem; font-weight: 600; cursor: pointer; border: 2px solid transparent; transition: all .15s; letter-spacing: .03em; }
+.btn-ghost { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.25); }
+.btn-ghost:hover { background: rgba(255,255,255,.22); }
+.btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-primary:hover { background: #d06010; }
+.btn-save { background: var(--green); color: #fff; border-color: var(--green); }
+.btn-save:hover { background: #256027; }
+.btn-new { background: var(--red); color: #fff; border-color: var(--red); }
+.btn-new:hover { background: #a93226; }
+
+/* ── LOAD SCREEN ── */
+#load-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 52px);
+  padding: 2rem;
+}
+.load-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 2.5rem 3rem;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(26,39,68,.1);
+  text-align: center;
+}
+.load-card h2 { font-size: 1.3rem; color: var(--navy); margin-bottom: .5rem; }
+.load-card p { font-size: .87rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.55; }
+.load-btns { display: flex; flex-direction: column; gap: .6rem; }
+.load-test-btn {
+  width: 100%; padding: .8rem 1.1rem;
+  background: var(--paper); border: 2px solid var(--border);
+  font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 600;
+  color: var(--navy); cursor: pointer; text-align: left;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all .14s;
+}
+.load-test-btn:hover { border-color: var(--navy); background: var(--navy); color: #fff; }
+.load-test-btn:hover .ltb-badge { background: rgba(255,255,255,.2); }
+.ltb-badge { font-size: .7rem; background: var(--bg); color: var(--muted); padding: .15rem .5rem; font-weight: 600; }
+.load-divider { border: none; border-top: 1px solid var(--borderlt); margin: 1rem 0; }
+.load-new-btn {
+  width: 100%; padding: .7rem;
+  background: var(--red); color: #fff; border: none;
+  font-family: 'DM Sans', sans-serif; font-size: .88rem; font-weight: 600;
+  cursor: pointer; transition: background .14s;
+}
+.load-new-btn:hover { background: #a93226; }
+
+/* ── EDITOR LAYOUT ── */
+#editor-screen { display: none; }
+
+.editor-body { display: flex; height: calc(100vh - 52px); }
+
+/* Sidebar */
+.sidebar {
+  width: 210px;
+  flex-shrink: 0;
+  background: var(--paper);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 1rem 0;
+}
+.sidebar-section { margin-bottom: .25rem; }
+.sidebar-group-hd {
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--muted);
+  padding: .5rem 1rem .25rem;
+}
+.sidebar-btn {
+  display: block; width: 100%;
+  padding: .42rem 1rem .42rem 1.4rem;
+  font-family: 'DM Sans', sans-serif; font-size: .82rem; font-weight: 500;
+  background: none; border: none; text-align: left;
+  color: var(--text); cursor: pointer; transition: all .12s;
+  border-left: 3px solid transparent;
+}
+.sidebar-btn:hover { background: var(--bg); color: var(--navy); }
+.sidebar-btn.active { background: var(--bg); color: var(--navy); font-weight: 600; border-left-color: var(--red); }
+
+/* Main panel */
+.main-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.75rem 2rem;
+  min-width: 0;
+}
+
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* Panel header */
+.panel-hd {
+  border-bottom: 2px solid var(--navy);
+  padding-bottom: .75rem;
+  margin-bottom: 1.5rem;
+}
+.panel-hd h2 { font-size: 1.05rem; color: var(--navy); font-weight: 600; }
+.panel-hd p { font-size: .82rem; color: var(--muted); margin-top: .2rem; }
+
+/* Form elements */
+.field { margin-bottom: 1.1rem; }
+.field-label {
+  display: block;
+  font-size: .72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--navy); margin-bottom: .35rem;
+}
+.field-hint { font-size: .72rem; color: var(--muted); margin-bottom: .35rem; font-weight: 400; text-transform: none; letter-spacing: 0; }
+.finput, .ftextarea, .fselect {
+  width: 100%;
+  padding: .55rem .75rem;
+  border: 2px solid var(--border);
+  background: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .87rem; color: var(--text);
+  outline: none; transition: border-color .15s;
+}
+.finput:focus, .ftextarea:focus { border-color: var(--navy); }
+.ftextarea { resize: vertical; min-height: 80px; line-height: 1.6; }
+.ftextarea.tall { min-height: 150px; }
+.ftextarea.xtall { min-height: 220px; }
+
+/* Grid */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .75rem; }
+
+/* Card (grouped fields) */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+.card-title {
+  font-size: .78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--navy); margin-bottom: .85rem;
+  padding-bottom: .5rem; border-bottom: 1px solid var(--borderlt);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.card-num {
+  background: var(--navy); color: #fff;
+  font-size: .65rem; padding: .15rem .45rem; font-weight: 700;
+}
+
+/* Section divider */
+.divider { border: none; border-top: 1px solid var(--borderlt); margin: 1.5rem 0; }
+
+/* Status bar */
+.statusbar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #fff; border-top: 1px solid var(--borderlt);
+  padding: .4rem 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: .78rem; color: var(--muted); z-index: 50;
+}
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); margin-right: .4rem; display: inline-block; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-badge">B1</div>
+    <span class="topbar-title">Test Editor – ÖSD Certificate</span>
+  </div>
+  <div class="topbar-right" id="topbar-btns" style="display:none;">
+    <button class="btn btn-ghost" onclick="closeEditor()">← Tests</button>
+    <button class="btn btn-save" onclick="downloadJSON()">⬇ Save JSON</button>
+  </div>
+</div>
+
+<!-- LOAD SCREEN -->
+<div id="load-screen">
+  <div class="load-card">
+    <h2>Select or create a test</h2>
+    <p>Select an existing test to edit, or create a new model set.</p>
+    <div class="load-btns" id="load-btns">
+      <!-- filled by JS -->
+    </div>
+    <hr class="load-divider">
+    <button class="load-new-btn" onclick="newTest()">+ Create new test</button>
+  </div>
+</div>
+
+<!-- EDITOR SCREEN -->
+<div id="editor-screen">
+  <div class="editor-body">
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-group-hd">General</div>
+        <button class="sidebar-btn active" onclick="showPanel('meta',this)">⚙ Metadata</button>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-group-hd">Reading (Lesen)</div>
+        <button class="sidebar-btn" onclick="showPanel('l1',this)">Teil 1 – True/False</button>
+        <button class="sidebar-btn" onclick="showPanel('l2',this)">Teil 2 – Multiple Choice</button>
+        <button class="sidebar-btn" onclick="showPanel('l3',this)">Teil 3 – Matching</button>
+        <button class="sidebar-btn" onclick="showPanel('l4',this)">Teil 4 – Reader Letters</button>
+        <button class="sidebar-btn" onclick="showPanel('l5',this)">Teil 5 – House Rules</button>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-group-hd">Listening (Hören)</div>
+        <button class="sidebar-btn" onclick="showPanel('h1',this)">Teil 1 – T/F + MC</button>
+        <button class="sidebar-btn" onclick="showPanel('h2',this)">Teil 2 – Multiple Choice</button>
+        <button class="sidebar-btn" onclick="showPanel('h3',this)">Teil 3 – True/False</button>
+        <button class="sidebar-btn" onclick="showPanel('h4',this)">Teil 4 – Who says what?</button>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-group-hd">Writing (Schreiben)</div>
+        <button class="sidebar-btn" onclick="showPanel('s1',this)">Task 1 – E-Mail</button>
+        <button class="sidebar-btn" onclick="showPanel('s2',this)">Task 2 – Opinion</button>
+        <button class="sidebar-btn" onclick="showPanel('s3',this)">Task 3 – Apology</button>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-group-hd">Speaking (Sprechen)</div>
+        <button class="sidebar-btn" onclick="showPanel('sp1',this)">Teil 1 – Planning</button>
+        <button class="sidebar-btn" onclick="showPanel('sp2',this)">Teil 2 – Presentation</button>
+        <button class="sidebar-btn" onclick="showPanel('sp3',this)">Teil 3 – Discussion</button>
+      </div>
+    </nav>
+
+    <!-- Main panel -->
+    <div class="main-panel" style="padding-bottom:3rem;">
+
+      <!-- META -->
+      <div class="panel active" id="panel-meta">
+        <div class="panel-hd"><h2>⚙ Metadata &amp; Audio</h2><p>Test name and audio file paths</p></div>
+        <div class="grid2">
+          <div class="field"><label class="field-label">Test ID</label><input class="finput" id="m-id" placeholder="test-03"></div>
+          <div class="field"><label class="field-label">Test Name</label><input class="finput" id="m-naziv" placeholder="Modellsatz 3"></div>
+        </div>
+        <hr class="divider">
+        <div class="panel-hd" style="margin-bottom:1rem;"><h2>🔊 Audio File Paths</h2><p>Relative path to MP3 (e.g. <code>audio/test0/horen_test0_teil1.mp3</code>)</p></div>
+        <div class="grid2">
+          <div class="field"><label class="field-label">Listening Teil 1</label><input class="finput" id="a-t1" placeholder="audio/test1/horen_test1_teil1.mp3"></div>
+          <div class="field"><label class="field-label">Listening Teil 2</label><input class="finput" id="a-t2" placeholder="audio/test1/horen_test1_teil2.mp3"></div>
+          <div class="field"><label class="field-label">Listening Teil 3</label><input class="finput" id="a-t3" placeholder="audio/test1/horen_test1_teil3.mp3"></div>
+          <div class="field"><label class="field-label">Listening Teil 4</label><input class="finput" id="a-t4" placeholder="audio/test1/horen_test1_teil4.mp3"></div>
+        </div>
+      </div>
+
+      <!-- LESEN 1 -->
+      <div class="panel" id="panel-l1">
+        <div class="panel-hd"><h2>Reading – Teil 1</h2><p>Blog text and 6 True/False statements</p></div>
+
+        <!-- Task — single plain textarea -->
+        <div class="card">
+          <div class="card-title">Task <span style="font-size:.72rem;color:var(--muted);font-weight:400;text-transform:none;">— full reading text (name, date, all paragraphs)</span></div>
+          <div class="field">
+            <textarea class="ftextarea xtall" id="l1-tekst" placeholder="Enter the full reading text here…"></textarea>
+          </div>
+        </div>
+
+        <!-- Beispiel with T/F toggle -->
+        <div class="card">
+          <div class="card-title">Beispiel (Example row)</div>
+          <div class="field">
+            <label class="field-label">Example statement</label>
+            <input class="finput" id="l1-primer" placeholder="Enter the example statement…">
+          </div>
+          <div class="field">
+            <label class="field-label">Correct answer</label>
+            <div class="tf-toggle">
+              <button class="tf-btn sel-r" id="l1-prim-r" onclick="setTF('l1','r')">✓ Richtig</button>
+              <button class="tf-btn" id="l1-prim-f" onclick="setTF('l1','f')">✗ Falsch</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Statements 1–6 -->
+        <div class="card">
+          <div class="card-title">Statements 1–6</div>
+          <div id="l1-pitanja-cont"></div>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-l2">
+        <div class="panel-hd"><h2>Reading – Teil 2</h2><p>2 articles + 6 multiple-choice tasks (a/b/c)</p></div>
+        <div class="card">
+          <div class="card-title">Article 1 <span class="card-num">Text 1</span></div>
+          <div class="field">
+            <div class="rich-wrap">
+              <div class="rich-toolbar">
+                <button onclick="fmt('bold')"><b>B</b></button>
+                <button onclick="fmt('italic')"><i>I</i></button>
+                <button onclick="fmt('underline')"><u>U</u></button>
+                <div class="tb-sep"></div>
+                <input type="color" value="#1c1c1c" onchange="fmt('foreColor',this.value)" title="Text colour">
+                <div class="tb-sep"></div>
+                <button onclick="fmt('removeFormat')">✕</button>
+              </div>
+              <div class="rich-editor xtall" id="l2-c1-tekst" contenteditable="true"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Article 2 <span class="card-num">Text 2</span></div>
+          <div class="field">
+            <div class="rich-wrap">
+              <div class="rich-toolbar">
+                <button onclick="fmt('bold')"><b>B</b></button>
+                <button onclick="fmt('italic')"><i>I</i></button>
+                <button onclick="fmt('underline')"><u>U</u></button>
+                <div class="tb-sep"></div>
+                <input type="color" value="#1c1c1c" onchange="fmt('foreColor',this.value)" title="Text colour">
+                <div class="tb-sep"></div>
+                <button onclick="fmt('removeFormat')">✕</button>
+              </div>
+              <div class="rich-editor xtall" id="l2-c2-tekst" contenteditable="true"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Beispiel (Example) <span class="card-num">0</span></div>
+          <div class="field"><label class="field-label">Question</label><input class="finput" id="l2-pq-inp"></div>
+          <div class="grid3">
+            <div class="field"><label class="field-label">Option a</label><input class="finput" id="l2-pa-inp"></div>
+            <div class="field"><label class="field-label">Option b</label><input class="finput" id="l2-pb-inp"></div>
+            <div class="field"><label class="field-label">Option c</label><input class="finput" id="l2-pc-inp"></div>
+          </div>
+          <div class="field">
+            <label class="field-label">Correct answer</label>
+            <div class="abc-toggle" id="l2-pans-tog">
+              <button class="abc-btn" onclick="setABC('l2-pans','a',this)">a</button>
+              <button class="abc-btn" onclick="setABC('l2-pans','b',this)">b</button>
+              <button class="abc-btn sel" onclick="setABC('l2-pans','c',this)">c</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Tasks 7–12</div>
+          <div id="l2-pitanja-cont"></div>
+        </div>
+      </div>
+
+      <!-- LESEN 3 -->
+      <div class="panel" id="panel-l3">
+        <div class="panel-hd"><h2>Reading – Teil 3</h2><p>Context, 10 ads (a–j) and 7 situations</p></div>
+        <div class="card">
+          <div class="card-title">Context sentence</div>
+          <div class="field"><textarea class="ftextarea" id="l3-kontekst"></textarea></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Example (Beispiel) Anzeige <span style="font-size:.72rem;color:var(--muted);font-weight:400;text-transform:none;">— select which ad is the locked example</span></div>
+          <div class="field">
+            <div class="abc-toggle" id="l3-primer-tog" style="flex-wrap:wrap;gap:.4rem;">
+              <button class="abc-btn" onclick="setL3Primer('a',this)">a</button>
+              <button class="abc-btn" onclick="setL3Primer('b',this)">b</button>
+              <button class="abc-btn" onclick="setL3Primer('c',this)">c</button>
+              <button class="abc-btn" onclick="setL3Primer('d',this)">d</button>
+              <button class="abc-btn" onclick="setL3Primer('e',this)">e</button>
+              <button class="abc-btn" onclick="setL3Primer('f',this)">f</button>
+              <button class="abc-btn" onclick="setL3Primer('g',this)">g</button>
+              <button class="abc-btn" onclick="setL3Primer('h',this)">h</button>
+              <button class="abc-btn sel" onclick="setL3Primer('i',this)">i</button>
+              <button class="abc-btn" onclick="setL3Primer('j',this)">j</button>
+            </div>
+          </div>
+          <div class="field" style="margin-top:.65rem;">
+            <label class="field-label">Example situation text (row 0)</label>
+            <input class="finput" id="l3-primer-tekst" placeholder="e.g. Mario möchte in Wien einen Sommersprachkurs besuchen.">
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Ads a–j <span style="font-size:.72rem;color:var(--muted);font-weight:400;text-transform:none;">— one plain text box per ad</span></div>
+          <div id="l3-oglasi-cont"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Situations 13–19</div>
+          <div id="l3-situacije-cont"></div>
+        </div>
+      </div>
+
+      <!-- LESEN 4 -->
+      <div class="panel" id="panel-l4">
+        <div class="panel-hd"><h2>Reading – Teil 4</h2><p>Context and 7 reader letters (Yes/No)</p></div>
+        <div class="card">
+          <div class="card-title">Context</div>
+          <div class="field"><textarea class="ftextarea" id="l4-kontekst"></textarea></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Task Instruction</div>
+          <div class="field">
+            <textarea class="ftextarea" id="l4-aufgabe" placeholder="Lesen Sie die Texte 20 bis 26. Wählen Sie: …"></textarea>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Beispiel (Example row)</div>
+          <div class="field">
+            <label class="field-label">Name</label>
+            <input class="finput" id="l4-primer-ime" placeholder="e.g. Niko">
+          </div>
+          <div class="field">
+            <label class="field-label">Letter Text</label>
+            <div class="rich-wrap">
+              <div class="rich-toolbar">
+                <button onclick="fmt('bold')"><b>B</b></button>
+                <button onclick="fmt('italic')"><i>I</i></button>
+                <button onclick="fmt('underline')"><u>U</u></button>
+                <div class="tb-sep"></div>
+                <input type="color" value="#1c1c1c" onchange="fmt('foreColor',this.value)" title="Text colour">
+                <div class="tb-sep"></div>
+                <button onclick="fmt('removeFormat')">✕</button>
+              </div>
+              <div class="rich-editor" id="l4-primer-tekst" contenteditable="true" style="min-height:90px;"></div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label">Correct answer</label>
+            <div class="tf-toggle">
+              <button class="tf-btn sel-r" id="l4-prim-ja" onclick="setTF2('l4','j')">Ja</button>
+              <button class="tf-btn" id="l4-prim-nein" onclick="setTF2('l4','n')">Nein</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Persons 20–26</div>
+          <div id="l4-osobe-cont"></div>
+        </div>
+      </div>
+
+      <!-- LESEN 5 -->
+      <div class="panel" id="panel-l5">
+        <div class="panel-hd"><h2>Reading – Teil 5</h2><p>Task text + 4 multiple-choice tasks</p></div>
+        <div class="card">
+          <div class="card-title">Task <span style="font-size:.72rem;color:var(--muted);font-weight:400;text-transform:none;">— full reading text (context + house rules content)</span></div>
+          <div class="field"><textarea class="ftextarea xtall" id="l5-tekst"></textarea></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Tasks 27–30</div>
+          <div id="l5-pitanja-cont"></div>
+        </div>
+      </div>
+
+      <!-- HÖREN 1 -->
+      <div class="panel" id="panel-h1">
+        <div class="panel-hd"><h2>Listening – Teil 1</h2><p>5 texts: one True/False + one Multiple Choice each</p></div>
+        <div class="card">
+          <div class="card-title">Example (locked)</div>
+          <div class="field">
+            <label class="field-label">01 – True/False Statement</label>
+            <input class="finput" id="h1-prf" style="margin-bottom:.45rem;">
+            <label class="field-label" style="margin-top:.4rem;">Correct answer</label>
+            <div class="tf-toggle">
+              <button class="tf-btn sel-r" id="h1-prf-prim-r" onclick="setTF('h1-prf','r')">✓ Richtig</button>
+              <button class="tf-btn" id="h1-prf-prim-f" onclick="setTF('h1-prf','f')">✗ Falsch</button>
+            </div>
+          </div>
+          <hr style="border:none;border-top:1px solid var(--borderlt);margin:.75rem 0;">
+          <div class="field">
+            <label class="field-label">02 – Multiple Choice Question</label>
+            <input class="finput" id="h1-pmc" style="margin-bottom:.45rem;">
+          </div>
+          <div class="grid3">
+            <div class="field"><label class="field-label">Option a</label><input class="finput" id="h1-pa"></div>
+            <div class="field"><label class="field-label">Option b</label><input class="finput" id="h1-pb"></div>
+            <div class="field"><label class="field-label">Option c</label><input class="finput" id="h1-pc"></div>
+          </div>
+          <div class="field" style="margin-top:.5rem;">
+            <label class="field-label">Correct answer (02)</label>
+            <div class="abc-toggle" id="h1-mc-ans-tog">
+              <button class="abc-btn" onclick="setABC('h1-mc-ans','a',this)">a</button>
+              <button class="abc-btn" onclick="setABC('h1-mc-ans','b',this)">b</button>
+              <button class="abc-btn sel" onclick="setABC('h1-mc-ans','c',this)">c</button>
+            </div>
+          </div>
+        </div>
+        <div id="h1-texte-cont"></div>
+      </div>
+
+      <!-- HÖREN 2 -->
+      <div class="panel" id="panel-h2">
+        <div class="panel-hd"><h2>Listening – Teil 2</h2><p>Situation + 5 Multiple-Choice-Questionn (11–15)</p></div>
+        <div class="card">
+          <div class="card-title">Situation</div>
+          <div class="field"><textarea class="ftextarea" id="h2-kontekst"></textarea></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Tasks 11–15</div>
+          <div id="h2-pitanja-cont"></div>
+        </div>
+      </div>
+
+      <!-- HÖREN 3 -->
+      <div class="panel" id="panel-h3">
+        <div class="panel-hd"><h2>Listening – Teil 3</h2><p>Situation + 7 True/False statementn (16–22)</p></div>
+        <div class="card">
+          <div class="card-title">Situation</div>
+          <div class="field"><textarea class="ftextarea" id="h3-kontekst"></textarea></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Statements 16–22</div>
+          <div id="h3-pitanja-cont"></div>
+        </div>
+      </div>
+
+      <!-- HÖREN 4 -->
+      <div class="panel" id="panel-h4">
+        <div class="panel-hd"><h2>Listening – Teil 4</h2><p>Situation + Example + 8 attribution statements (23–30)</p></div>
+        <div class="card">
+          <div class="card-title">Situation</div>
+          <div class="field"><textarea class="ftextarea" id="h4-kontekst"></textarea></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Person Names (a / b / c)</div>
+          <div class="grid3">
+            <div class="field"><label class="field-label">a</label><input class="finput" id="h4-name-a" placeholder="Moderator"></div>
+            <div class="field"><label class="field-label">b</label><input class="finput" id="h4-name-b" placeholder="Dana Schneider"></div>
+            <div class="field"><label class="field-label">c</label><input class="finput" id="h4-name-c" placeholder="Florian Bader"></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Example (locked)</div>
+          <div class="field">
+            <label class="field-label">Statement</label>
+            <input class="finput" id="h4-primer" style="margin-bottom:.45rem;">
+            <label class="field-label" style="margin-top:.4rem;">Who says it?</label>
+            <div class="abc-toggle" id="h4-primer-ans-tog">
+              <button class="abc-btn" onclick="setABC('h4-primer-ans','a',this)" id="h4-tog-a">a</button>
+              <button class="abc-btn sel" onclick="setABC('h4-primer-ans','b',this)" id="h4-tog-b">b</button>
+              <button class="abc-btn" onclick="setABC('h4-primer-ans','c',this)" id="h4-tog-c">c</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Statements 23–30</div>
+          <div id="h4-pitanja-cont"></div>
+        </div>
+      </div>
+
+      <!-- SCHREIBEN 1 -->
+      <div class="panel" id="panel-s1">
+        <div class="panel-hd"><h2>Writing – Task 1</h2><p>E-mail approx. 80 words</p></div>
+        <div class="card">
+          <div class="card-title">Situation</div>
+          <div class="field"><textarea class="ftextarea tall" id="s1-sit"></textarea></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Content Points <span style="font-size:.72rem;color:var(--muted);font-weight:400;text-transform:none;">— one per line, or use your own format</span></div>
+          <div class="field"><textarea class="ftextarea tall" id="s1-tacke" placeholder="– Point 1&#10;– Point 2&#10;– Point 3"></textarea></div>
+        </div>
+      </div>
+
+      <!-- SCHREIBEN 2 -->
+      <div class="panel" id="panel-s2">
+        <div class="panel-hd"><h2>Writing – Task 2</h2><p>Opinion approx. 80 words</p></div>
+        <div class="card">
+          <div class="card-title">Situation &amp; Task Text <span style="font-size:.72rem;color:var(--muted);font-weight:400;text-transform:none;">— full text shown to candidate (situation + guestbook entry etc.)</span></div>
+          <div class="field"><textarea class="ftextarea xtall" id="s2-sit"></textarea></div>
+        </div>
+      </div>
+
+      <!-- SCHREIBEN 3 -->
+      <div class="panel" id="panel-s3">
+        <div class="panel-hd"><h2>Writing – Task 3</h2><p>E-mail approx. 40 words</p></div>
+        <div class="card">
+          <div class="card-title">Situation &amp; Task Description <span style="font-size:.72rem;color:var(--muted);font-weight:400;text-transform:none;">— full text shown to candidate</span></div>
+          <div class="field"><textarea class="ftextarea xtall" id="s3-sit"></textarea></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Text Area Placeholder <span style="font-size:.72rem;color:var(--muted);font-weight:400;text-transform:none;">— hint text shown in the empty answer box</span></div>
+          <div class="field"><textarea class="ftextarea" id="s3-placeholder" placeholder="Schreiben Sie hier Ihre E-Mail …&#10;&#10;Sehr geehrte Frau Müller,&#10;&#10;…"></textarea></div>
+        </div>
+      </div>
+
+      <!-- SPRECHEN 1 -->
+      <div class="panel" id="panel-sp1">
+        <div class="panel-hd"><h2>Speaking – Teil 1</h2><p>Planning together</p></div>
+        <div class="card">
+          <div class="card-title">Situation</div>
+          <div class="field"><textarea class="ftextarea tall" id="sp1-sit"></textarea></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Task <span style="font-size:.72rem;color:var(--muted);font-weight:400;text-transform:none;">— card title + discussion points (shown on card)</span></div>
+          <div class="field">
+            <div class="rich-wrap">
+              <div class="rich-toolbar">
+                <button onclick="fmt('bold')"><b>B</b></button>
+                <button onclick="fmt('italic')"><i>I</i></button>
+                <button onclick="fmt('underline')"><u>U</u></button>
+                <div class="tb-sep"></div>
+                <select onchange="fmt('fontSize',this.value);this.selectedIndex=0">
+                  <option value="">Size</option>
+                  <option value="1">Small</option>
+                  <option value="3">Normal</option>
+                  <option value="5">Large</option>
+                </select>
+                <div class="tb-sep"></div>
+                <input type="color" value="#1a2744" onchange="fmt('foreColor',this.value)" title="Text colour">
+                <div class="tb-sep"></div>
+                <button onclick="fmt('removeFormat')">✕</button>
+              </div>
+              <div class="rich-editor tall" id="sp1-task" contenteditable="true" placeholder="Card title + bullet points..."></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPRECHEN 2 -->
+      <div class="panel" id="panel-sp2">
+        <div class="panel-hd"><h2>Speaking – Teil 2</h2><p>For each slide: instruction text (left) + card content (right)</p></div>
+        <div class="card">
+          <div class="card-title">Topic 1</div>
+          <div id="sp2-t1-folien-cont"></div>
+        </div>
+        <div class="card" style="margin-top:1.25rem;">
+          <div class="card-title">Topic 2</div>
+          <div id="sp2-t2-folien-cont"></div>
+        </div>
+      </div>
+
+      <!-- SPRECHEN 3 -->
+      <div class="panel" id="panel-sp3">
+        <div class="panel-hd"><h2>Speaking – Teil 3</h2><p>Discussion after presentations</p></div>
+        <div class="card">
+          <div class="card-title">Text 1 <span style="font-size:.72rem;color:var(--muted);font-weight:400;text-transform:none;">— e.g. "Nach Ihrer Präsentation"</span></div>
+          <div class="field"><textarea class="ftextarea tall" id="sp3-tekst1"></textarea></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Text 2 <span style="font-size:.72rem;color:var(--muted);font-weight:400;text-transform:none;">— e.g. "Nach der Präsentation Ihrer Partnerin/Ihres Partners"</span></div>
+          <div class="field"><textarea class="ftextarea xtall" id="sp3-tekst2"></textarea></div>
+        </div>
+      </div>
+
+    </div><!-- /main-panel -->
+  </div><!-- /editor-body -->
+</div><!-- /editor-screen -->
+
+<div class="statusbar" id="statusbar" style="display:none;">
+  <span><span class="status-dot"></span> Changes will be exported when saved</span>
+  <span id="status-testname" style="font-weight:600; color:var(--navy);"></span>
+</div>
+
+<script>
+const TESTOVI = [
+  { id: 'test-00', naziv: 'Model Set 0' },
+  { id: 'test-01', naziv: 'Model Set 1' },
+  { id: 'test-02', naziv: 'Model Set 2' },
+  { id: 'test-03', naziv: 'Model Set 3' }
+];
+
+let D = null; // current data
+
+// ── BUILD LOAD SCREEN ──
+(function() {
+  const cont = document.getElementById('load-btns');
+  TESTOVI.forEach(t => {
+    const btn = document.createElement('button');
+    btn.className = 'load-test-btn';
+    btn.innerHTML = `<span>${t.naziv}</span><span class="ltb-badge">edit</span>`;
+    btn.onclick = () => loadTest(t.id);
+    cont.appendChild(btn);
+  });
+})();
+
+function setL3Primer(letter, btn) {
+  _abcState['l3-primer'] = letter;
+  const tog = document.getElementById('l3-primer-tog');
+  if (tog) tog.querySelectorAll('.abc-btn').forEach(b => b.classList.remove('sel'));
+  if (btn) btn.classList.add('sel');
+}
+function getL3Primer() { return _abcState['l3-primer'] || 'i'; }
+
+async function loadTest(id) {
+  try {
+    const res = await fetch(`testovi/${id}.json`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    D = await res.json();
+    openEditor();
+  } catch(e) {
+    alert('Error loading:\n' + e.message + '\n\nMake sure Live Server is running and testovi/' + id + '.json exists.');
+  }
+}
+
+function newTest() {
+  D = {
+    meta: { id: 'test-0' + (TESTOVI.length + 1), naziv: 'Model Set ' + (TESTOVI.length + 1) },
+    audio: { t1: 'audio/test0/horen_test0_teil1.mp3', t2: 'audio/test0/horen_test0_teil2.mp3', t3: 'audio/test0/horen_test0_teil3.mp3', t4: 'audio/test0/horen_test0_teil4.mp3' },
+    lesen: {
+      t1: { blog_naslov:'', blog_tagline:'', blog_datum:'', blog_tekst:['','','','',''], primer_tekst:'', pitanja:['','','','','',''] },
+      t2: { clanak1:{kicker:'',naslov:'',kolona1:[''],kolona2:[''],izvor:''}, clanak2:{naslov:'',kolona1:[''],kolona2:[''],izvor:''}, primer_tekst:'', primer_odg:'', pitanja:[{tekst:'',a:'',b:'',c:''},{tekst:'',a:'',b:'',c:''},{tekst:'',a:'',b:'',c:''},{tekst:'',a:'',b:'',c:''},{tekst:'',a:'',b:'',c:''},{tekst:'',a:'',b:'',c:''}] },
+      t3: { kontekst:'', primer_tekst:'', primer_odg:'i', primer_slovo:'i', oglasi:{a:{tekst:'',primer:false},b:{tekst:'',primer:false},c:{tekst:'',primer:false},d:{tekst:'',primer:false},e:{tekst:'',primer:false},f:{tekst:'',primer:false},g:{tekst:'',primer:false},h:{tekst:'',primer:false},i:{tekst:'',primer:true},j:{tekst:'',primer:false}}, situacije:['','','','','','',''] },
+      t4: { kontekst:'', primer_ime:'', primer_odg:'j', primer_tekst:'', osobe:[{ime:'',tekst:''},{ime:'',tekst:''},{ime:'',tekst:''},{ime:'',tekst:''},{ime:'',tekst:''},{ime:'',tekst:''},{ime:'',tekst:''}] },
+      t5: { kontekst:'', hausordnung:[{naslov:'',tekst:''},{naslov:'',tekst:''},{naslov:'',tekst:''},{naslov:'',tekst:''},{naslov:'',tekst:''},{naslov:'',tekst:''},{naslov:'',tekst:''}], pitanja:[{tekst:'',a:'',b:'',c:''},{tekst:'',a:'',b:'',c:''},{tekst:'',a:'',b:'',c:''},{tekst:'',a:'',b:'',c:''}] }
+    },
+    hoeren: {
+      t1: { primer_rf:{tekst:''}, primer_mc:{tekst:'',a:'',b:'',c:''}, tekstovi:[{rf:'',mc:{tekst:'',a:'',b:'',c:''}},{rf:'',mc:{tekst:'',a:'',b:'',c:''}},{rf:'',mc:{tekst:'',a:'',b:'',c:''}},{rf:'',mc:{tekst:'',a:'',b:'',c:''}},{rf:'',mc:{tekst:'',a:'',b:'',c:''}}] },
+      t2: { kontekst:'', pitanja:[{tekst:'',a:'',b:'',c:''},{tekst:'',a:'',b:'',c:''},{tekst:'',a:'',b:'',c:''},{tekst:'',a:'',b:'',c:''},{tekst:'',a:'',b:'',c:''}] },
+      t3: { kontekst:'', pitanja:['','','','','','',''] },
+      t4: { kontekst:'', primer_tekst:'', primer_odg:'b', pitanja:['','','','','','','',''] }
+    },
+    schreiben: {
+      a1: { situacija:'', tacke:['','',''] },
+      a2: { situacija:'', gaestebuch_autor:'', gaestebuch_timestamp:'', gaestebuch_tekst:'' },
+      a3: { situacija:'', zadatak:'' }
+    },
+    sprechen: {
+      t1: { situacija:'', naslov:'', tacke:['','','',''] },
+      t2: { thema1_naslov:'', thema1_folien:['','','','',''], thema1_instrukcije:['','','','',''], thema2_naslov:'', thema2_folien:['','','','',''], thema2_instrukcije:['','','','',''] }
+    }
+  };
+  openEditor();
+}
+
+function openEditor() {
+  document.getElementById('load-screen').style.display = 'none';
+  document.getElementById('editor-screen').style.display = 'block';
+  document.getElementById('topbar-btns').style.display = 'flex';
+  document.getElementById('statusbar').style.display = 'flex';
+  document.getElementById('status-testname').textContent = D.meta?.naziv || '';
+  fillForm();
+}
+
+function closeEditor() {
+  if (!confirm('Unsaved changes will be lost. Return to selection?')) return;
+  D = null;
+  document.getElementById('editor-screen').style.display = 'none';
+  document.getElementById('load-screen').style.display = 'flex';
+  document.getElementById('topbar-btns').style.display = 'none';
+  document.getElementById('statusbar').style.display = 'none';
+}
+
+// ── PANEL NAV ──
+function showPanel(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sidebar-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── RICH TEXT HELPERS ──
+function fmt(cmd, val) {
+  document.execCommand(cmd, false, val || null);
+}
+function setRich(id, html) {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = html || '';
+}
+function getRich(id) {
+  const el = document.getElementById(id);
+  return el ? el.innerHTML : '';
+}
+
+// ── TRUE/FALSE TOGGLE ──
+const _tfState = {};
+function setTF(prefix, val) {
+  _tfState[prefix] = val;
+  const r = document.getElementById(prefix + '-prim-r');
+  const f = document.getElementById(prefix + '-prim-f');
+  if (r) { r.classList.toggle('sel-r', val === 'r'); r.classList.toggle('tf-btn', true); }
+  if (f) { f.classList.toggle('sel-f', val === 'f'); f.classList.toggle('tf-btn', true); }
+}
+function getTF(prefix) {
+  return _tfState[prefix] || 'r';
+}
+// Ja/Nein variant (j/n instead of r/f)
+function setTF2(prefix, val) {
+  _tfState[prefix] = val;
+  const ja   = document.getElementById(prefix + '-prim-ja');
+  const nein = document.getElementById(prefix + '-prim-nein');
+  if (ja)   ja.classList.toggle('sel-r', val === 'j');
+  if (nein) nein.classList.toggle('sel-f', val === 'n');
+}
+function getTF2(prefix) { return _tfState[prefix] || 'j'; }
+
+// ── ABC TOGGLE (a/b/c answer select) ──
+const _abcState = {};
+function setABC(key, val, btn) {
+  _abcState[key] = val;
+  if (btn) {
+    const tog = btn.closest('.abc-toggle');
+    if (tog) tog.querySelectorAll('.abc-btn').forEach(b => b.classList.remove('sel'));
+    btn.classList.add('sel');
+  }
+}
+function getABC(key, def) {
+  return _abcState[key] || def || 'a';
+}
+function initABC(key, val, togId) {
+  _abcState[key] = val || 'a';
+  const tog = document.getElementById(togId);
+  if (!tog) return;
+  const map = {a:0,b:1,c:2};
+  const btns = tog.querySelectorAll('.abc-btn');
+  btns.forEach(b => b.classList.remove('sel'));
+  if (btns[map[_abcState[key]]]) btns[map[_abcState[key]]].classList.add('sel');
+}
+
+// ── FORM HELPERS ──
+function inp(id) { return document.getElementById(id); }
+function setVal(id, v) { const e = inp(id); if(e) e.value = v || ''; }
+function getVal(id) { const e = inp(id); return e ? e.value : ''; }
+
+function makeField(label, id, type='input', placeholder='') {
+  const d = document.createElement('div');
+  d.className = 'field';
+  d.innerHTML = `<label class="field-label">${label}</label>` +
+    (type === 'textarea'
+      ? `<textarea class="ftextarea" id="${id}" placeholder="${placeholder}"></textarea>`
+      : `<input class="finput" id="${id}" placeholder="${placeholder}">`);
+  return d;
+}
+
+function makeMCBlock(num, qId, aId, bId, cId) {
+  const d = document.createElement('div');
+  d.className = 'card';
+  d.style.marginBottom = '.75rem';
+  d.innerHTML = `<div class="card-title">Aufgabe ${num} <span class="card-num">a / b / c</span></div>
+    <div class="field"><label class="field-label">Question</label><input class="finput" id="${qId}"></div>
+    <div class="grid3">
+      <div class="field"><label class="field-label">Option a</label><input class="finput" id="${aId}"></div>
+      <div class="field"><label class="field-label">Option b</label><input class="finput" id="${bId}"></div>
+      <div class="field"><label class="field-label">Option c</label><input class="finput" id="${cId}"></div>
+    </div>`;
+  return d;
+}
+
+// ── FILL FORM ──
+function fillForm() {
+  // META
+  setVal('m-id', D.meta.id);
+  setVal('m-naziv', D.meta.naziv);
+  setVal('a-t1', D.audio.t1); setVal('a-t2', D.audio.t2);
+  setVal('a-t3', D.audio.t3); setVal('a-t4', D.audio.t4);
+
+  // L1 — combine all text into one plain textarea
+  const l1parts = [];
+  if (D.lesen.t1.blog_naslov)  l1parts.push(D.lesen.t1.blog_naslov);
+  if (D.lesen.t1.blog_tagline) l1parts.push(D.lesen.t1.blog_tagline);
+  if (D.lesen.t1.blog_datum)   l1parts.push(D.lesen.t1.blog_datum);
+  const l1tekst = Array.isArray(D.lesen.t1.blog_tekst)
+    ? D.lesen.t1.blog_tekst.join('\n\n')
+    : (D.lesen.t1.blog_tekst || '');
+  if (l1tekst) l1parts.push(l1tekst);
+  setVal('l1-tekst', l1parts.filter(Boolean).join('\n\n'));
+  setVal('l1-primer', D.lesen.t1.primer_tekst);
+  setTF('l1', D.lesen.t1.primer_odg || 'r');
+  const l1pc = document.getElementById('l1-pitanja-cont'); l1pc.innerHTML = '';
+  D.lesen.t1.pitanja.forEach((q,i) => { const f = makeField(`Statement ${i+1}`, `l1-q${i}`); l1pc.appendChild(f); setVal(`l1-q${i}`, q); });
+
+  // L2 – articles as single rich text + beispiel
+  const c1 = D.lesen.t2.clanak1, c2 = D.lesen.t2.clanak2;
+  const c1tekst = c1.clanak1_tekst || [c1.kicker,c1.naslov,...(c1.kolona1||[]),...(c1.kolona2||[]),c1.izvor].filter(Boolean).join('\n\n');
+  const c2tekst = c2.clanak2_tekst || [c2.naslov,...(c2.kolona1||[]),...(c2.kolona2||[]),c2.izvor].filter(Boolean).join('\n\n');
+  setRich('l2-c1-tekst', c1tekst.replace(/\n/g,'<br>'));
+  setRich('l2-c2-tekst', c2tekst.replace(/\n/g,'<br>'));
+  // Beispiel
+  setVal('l2-pq-inp', D.lesen.t2.primer_question || D.lesen.t2.primer_tekst || '');
+  setVal('l2-pa-inp', D.lesen.t2.primer_a || '');
+  setVal('l2-pb-inp', D.lesen.t2.primer_b || '');
+  setVal('l2-pc-inp', D.lesen.t2.primer_c || D.lesen.t2.primer_odg || '');
+  initABC('l2-pans', D.lesen.t2.primer_ans || 'c', 'l2-pans-tog');
+  const l2pc = document.getElementById('l2-pitanja-cont'); l2pc.innerHTML = '';
+  D.lesen.t2.pitanja.forEach((q,i) => { const b = makeMCBlock(7+i, `l2-q${i}`, `l2-a${i}`, `l2-b${i}`, `l2-c${i}`); l2pc.appendChild(b); setVal(`l2-q${i}`,q.tekst); setVal(`l2-a${i}`,q.a); setVal(`l2-b${i}`,q.b); setVal(`l2-c${i}`,q.c); });
+
+  // L3
+  setVal('l3-kontekst', D.lesen.t3.kontekst);
+  // Beispiel selector
+  const primerSlovo = D.lesen.t3.primer_slovo || 'i';
+  _abcState['l3-primer'] = primerSlovo;
+  const tog = document.getElementById('l3-primer-tog');
+  if (tog) {
+    tog.querySelectorAll('.abc-btn').forEach(b => {
+      b.classList.toggle('sel', b.textContent.trim() === primerSlovo);
+    });
+  }
+  // Ad editors
+  const l3oc = document.getElementById('l3-oglasi-cont'); l3oc.innerHTML = '';
+  'abcdefghij'.split('').forEach(l => {
+    const ad = D.lesen.t3.oglasi[l] || {};
+    const isEx = l === primerSlovo;
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'margin-bottom:.75rem;';
+    wrap.innerHTML = `
+      <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--navy);margin-bottom:.3rem;">${l}</div>
+      <div class="rich-wrap">
+        <div class="rich-toolbar">
+          <button onclick="fmt('bold')"><b>B</b></button>
+          <button onclick="fmt('italic')"><i>I</i></button>
+          <button onclick="fmt('underline')"><u>U</u></button>
+          <div class="tb-sep"></div>
+          <input type="color" value="#1c1c1c" onchange="fmt('foreColor',this.value)" title="Text colour">
+          <div class="tb-sep"></div>
+          <button onclick="fmt('removeFormat')">✕</button>
+        </div>
+        <div class="rich-editor" id="l3-ad-${l}" contenteditable="true" style="min-height:90px;"></div>
+      </div>`;
+    l3oc.appendChild(wrap);
+    setRich(`l3-ad-${l}`, (ad.tekst||'').replace(/\n/g,'<br>'));
+  });
+  const l3sc = document.getElementById('l3-situacije-cont'); l3sc.innerHTML = '';
+  D.lesen.t3.situacije.forEach((s,i) => { const f = makeField(`Situation ${13+i}`, `l3-s${i}`); l3sc.appendChild(f); setVal(`l3-s${i}`, s); });
+
+  // L4
+  setVal('l4-kontekst', D.lesen.t4.kontekst);
+  setVal('l4-aufgabe', D.lesen.t4.aufgabe || '');
+  setVal('l4-primer-ime', D.lesen.t4.primer_ime || '');
+  setRich('l4-primer-tekst', (D.lesen.t4.primer_tekst || '').replace(/\n/g,'<br>'));
+  setTF2('l4', D.lesen.t4.primer_odg || 'j');
+  const l4oc = document.getElementById('l4-osobe-cont'); l4oc.innerHTML = '';
+  D.lesen.t4.osobe.forEach((p,i) => {
+    const d = document.createElement('div');
+    d.className = 'card'; d.style.marginBottom = '.75rem';
+    d.innerHTML = `<div class="card-title">Person ${20+i} <span class="card-num">${20+i}</span></div><div class="field"><label class="field-label">Name, Age, City</label><input class="finput" id="l4-n${i}"></div><div class="field"><label class="field-label">Letter text</label><textarea class="ftextarea xtall" id="l4-t${i}"></textarea></div>`;
+    l4oc.appendChild(d);
+    setVal(`l4-n${i}`, p.ime); setVal(`l4-t${i}`, p.tekst);
+  });
+
+  // L5
+  // L5 – single text box
+  const l5tekst = D.lesen.t5.tekst || (() => {
+    const parts = [];
+    if (D.lesen.t5.kontekst) parts.push(D.lesen.t5.kontekst);
+    (D.lesen.t5.hausordnung||[]).forEach(s => parts.push(`${s.naslov}:\n${s.tekst}`));
+    return parts.join('\n\n');
+  })();
+  setVal('l5-tekst', l5tekst);
+  const l5pc = document.getElementById('l5-pitanja-cont'); l5pc.innerHTML = '';
+  D.lesen.t5.pitanja.forEach((q,i) => { const b = makeMCBlock(27+i, `l5-q${i}`, `l5-a${i}`, `l5-b${i}`, `l5-c${i}`); l5pc.appendChild(b); setVal(`l5-q${i}`,q.tekst); setVal(`l5-a${i}`,q.a); setVal(`l5-b${i}`,q.b); setVal(`l5-c${i}`,q.c); });
+
+
+  // H1
+  setVal('h1-prf', D.hoeren.t1.primer_rf.tekst);
+  setTF('h1-prf', D.hoeren.t1.primer_rf_odg || 'r');
+  setVal('h1-pmc', D.hoeren.t1.primer_mc.tekst);
+  setVal('h1-pa', D.hoeren.t1.primer_mc.a); setVal('h1-pb', D.hoeren.t1.primer_mc.b); setVal('h1-pc', D.hoeren.t1.primer_mc.c);
+  initABC('h1-mc-ans', D.hoeren.t1.primer_mc_odg || 'c', 'h1-mc-ans-tog');
+  const h1tc = document.getElementById('h1-texte-cont'); h1tc.innerHTML = '';
+  D.hoeren.t1.tekstovi.forEach((t,i) => {
+    const d = document.createElement('div'); d.className = 'card'; d.style.marginBottom = '.75rem';
+    d.innerHTML = `<div class="card-title">Text ${i+1}</div>
+      <div class="field"><label class="field-label">True/False statement</label><input class="finput" id="h1-rf${i}"></div>
+      <div class="field"><label class="field-label">MC-Question</label><input class="finput" id="h1-mq${i}"></div>
+      <div class="grid3">
+        <div class="field"><label class="field-label">Option a</label><input class="finput" id="h1-ma${i}"></div>
+        <div class="field"><label class="field-label">Option b</label><input class="finput" id="h1-mb${i}"></div>
+        <div class="field"><label class="field-label">Option c</label><input class="finput" id="h1-mc${i}"></div>
+      </div>`;
+    h1tc.appendChild(d);
+    setVal(`h1-rf${i}`,t.rf); setVal(`h1-mq${i}`,t.mc.tekst);
+    setVal(`h1-ma${i}`,t.mc.a); setVal(`h1-mb${i}`,t.mc.b); setVal(`h1-mc${i}`,t.mc.c);
+  });
+
+  // H2
+  setVal('h2-kontekst', D.hoeren.t2.kontekst);
+  const h2pc = document.getElementById('h2-pitanja-cont'); h2pc.innerHTML = '';
+  D.hoeren.t2.pitanja.forEach((q,i) => { const b = makeMCBlock(11+i, `h2-q${i}`, `h2-a${i}`, `h2-b${i}`, `h2-c${i}`); h2pc.appendChild(b); setVal(`h2-q${i}`,q.tekst); setVal(`h2-a${i}`,q.a); setVal(`h2-b${i}`,q.b); setVal(`h2-c${i}`,q.c); });
+
+  // H3
+  setVal('h3-kontekst', D.hoeren.t3.kontekst);
+  const h3pc = document.getElementById('h3-pitanja-cont'); h3pc.innerHTML = '';
+  D.hoeren.t3.pitanja.forEach((q,i) => { const f = makeField(`Statement ${16+i}`, `h3-q${i}`); h3pc.appendChild(f); setVal(`h3-q${i}`,q); });
+
+  // H4
+  setVal('h4-kontekst', D.hoeren.t4.kontekst);
+  const h4names = D.hoeren.t4.osobe_naslovi || {a:'Moderator',b:'Dana Schneider',c:'Florian Bader'};
+  setVal('h4-name-a', h4names.a || '');
+  setVal('h4-name-b', h4names.b || '');
+  setVal('h4-name-c', h4names.c || '');
+  setVal('h4-primer', D.hoeren.t4.primer_tekst);
+  initABC('h4-primer-ans', D.hoeren.t4.primer_odg || 'b', 'h4-primer-ans-tog');
+  const h4pc = document.getElementById('h4-pitanja-cont'); h4pc.innerHTML = '';
+  D.hoeren.t4.pitanja.forEach((q,i) => { const f = makeField(`Statement ${23+i}`, `h4-q${i}`); h4pc.appendChild(f); setVal(`h4-q${i}`,q); });
+
+  // S1
+  setVal('s1-sit', D.schreiben.a1.situacija);
+  setVal('s1-tacke', (D.schreiben.a1.tacke || []).join('\n'));
+
+  // S2
+  setVal('s2-sit', D.schreiben.a2.situacija);
+
+  // S3
+  setVal('s3-sit', D.schreiben.a3.situacija);
+  setVal('s3-placeholder', D.schreiben.a3.placeholder || '');
+
+  // SP1
+  setVal('sp1-sit', D.sprechen.t1.situacija);
+  const sp1task = (D.sprechen.t1.naslov ? `<strong>${D.sprechen.t1.naslov}</strong><br>` : '') +
+    (D.sprechen.t1.tacke || []).map(t => `– ${t}`).join('<br>');
+  setRich('sp1-task', sp1task);
+
+  // SP2 – 2-column folie rows
+  const sp2t1c = document.getElementById('sp2-t1-folien-cont'); sp2t1c.innerHTML = '';
+  const instr1 = D.sprechen.t2.thema1_instrukcije || ['','','','',''];
+  D.sprechen.t2.thema1_folien.forEach((f,i) => {
+    const row = document.createElement('div'); row.className = 'folie-edit-row';
+    row.innerHTML = `<div>
+      <div class="folie-edit-label">Slide ${i+1} – Instruction (left side)</div>
+      <textarea class="ftextarea" id="sp2-t1-instr${i}" style="min-height:80px;"></textarea>
+    </div>
+    <div>
+      <div class="folie-edit-label">Slide ${i+1} – Card Content (right side)</div>
+      <textarea class="ftextarea" id="sp2-t1-f${i}" style="min-height:80px;"></textarea>
+    </div>`;
+    sp2t1c.appendChild(row);
+    setVal(`sp2-t1-instr${i}`, instr1[i] || '');
+    setVal(`sp2-t1-f${i}`, f);
+  });
+
+  const sp2t2c = document.getElementById('sp2-t2-folien-cont'); sp2t2c.innerHTML = '';
+  const instr2 = D.sprechen.t2.thema2_instrukcije || ['','','','',''];
+  D.sprechen.t2.thema2_folien.forEach((f,i) => {
+    const row = document.createElement('div'); row.className = 'folie-edit-row';
+    row.innerHTML = `<div>
+      <div class="folie-edit-label">Slide ${i+1} – Instruction (left side)</div>
+      <textarea class="ftextarea" id="sp2-t2-instr${i}" style="min-height:80px;"></textarea>
+    </div>
+    <div>
+      <div class="folie-edit-label">Slide ${i+1} – Card Content (right side)</div>
+      <textarea class="ftextarea" id="sp2-t2-f${i}" style="min-height:80px;"></textarea>
+    </div>`;
+    sp2t2c.appendChild(row);
+    setVal(`sp2-t2-instr${i}`, instr2[i] || '');
+    setVal(`sp2-t2-f${i}`, f);
+  });
+
+  // SP3
+  setVal('sp3-tekst1', D.sprechen.t3 ? (D.sprechen.t3.tekst1 || '') : '');
+  setVal('sp3-tekst2', D.sprechen.t3 ? (D.sprechen.t3.tekst2 || '') : '');
+}
+
+// ── READ FORM → JSON ──
+function readForm() {
+  D.meta.id = getVal('m-id');
+  D.meta.naziv = getVal('m-naziv');
+  D.audio = { t1:getVal('a-t1'), t2:getVal('a-t2'), t3:getVal('a-t3'), t4:getVal('a-t4') };
+
+  // L1 — save full text as blog_tekst, clear separate fields
+  const l1full = getVal('l1-tekst');
+  D.lesen.t1.blog_tekst = l1full;
+  D.lesen.t1.blog_naslov  = '';
+  D.lesen.t1.blog_tagline = '';
+  D.lesen.t1.blog_datum   = '';
+  D.lesen.t1.primer_tekst = getVal('l1-primer');
+  D.lesen.t1.primer_odg   = getTF('l1');
+  D.lesen.t1.pitanja = D.lesen.t1.pitanja.map((_,i) => getVal(`l1-q${i}`));
+
+  // L2
+  D.lesen.t2.clanak1.clanak1_tekst = getRich('l2-c1-tekst').replace(/<br>/g,'\n').replace(/<[^>]+>/g,'');
+  D.lesen.t2.clanak2.clanak2_tekst = getRich('l2-c2-tekst').replace(/<br>/g,'\n').replace(/<[^>]+>/g,'');
+  D.lesen.t2.primer_question = getVal('l2-pq-inp');
+  D.lesen.t2.primer_a = getVal('l2-pa-inp');
+  D.lesen.t2.primer_b = getVal('l2-pb-inp');
+  D.lesen.t2.primer_c = getVal('l2-pc-inp');
+  D.lesen.t2.primer_ans = getABC('l2-pans','c');
+  D.lesen.t2.pitanja = D.lesen.t2.pitanja.map((_,i) => ({ tekst:getVal(`l2-q${i}`), a:getVal(`l2-a${i}`), b:getVal(`l2-b${i}`), c:getVal(`l2-c${i}`) }));
+
+  // L3
+  D.lesen.t3.kontekst = getVal('l3-kontekst');
+  const newPrimer = getL3Primer();
+  D.lesen.t3.primer_slovo = newPrimer;
+  'abcdefghij'.split('').forEach(l => {
+    const html = getRich(`l3-ad-${l}`);
+    const plain = html.replace(/<br\s*\/?>/gi,'\n').replace(/<[^>]+>/g,'');
+    if (!D.lesen.t3.oglasi[l]) D.lesen.t3.oglasi[l] = {};
+    D.lesen.t3.oglasi[l].tekst = plain;
+    D.lesen.t3.oglasi[l].primer = (l === newPrimer);
+  });
+  D.lesen.t3.situacije = D.lesen.t3.situacije.map((_,i) => getVal(`l3-s${i}`));
+
+  // L4
+  D.lesen.t4.kontekst = getVal('l4-kontekst');
+  D.lesen.t4.aufgabe = getVal('l4-aufgabe');
+  D.lesen.t4.primer_ime = getVal('l4-primer-ime');
+  D.lesen.t4.primer_tekst = getRich('l4-primer-tekst').replace(/<br\s*\/?>/gi,'\n').replace(/<[^>]+>/g,'');
+  D.lesen.t4.primer_odg = getTF2('l4');
+  D.lesen.t4.osobe = D.lesen.t4.osobe.map((_,i) => ({ ime:getVal(`l4-n${i}`), tekst:getVal(`l4-t${i}`) }));
+
+  // L5
+  D.lesen.t5.tekst = getVal('l5-tekst');
+  D.lesen.t5.pitanja = D.lesen.t5.pitanja.map((_,i) => ({ tekst:getVal(`l5-q${i}`), a:getVal(`l5-a${i}`), b:getVal(`l5-b${i}`), c:getVal(`l5-c${i}`) }));
+
+  // H1
+  D.hoeren.t1.primer_rf.tekst = getVal('h1-prf');
+  D.hoeren.t1.primer_rf_odg = getTF('h1-prf');
+  D.hoeren.t1.primer_mc = { tekst:getVal('h1-pmc'), a:getVal('h1-pa'), b:getVal('h1-pb'), c:getVal('h1-pc') };
+  D.hoeren.t1.primer_mc_odg = getABC('h1-mc-ans','c');
+  D.hoeren.t1.tekstovi = D.hoeren.t1.tekstovi.map((_,i) => ({ rf:getVal(`h1-rf${i}`), mc:{tekst:getVal(`h1-mq${i}`),a:getVal(`h1-ma${i}`),b:getVal(`h1-mb${i}`),c:getVal(`h1-mc${i}`)} }));
+
+  // H2
+  D.hoeren.t2.kontekst = getVal('h2-kontekst');
+  D.hoeren.t2.pitanja = D.hoeren.t2.pitanja.map((_,i) => ({ tekst:getVal(`h2-q${i}`), a:getVal(`h2-a${i}`), b:getVal(`h2-b${i}`), c:getVal(`h2-c${i}`) }));
+
+  // H3
+  D.hoeren.t3.kontekst = getVal('h3-kontekst');
+  D.hoeren.t3.pitanja = D.hoeren.t3.pitanja.map((_,i) => getVal(`h3-q${i}`));
+
+  // H4
+  D.hoeren.t4.kontekst = getVal('h4-kontekst');
+  D.hoeren.t4.osobe_naslovi = {
+    a: getVal('h4-name-a') || 'Moderator',
+    b: getVal('h4-name-b') || 'Dana Schneider',
+    c: getVal('h4-name-c') || 'Florian Bader'
+  };
+  D.hoeren.t4.primer_tekst = getVal('h4-primer');
+  D.hoeren.t4.primer_odg = getABC('h4-primer-ans','b');
+  D.hoeren.t4.pitanja = D.hoeren.t4.pitanja.map((_,i) => getVal(`h4-q${i}`));
+
+  // S1
+  D.schreiben.a1.situacija = getVal('s1-sit');
+  D.schreiben.a1.tacke = getVal('s1-tacke').split('\n').map(s=>s.replace(/^[–\-]\s*/,'')).filter(Boolean);
+
+  // S2
+  D.schreiben.a2 = { situacija: getVal('s2-sit') };
+
+  // S3
+  D.schreiben.a3 = { situacija: getVal('s3-sit'), placeholder: getVal('s3-placeholder') };
+
+  // SP1 — parse rich text back into naslov + tacke
+  D.sprechen.t1.situacija = getVal('sp1-sit');
+  const sp1html = getRich('sp1-task');
+  D.sprechen.t1._rich = sp1html; // store raw HTML for re-editing
+  // Extract plain text for naslov/tacke (for test rendering compatibility)
+  const sp1tmp = document.createElement('div'); sp1tmp.innerHTML = sp1html;
+  const sp1lines = sp1tmp.innerText.split('\n').map(s=>s.replace(/^[–\-]\s*/,'')).filter(Boolean);
+  D.sprechen.t1.naslov = sp1lines[0] || '';
+  D.sprechen.t1.tacke = sp1lines.slice(1);
+
+  // SP2
+  D.sprechen.t2.thema1_folien = D.sprechen.t2.thema1_folien.map((_,i) => getVal(`sp2-t1-f${i}`));
+  D.sprechen.t2.thema1_instrukcije = D.sprechen.t2.thema1_folien.map((_,i) => getVal(`sp2-t1-instr${i}`));
+  D.sprechen.t2.thema2_folien = D.sprechen.t2.thema2_folien.map((_,i) => getVal(`sp2-t2-f${i}`));
+  D.sprechen.t2.thema2_instrukcije = D.sprechen.t2.thema2_folien.map((_,i) => getVal(`sp2-t2-instr${i}`));
+
+  // SP3
+  if (!D.sprechen.t3) D.sprechen.t3 = {};
+  D.sprechen.t3.tekst1 = getVal('sp3-tekst1');
+  D.sprechen.t3.tekst2 = getVal('sp3-tekst2');
+}
+
+// ── DOWNLOAD ──
+function downloadJSON() {
+  readForm();
+  const json = JSON.stringify(D, null, 2);
+  const blob = new Blob([json], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = (D.meta.id || 'test') + '.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>
