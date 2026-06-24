@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WortHeld — kviz njemačkih riječi</title>
+<style>
+  :root{
+    --ink:#1a2238;
+    --paper:#f3ede2;
+    --gold:#e0a13c;
+    --gold-deep:#c4842a;
+    --green:#3f9b6d;
+    --green-deep:#2f7a54;
+    --red:#cf5b52;
+    --red-deep:#b04138;
+    --line:#cdbfa6;
+    --shadow:rgba(26,34,56,.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+    background:
+      radial-gradient(circle at 20% 18%,rgba(224,161,60,.14),transparent 42%),
+      radial-gradient(circle at 82% 84%,rgba(63,155,109,.12),transparent 46%),
+      var(--paper);
+    color:var(--ink);
+    min-height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    line-height:1.5;
+  }
+  .stage{
+    width:100%;
+    max-width:520px;
+    background:#fffdf8;
+    border:1px solid var(--line);
+    border-radius:20px;
+    box-shadow:0 18px 50px -18px var(--shadow);
+    overflow:hidden;
+  }
+  .topbar{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    padding:18px 26px;
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,#fffdf8,#f7f1e6);
+  }
+  .brand{font-weight:800;letter-spacing:.04em;font-size:1.15rem}
+  .brand span{color:var(--gold-deep)}
+  .tag{font-size:.72rem;color:#7d7261;letter-spacing:.18em;text-transform:uppercase}
+  .screen{padding:34px 30px 38px;display:none}
+  .screen.active{display:block;animation:rise .4s ease}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  h1{font-size:1.7rem;line-height:1.15;margin-bottom:10px}
+  .lead{color:#6b624e;margin-bottom:26px;font-size:.97rem}
+
+  label{display:block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#8a7f6b;margin-bottom:8px}
+  input[type=text]{
+    width:100%;padding:14px 16px;font-size:1.05rem;
+    border:1.5px solid var(--line);border-radius:12px;
+    background:#fff;color:var(--ink);outline:none;transition:border-color .2s;
+  }
+  input[type=text]:focus{border-color:var(--gold)}
+
+  .btn{
+    display:block;width:100%;margin-top:22px;padding:14px;
+    font-size:1rem;font-weight:700;letter-spacing:.03em;
+    border:none;border-radius:12px;cursor:pointer;
+    background:var(--ink);color:#fff;transition:transform .12s,filter .2s;
+  }
+  .btn:hover{filter:brightness(1.12)}
+  .btn:active{transform:scale(.98)}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+
+  .levels{display:grid;gap:14px;margin-top:6px}
+  .level{
+    text-align:left;padding:18px 20px;border:1.5px solid var(--line);
+    border-radius:14px;background:#fff;cursor:pointer;
+    display:flex;align-items:center;gap:16px;
+    transition:border-color .2s,transform .12s,background .2s;
+  }
+  .level:hover{border-color:var(--gold);transform:translateX(4px)}
+  .level:disabled{opacity:.5;cursor:wait;transform:none}
+  .level .badge{
+    font-weight:800;font-size:1.05rem;background:var(--gold);color:#fff;
+    width:48px;height:48px;border-radius:11px;display:grid;place-items:center;flex:none;
+  }
+  .level .desc strong{display:block;font-size:1.02rem}
+  .level .desc small{color:#8a7f6b}
+
+  .qhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;font-size:.82rem;color:#8a7f6b;letter-spacing:.04em}
+  .score{font-weight:700;color:var(--green-deep)}
+  .bar{height:6px;background:#eadfca;border-radius:99px;overflow:hidden;margin-bottom:30px}
+  .bar > i{display:block;height:100%;background:var(--gold);width:0;transition:width .35s ease}
+
+  .prompt{text-align:center;margin-bottom:8px}
+  .prompt small{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#a89a80}
+  .prompt .word{font-size:2.1rem;font-weight:800;margin-top:6px}
+
+  .answers{display:grid;gap:12px;margin-top:28px}
+  .btn-finish{
+    display:block;width:100%;margin-top:22px;padding:12px;
+    font-size:.92rem;font-weight:600;letter-spacing:.02em;
+    border:1.5px solid var(--line);border-radius:12px;cursor:pointer;
+    background:transparent;color:#8a7f6b;
+    transition:border-color .2s,color .2s,background .2s;
+  }
+  .btn-finish:hover{border-color:var(--gold);color:var(--gold-deep);background:#fffbf2}
+  .btn-finish:active{transform:scale(.99)}
+  .answer{
+    padding:15px 18px;font-size:1.05rem;font-weight:600;
+    border:1.5px solid var(--line);border-radius:12px;
+    background:#fff;color:var(--ink);cursor:pointer;text-align:center;
+    transition:transform .12s,border-color .2s;
+  }
+  .answer:hover{border-color:var(--gold)}
+  .answer.correct{background:var(--green);border-color:var(--green-deep);color:#fff;animation:pop .25s}
+  .answer.wrong{background:var(--red);border-color:var(--red-deep);color:#fff}
+  .answer:disabled{cursor:default}
+  @keyframes pop{50%{transform:scale(1.04)}}
+
+  .result{text-align:center}
+  .result .big{font-size:3.4rem;font-weight:800;color:var(--gold-deep);margin:8px 0}
+  .result .msg{font-size:1.1rem;margin-bottom:6px}
+  .result .sub{color:#8a7f6b;margin-bottom:8px}
+
+  .error{
+    margin-top:18px;padding:14px 16px;border-radius:12px;
+    background:#fbe9e7;border:1.5px solid var(--red);color:var(--red-deep);
+    font-size:.92rem;display:none;
+  }
+  .error.show{display:block}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="topbar">
+    <div class="brand">Wort<span>Held</span></div>
+    <div class="tag" id="tag">Njemački · kviz</div>
+  </div>
+
+  <!-- 1. IME -->
+  <section class="screen active" id="screen-name">
+    <h1>Dobrodošli, jezički junače.</h1>
+    <p class="lead">Upišite svoje ime i krenite u osvajanje njemačkih riječi.</p>
+    <label for="name">Vaše ime</label>
+    <input type="text" id="name" placeholder="npr. Marko" autocomplete="off" maxlength="20">
+    <button class="btn" id="toLevels" disabled>Nastavi</button>
+  </section>
+
+  <!-- 2. NIVO -->
+  <section class="screen" id="screen-level">
+    <h1 id="greet">Biraj nivo</h1>
+    <p class="lead">Svaki nivo nosi svoj set riječi. Počni lagano ili idi pravo na izazov.</p>
+    <div class="levels">
+      <button class="level" data-level="a1">
+        <span class="badge">A1</span>
+        <span class="desc"><strong>Početni</strong><small>Osnovne, svakodnevne riječi</small></span>
+      </button>
+      <button class="level" data-level="a2">
+        <span class="badge">A2</span>
+        <span class="desc"><strong>Osnovni</strong><small>Proširen svakodnevni vokabular</small></span>
+      </button>
+      <button class="level" data-level="b1">
+        <span class="badge">B1</span>
+        <span class="desc"><strong>Srednji</strong><small>Apstraktnije i složenije riječi</small></span>
+      </button>
+    </div>
+    <div class="error" id="loadError"></div>
+  </section>
+
+  <!-- 3. KVIZ -->
+  <section class="screen" id="screen-quiz">
+    <div class="qhead">
+      <span id="progress">Pitanje 1</span>
+      <span class="score">Tačno: <span id="score">0</span></span>
+    </div>
+    <div class="bar"><i id="barFill"></i></div>
+    <div class="prompt">
+      <small>Prevedi na njemački</small>
+      <div class="word" id="srWord">—</div>
+    </div>
+    <div class="answers" id="answers"></div>
+    <button class="btn-finish" id="finish">Završi i prikaži rezultat</button>
+  </section>
+
+  <!-- 4. REZULTAT -->
+  <section class="screen" id="screen-result">
+    <div class="result">
+      <p class="sub" id="rName">Bravo!</p>
+      <div class="big"><span id="finalScore">0</span>/<span id="finalTotal">0</span></div>
+      <p class="msg" id="rMsg">Sjajan rezultat!</p>
+      <button class="btn" id="again">Igraj ponovo</button>
+    </div>
+  </section>
+</div>
+
+<script>
+/* ====== STANJE ====== */
+let state = { name:"", level:"", q:0, score:0, deck:[] };
+
+/* Keš učitanih nivoa da se isti JSON ne čita više puta */
+const cache = {};
+
+/* ====== POMOĆNE ====== */
+const $ = id => document.getElementById(id);
+const show = id => {
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  $(id).classList.add('active');
+};
+const shuffle = arr => arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+
+/* ====== UČITAVANJE PITANJA IZ JSON-a ====== */
+async function loadQuestions(level){
+  if(cache[level]) return cache[level];
+  const res = await fetch(`pitanja/pitanja_${level}.json`);
+  if(!res.ok) throw new Error(`Ne mogu da učitam pitanja_${level}.json (status ${res.status})`);
+  const data = await res.json();
+  if(!Array.isArray(data) || data.length === 0) throw new Error(`Fajl pitanja_${level}.json je prazan ili neispravan.`);
+  cache[level] = data;
+  return data;
+}
+
+/* ====== EKRAN 1: IME ====== */
+$('name').addEventListener('input', e=>{
+  $('toLevels').disabled = e.target.value.trim().length === 0;
+});
+$('name').addEventListener('keydown', e=>{
+  if(e.key==='Enter' && !$('toLevels').disabled) $('toLevels').click();
+});
+$('toLevels').addEventListener('click', ()=>{
+  state.name = $('name').value.trim();
+  $('greet').textContent = `Biraj nivo, ${state.name}`;
+  show('screen-level');
+});
+
+/* ====== EKRAN 2: NIVO ====== */
+document.querySelectorAll('.level').forEach(btn=>{
+  btn.addEventListener('click', async ()=>{
+    const level = btn.dataset.level;
+    const allLevels = document.querySelectorAll('.level');
+    $('loadError').classList.remove('show');
+    allLevels.forEach(b=>b.disabled = true);
+    try{
+      const questions = await loadQuestions(level);
+      state.level = level;
+      state.q = 0; state.score = 0;
+      state.deck = shuffle(questions);
+      $('tag').textContent = `Njemački · ${level.toUpperCase()}`;
+      show('screen-quiz');
+      renderQuestion();
+    }catch(err){
+      $('loadError').textContent = err.message;
+      $('loadError').classList.add('show');
+    }finally{
+      allLevels.forEach(b=>b.disabled = false);
+    }
+  });
+});
+
+/* ====== EKRAN 3: KVIZ ====== */
+function renderQuestion(){
+  const item = state.deck[state.q];
+  $('progress').textContent = `Pitanje ${state.q+1} / ${state.deck.length}`;
+  $('score').textContent = state.score;
+  $('barFill').style.width = (state.q/state.deck.length*100) + '%';
+  $('srWord').textContent = item.sr;
+
+  const options = shuffle([item.de, ...item.wrong]);
+  const box = $('answers');
+  box.innerHTML = '';
+  options.forEach(opt=>{
+    const b = document.createElement('button');
+    b.className = 'answer';
+    b.textContent = opt;
+    b.addEventListener('click', ()=> handleAnswer(b, opt, item.de));
+    box.appendChild(b);
+  });
+}
+
+function handleAnswer(btn, chosen, correct){
+  document.querySelectorAll('.answer').forEach(b=>{
+    b.disabled = true;
+    if(b.textContent === correct) b.classList.add('correct');
+  });
+  if(chosen === correct){
+    state.score++;
+    $('score').textContent = state.score;
+  } else {
+    btn.classList.add('wrong');
+  }
+  setTimeout(()=>{
+    state.q++;
+    if(state.q < state.deck.length) renderQuestion();
+    else finish();
+  }, 1100);
+}
+
+/* ====== EKRAN 4: REZULTAT ====== */
+/* total = broj pitanja koje je korisnik stvarno prešao (state.q),
+   a ne ukupan broj pitanja u nivou. Tako rezultat važi samo
+   za pređene riječi, npr. 9/12 a ne 9/1000. */
+function finish(){
+  const total = state.q;             // koliko je pitanja odgovoreno
+  $('finalScore').textContent = state.score;
+  $('finalTotal').textContent = total;
+  $('rName').textContent = `${state.name}, evo tvog rezultata:`;
+
+  if(total === 0){
+    $('rMsg').textContent = "Nisi odgovorio ni na jedno pitanje. Probaj ponovo!";
+    show('screen-result');
+    return;
+  }
+
+  const pct = state.score/total;
+  let msg;
+  if(pct === 1) msg = "Savršeno! Pravi WortHeld. 🏆";
+  else if(pct >= 0.7) msg = "Odlično ti ide!";
+  else if(pct >= 0.4) msg = "Solidno — vježba čini majstora.";
+  else msg = "Ne odustaj, probaj ponovo!";
+  $('rMsg').textContent = msg;
+  show('screen-result');
+}
+
+/* Dugme "Završi" — prekida kviz; broje se samo odgovorena pitanja */
+$('finish').addEventListener('click', finish);
+
+$('again').addEventListener('click', ()=>{
+  $('name').value = state.name;
+  $('toLevels').disabled = false;
+  show('screen-level');
+});
+</script>
+</body>
+</html>
