@@ -78,6 +78,43 @@
   .btn:active{transform:scale(.98)}
   .btn:disabled{opacity:.4;cursor:not-allowed}
 
+  .btn-ghost{
+    display:block;width:100%;margin-top:12px;padding:13px;
+    font-size:.95rem;font-weight:600;letter-spacing:.02em;
+    border:1.5px solid var(--line);border-radius:12px;cursor:pointer;
+    background:transparent;color:#8a7f6b;
+    transition:border-color .2s,color .2s,background .2s;
+  }
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-deep);background:#fffbf2}
+
+  /* Leaderboard */
+  .board-tabs{display:flex;gap:8px;margin-bottom:18px}
+  .board-tab{
+    flex:1;padding:10px;font-weight:700;font-size:.92rem;
+    border:1.5px solid var(--line);border-radius:10px;
+    background:#fff;color:#8a7f6b;cursor:pointer;transition:all .18s;
+  }
+  .board-tab:hover{border-color:var(--gold)}
+  .board-tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  .board-list{list-style:none;display:grid;gap:9px;margin-bottom:6px}
+  .board-row{
+    display:flex;align-items:center;gap:14px;
+    padding:13px 16px;border:1.5px solid var(--line);border-radius:12px;
+    background:#fff;
+  }
+  .board-row .rank{
+    flex:none;width:30px;text-align:center;font-weight:800;font-size:1.05rem;color:#a89a80;
+  }
+  .board-row .who{flex:1;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .board-row .pct{font-weight:800;color:var(--green-deep)}
+  .board-row .star{font-size:1.25rem;flex:none}
+  .board-row.top1{background:linear-gradient(180deg,#fff9e8,#fff);border-color:var(--gold)}
+  .board-row.top2{background:linear-gradient(180deg,#f4f4f6,#fff);border-color:#c2c6cc}
+  .board-row.top3{background:linear-gradient(180deg,#f8efe6,#fff);border-color:#cd9b7a}
+  .board-empty{text-align:center;color:#a89a80;padding:24px 0;display:none}
+  .board-empty.show{display:block}
+
   .levels{display:grid;gap:14px;margin-top:6px}
   .level{
     text-align:left;padding:18px 20px;border:1.5px solid var(--line);
@@ -128,6 +165,7 @@
   .result{text-align:center}
   .result .big{font-size:3.4rem;font-weight:800;color:var(--gold-deep);margin:8px 0}
   .result .msg{font-size:1.1rem;margin-bottom:6px}
+  .board-note{font-size:.9rem;color:var(--gold-deep);margin-bottom:14px;min-height:1.2em}
   .result .sub{color:#8a7f6b;margin-bottom:8px}
 
   .error{
@@ -152,6 +190,21 @@
     <label for="name">Vaše ime</label>
     <input type="text" id="name" placeholder="npr. Marko" autocomplete="off" maxlength="20">
     <button class="btn" id="toLevels" disabled>Nastavi</button>
+    <button class="btn-ghost" id="openBoard">🏆 Tabela najboljih</button>
+  </section>
+
+  <!-- 1b. LEADERBOARD -->
+  <section class="screen" id="screen-board">
+    <h1>Tabela najboljih</h1>
+    <p class="lead">Top 10 igrača po procentu tačnih odgovora. Za ulazak treba odigrati bar 30% riječi nivoa.</p>
+    <div class="board-tabs">
+      <button class="board-tab active" data-board="a1">A1</button>
+      <button class="board-tab" data-board="a2">A2</button>
+      <button class="board-tab" data-board="b1">B1</button>
+    </div>
+    <ol class="board-list" id="boardList"></ol>
+    <p class="board-empty" id="boardEmpty">Još nema rezultata za ovaj nivo. Budi prvi!</p>
+    <button class="btn" id="boardBack">Nazad</button>
   </section>
 
   <!-- 2. NIVO -->
@@ -196,6 +249,7 @@
       <p class="sub" id="rName">Bravo!</p>
       <div class="big"><span id="finalScore">0</span>/<span id="finalTotal">0</span></div>
       <p class="msg" id="rMsg">Sjajan rezultat!</p>
+      <p class="board-note" id="rBoard"></p>
       <button class="btn" id="again">Igraj ponovo</button>
     </div>
   </section>
@@ -325,8 +379,99 @@ function finish(){
   else if(pct >= 0.4) msg = "Solidno — vježba čini majstora.";
   else msg = "Ne odustaj, probaj ponovo!";
   $('rMsg').textContent = msg;
+
+  // Pokušaj upisa na tabelu najboljih
+  const boardMsg = saveScore(state.level, state.name, state.score, total, state.deck.length);
+  $('rBoard').textContent = boardMsg;
+
   show('screen-result');
 }
+
+/* ====== TABELA NAJBOLJIH (localStorage) ====== */
+const BOARD_KEY = 'wortheld_board_v1';
+const MIN_SHARE = 0.30;   // mora odigrati bar 30% riječi nivoa
+const MAX_ENTRIES = 10;   // pamti se 10 najboljih po nivou
+
+function loadBoard(){
+  try{ return JSON.parse(localStorage.getItem(BOARD_KEY)) || {}; }
+  catch(e){ return {}; }
+}
+function storeBoard(board){
+  try{ localStorage.setItem(BOARD_KEY, JSON.stringify(board)); }catch(e){}
+}
+
+/* Vraća poruku za ekran rezultata */
+function saveScore(level, name, score, answered, levelTotal){
+  const share = answered / levelTotal;
+  if(share < MIN_SHARE){
+    const need = Math.ceil(levelTotal * MIN_SHARE);
+    return `Za tabelu najboljih treba odigrati bar ${need} riječi (30% nivoa). Odigrao si ${answered}.`;
+  }
+  const pct = Math.round(score / answered * 100);
+  const board = loadBoard();
+  if(!board[level]) board[level] = [];
+  board[level].push({ name, pct, score, answered, ts: Date.now() });
+  // sortiranje: veći procenat prvo; pri istom procentu više odgovorenih prvo; pa stariji rezultat prvo
+  board[level].sort((a,b)=> b.pct - a.pct || b.answered - a.answered || a.ts - b.ts);
+  const before = board[level].length;
+  board[level] = board[level].slice(0, MAX_ENTRIES);
+  storeBoard(board);
+
+  const made = board[level].some(e => e.name===name && e.pct===pct && e.answered===answered);
+  if(made){
+    const rank = board[level].findIndex(e => e.name===name && e.pct===pct && e.answered===answered) + 1;
+    return `🎉 Ušao si na tabelu najboljih — ${rank}. mjesto (${pct}%)!`;
+  }
+  return `Tvoj rezultat (${pct}%) nije ušao u top ${MAX_ENTRIES} za ovaj nivo.`;
+}
+
+const STARS = ['🥇','🥈','🥉'];
+function renderBoard(level){
+  const board = loadBoard();
+  const list = (board[level] || []);
+  const ol = $('boardList');
+  ol.innerHTML = '';
+  if(list.length === 0){
+    $('boardEmpty').classList.add('show');
+    return;
+  }
+  $('boardEmpty').classList.remove('show');
+  list.forEach((e, i)=>{
+    const li = document.createElement('li');
+    li.className = 'board-row' + (i<3 ? ' top'+(i+1) : '');
+    const star = i<3 ? `<span class="star">${STARS[i]}</span>` : '';
+    li.innerHTML =
+      `<span class="rank">${i+1}</span>` +
+      `<span class="who">${escapeHtml(e.name)}</span>` +
+      star +
+      `<span class="pct">${e.pct}%</span>`;
+    ol.appendChild(li);
+  });
+}
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c =>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+/* Otvaranje/zatvaranje tabele s ekrana imena */
+let currentBoardLevel = 'a1';
+$('openBoard').addEventListener('click', ()=>{
+  currentBoardLevel = 'a1';
+  document.querySelectorAll('.board-tab').forEach(t=>
+    t.classList.toggle('active', t.dataset.board==='a1'));
+  renderBoard('a1');
+  show('screen-board');
+});
+$('boardBack').addEventListener('click', ()=> show('screen-name'));
+document.querySelectorAll('.board-tab').forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    currentBoardLevel = tab.dataset.board;
+    document.querySelectorAll('.board-tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    renderBoard(currentBoardLevel);
+  });
+});
 
 /* Dugme "Završi" — prekida kviz; broje se samo odgovorena pitanja */
 $('finish').addEventListener('click', finish);
