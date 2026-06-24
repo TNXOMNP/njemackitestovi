@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Njemački — testovi i kviz</title>
+<style>
+  :root{
+    --ink:#1a2238;
+    --paper:#f3ede2;
+    --gold:#e0a13c;
+    --gold-deep:#c4842a;
+    --green:#3f9b6d;
+    --green-deep:#2f7a54;
+    --line:#cdbfa6;
+    --shadow:rgba(26,34,56,.18);
+    --muted:#9a8f7b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+    background:
+      radial-gradient(circle at 18% 16%,rgba(224,161,60,.16),transparent 44%),
+      radial-gradient(circle at 84% 86%,rgba(63,155,109,.13),transparent 46%),
+      var(--paper);
+    color:var(--ink);
+    min-height:100%;
+    display:flex;align-items:center;justify-content:center;
+    padding:24px;line-height:1.5;
+  }
+  .stage{
+    width:100%;max-width:560px;
+    background:#fffdf8;border:1px solid var(--line);
+    border-radius:22px;box-shadow:0 22px 60px -22px var(--shadow);
+    overflow:hidden;
+  }
+  .hero{
+    padding:42px 36px 30px;
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,#fffdf8,#f7f1e6);
+    text-align:center;
+  }
+  .kicker{
+    font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--gold-deep);font-weight:700;margin-bottom:14px;
+  }
+  .hero h1{font-size:2rem;line-height:1.12;margin-bottom:10px}
+  .hero h1 b{color:var(--gold-deep)}
+  .hero p{color:#6b624e;font-size:.98rem;max-width:38ch;margin:0 auto}
+
+  .menu{padding:28px 28px 34px;display:grid;gap:14px}
+
+  .card{
+    display:flex;align-items:center;gap:18px;
+    padding:20px 22px;
+    border:1.5px solid var(--line);border-radius:16px;
+    background:#fff;color:inherit;text-decoration:none;
+    transition:border-color .2s,transform .14s,box-shadow .2s;
+  }
+  .card:hover{
+    border-color:var(--gold);transform:translateX(5px);
+    box-shadow:0 10px 26px -16px var(--shadow);
+  }
+  .card .badge{
+    flex:none;width:56px;height:56px;border-radius:14px;
+    display:grid;place-items:center;
+    font-weight:800;font-size:1.1rem;color:#fff;
+    background:var(--gold);
+  }
+  .card .badge.green{background:var(--green)}
+  .card .badge.ink{background:var(--ink)}
+  .card .body{flex:1}
+  .card .body strong{display:block;font-size:1.12rem;margin-bottom:2px}
+  .card .body small{color:var(--muted);font-size:.88rem}
+  .card .arrow{font-size:1.3rem;color:var(--line);transition:color .2s,transform .2s}
+  .card:hover .arrow{color:var(--gold);transform:translateX(3px)}
+
+  /* Onemogućene kartice (A1, A2) */
+  .card.soon{cursor:not-allowed;opacity:.62;background:#faf6ee}
+  .card.soon:hover{border-color:var(--line);transform:none;box-shadow:none}
+  .card.soon .badge{background:#cdbfa6}
+  .card.soon .arrow{display:none}
+  .pill{
+    font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+    background:#eadfca;color:#8a7f6b;font-weight:700;
+    padding:4px 9px;border-radius:99px;white-space:nowrap;
+  }
+
+  footer{text-align:center;padding:0 28px 28px;color:var(--muted);font-size:.8rem}
+
+  @media (max-width:420px){
+    .hero{padding:34px 24px 26px}
+    .hero h1{font-size:1.65rem}
+    .menu{padding:22px 20px 26px}
+    .card{padding:16px 18px;gap:14px}
+    .card .badge{width:48px;height:48px;font-size:1rem}
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="hero">
+      <div class="kicker">Uči njemački</div>
+      <h1>Testovi i <b>kviz riječi</b></h1>
+      <p>Odaberi nivo testa ili provjeri svoj vokabular u brzom kvizu.</p>
+    </div>
+
+    <nav class="menu">
+      <!-- A1 — još nema funkciju -->
+      <div class="card soon" aria-disabled="true">
+        <span class="badge">A1</span>
+        <span class="body">
+          <strong>A1 testovi</strong>
+          <small>Početni nivo</small>
+        </span>
+        <span class="pill">Uskoro</span>
+      </div>
+
+      <!-- A2 — još nema funkciju -->
+      <div class="card soon" aria-disabled="true">
+        <span class="badge">A2</span>
+        <span class="body">
+          <strong>A2 testovi</strong>
+          <small>Osnovni nivo</small>
+        </span>
+        <span class="pill">Uskoro</span>
+      </div>
+
+      <!-- B1 — vodi na postojeći sajt (preimenovan u b1testovi.html) -->
+      <a class="card" href="b1testovi.html">
+        <span class="badge">B1</span>
+        <span class="body">
+          <strong>B1 testovi</strong>
+          <small>Srednji nivo</small>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- Kviz riječi — vodi na wortheld.html -->
+      <a class="card" href="wortheld.html">
+        <span class="badge green">QZ</span>
+        <span class="body">
+          <strong>Kviz riječi</strong>
+          <small>Brzi kviz prevoda — A1, A2, B1</small>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </nav>
+
+    <footer>Odaberi opciju iznad da počneš.</footer>
+  </div>
+</body>
+</html>
