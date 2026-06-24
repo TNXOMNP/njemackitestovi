@@ -1,0 +1,10 @@
+[
+  { "sr": "kuća",   "de": "das Haus",   "wrong": ["der Baum", "die Katze", "das Brot"] },
+  { "sr": "voda",   "de": "das Wasser", "wrong": ["das Feuer", "die Milch", "der Wein"] },
+  { "sr": "hljeb",  "de": "das Brot",   "wrong": ["der Käse", "die Butter", "das Ei"] },
+  { "sr": "pas",    "de": "der Hund",   "wrong": ["die Katze", "das Pferd", "der Vogel"] },
+  { "sr": "jabuka", "de": "der Apfel",  "wrong": ["die Birne", "die Banane", "die Traube"] },
+  { "sr": "knjiga", "de": "das Buch",   "wrong": ["der Stift", "das Heft", "die Tafel"] },
+  { "sr": "sunce",  "de": "die Sonne",  "wrong": ["der Mond", "der Stern", "der Himmel"] },
+  { "sr": "majka",  "de": "die Mutter", "wrong": ["der Vater", "die Schwester", "die Tochter"] }
+]

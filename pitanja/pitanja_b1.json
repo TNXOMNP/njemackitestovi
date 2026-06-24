@@ -1,0 +1,10 @@
+[
+  { "sr": "iskustvo",    "de": "die Erfahrung",     "wrong": ["das Wissen", "die Kenntnis", "die Übung"] },
+  { "sr": "odluka",      "de": "die Entscheidung",  "wrong": ["die Meinung", "der Vorschlag", "die Wahl"] },
+  { "sr": "okolina",     "de": "die Umwelt",        "wrong": ["die Umgebung", "die Natur", "die Welt"] },
+  { "sr": "razvoj",      "de": "die Entwicklung",   "wrong": ["der Fortschritt", "die Änderung", "das Wachstum"] },
+  { "sr": "odgovornost", "de": "die Verantwortung", "wrong": ["die Pflicht", "die Aufgabe", "die Rolle"] },
+  { "sr": "mogućnost",   "de": "die Möglichkeit",   "wrong": ["die Gelegenheit", "die Chance", "die Fähigkeit"] },
+  { "sr": "društvo",     "de": "die Gesellschaft",  "wrong": ["die Gruppe", "die Gemeinschaft", "das Volk"] },
+  { "sr": "uspjeh",      "de": "der Erfolg",        "wrong": ["der Gewinn", "das Ergebnis", "der Vorteil"] }
+]

@@ -1,0 +1,10 @@
+[
+  { "sr": "putovanje", "de": "die Reise",      "wrong": ["der Weg", "der Urlaub", "die Fahrt"] },
+  { "sr": "zdravlje",  "de": "die Gesundheit", "wrong": ["die Krankheit", "der Körper", "das Leben"] },
+  { "sr": "posao",     "de": "die Arbeit",     "wrong": ["der Beruf", "die Stelle", "das Büro"] },
+  { "sr": "prijatelj", "de": "der Freund",     "wrong": ["der Nachbar", "der Kollege", "der Gast"] },
+  { "sr": "vrijeme",   "de": "das Wetter",     "wrong": ["die Zeit", "die Uhr", "der Tag"] },
+  { "sr": "novac",     "de": "das Geld",       "wrong": ["die Karte", "der Preis", "die Münze"] },
+  { "sr": "grad",      "de": "die Stadt",      "wrong": ["das Dorf", "das Land", "der Ort"] },
+  { "sr": "hrana",     "de": "das Essen",      "wrong": ["das Getränk", "der Teller", "die Küche"] }
+]
